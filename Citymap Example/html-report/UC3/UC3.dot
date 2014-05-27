@@ -1,0 +1,60 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC3 {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC31" [xlabel="1", label="{<JMP>&bull;|<EXT>}", tooltip="Include use case \"Generate city\".", width="1.0"]
+		"UC32" [xlabel="2", label="{<JMP>&bull;|<EXT>|<OUT>}", tooltip="System validates the zoom settings.", width="1.5"]
+		"UC33" [xlabel="3", label="{<JMP>&bull;}", tooltip="System asks RestaurantServer for restaurants.", width="0.5"]
+		"UC34" [xlabel="4", label="{<JMP>&bull;}", tooltip="RestaurantServer generates the restaurant layer information.", width="0.5"]
+		"UC35" [xlabel="5", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="System generates restaurant map.", width="0.5"]
+	}
+	subgraph cluster_UC31a {
+		label="Extension: 1a.\l There was an abort in \"Generate city\". "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC31a1" [xlabel="1a1", label="{<JMP>&bull;}", tooltip="System shows an error message to the user.", width="0.5"]
+		"UC31a2" [xlabel="1a2", fillcolor="#fbb4ae", label="{<JMP>&bull;}", tooltip="Use case aborts.", width="0.5"]
+	}
+	subgraph cluster_UC32a {
+		label="Extension: 2a.\l Zoom settings are invalid "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC32a1" [xlabel="2a1", label="{<JMP>&bull;}", tooltip="System displays an error message to the user.", width="0.5"]
+		"UC32a2" [xlabel="2a2", label="{<JMP>&bull;}", tooltip="System uses the default zoom settings.", width="0.5"]
+	}
+	"UC2" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC2 Generate city", URL="../UC2/UC2.html", target="_top"]
+	"UC31":"JMP" -> "UC2" [URL="#UC3_1"]
+	"UC2" -> "UC31":"EXT" 
+	"UC31":"EXT" -> "UC32":"JMP" [URL="#UC3_1"]
+	"UC32":"OUT" -> "UC33":"JMP" [URL="#UC3_2"]
+	"UC33":"JMP" -> "UC34":"JMP" [URL="#UC3_3"]
+	"UC34":"JMP" -> "UC35":"JMP" [URL="#UC3_4"]
+	"UC31":"EXT" -> "UC31a1":"JMP" [URL="#UC3_1"]
+	"UC31a1":"JMP" -> "UC31a2":"JMP" [URL="#UC3_1a1"]
+	"UC32":"EXT" -> "UC32a1":"JMP" [URL="#UC3_2"]
+	"UC32a1":"JMP" -> "UC32a2":"JMP" [URL="#UC3_2a1"]
+	"UC32a2":"JMP" -> "UC32":"OUT" [URL="#UC3_2a2"]
+}

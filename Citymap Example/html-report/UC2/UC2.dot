@@ -1,0 +1,42 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC2 {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC21" [xlabel="1", label="{<JMP>&bull;}", tooltip="The system asks MapServer to provide city information.", width="0.5"]
+		"UC22" [xlabel="2", label="{<VAR>|<JMP>&bull;}", tooltip="MapServer provides the requested information.", width="1.0"]
+		"UC23" [xlabel="3", label="{<JMP>&bull;}", tooltip="The system generates the map with default zoom settings.", width="0.5"]
+		"UC24" [xlabel="4", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="User adjusts zoom settings.", width="0.5"]
+	}
+	subgraph cluster_UC22a {
+		label="Variation: 2a.\l MapServer error occurred. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC22a1" [xlabel="2a1", fillcolor="#fbb4ae", label="{<JMP>&bull;}", tooltip="Use case aborts.", width="0.5"]
+	}
+	"UC21":"JMP" -> "UC22":"VAR" [URL="#UC2_1"]
+	"UC22":"JMP" -> "UC23":"JMP" [URL="#UC2_2"]
+	"UC23":"JMP" -> "UC24":"JMP" [URL="#UC2_3"]
+	"UC22":"VAR" -> "UC22a1":"JMP" [URL="#UC2_2"]
+}

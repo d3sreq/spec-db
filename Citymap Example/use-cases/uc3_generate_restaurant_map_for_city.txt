@@ -1,0 +1,17 @@
+UC3 Generate restaurant map for city
+
+Preceding: UC1 Select city on map
+
+1. Include use case "Generate city". #(include:UC2)
+2. System validates the zoom settings.
+3. System asks RestaurantServer for restaurants. #(use:city)
+4. RestaurantServer generates the restaurant layer information.
+5. System generates restaurant map. #(use:location)
+
+Extension: 1a. There was an abort in "Generate city". 
+1a1. System shows an error message to the user. #(guard:abort)
+1a2. Use case aborts. #(abort) #(mark:abort)
+
+Extension: 2a. Zoom settings are invalid
+2a1 System displays an error message to the user.
+2a2 System uses the default zoom settings.

@@ -1,0 +1,26 @@
+digraph mygraph {
+	rankdir="BT"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="70"
+	node [
+		style="filled",
+		fontname="Arial",
+		shape="box",
+		fillcolor="#f2f2f2",
+		height="0.1"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	"UC1" [URL="../UC1/UC1.html", tooltip="Select city on map", target="_top"]
+	"UC2" [URL="../UC2/UC2.html", tooltip="Generate city", target="_top"]
+	"UC3" [URL="../UC3/UC3.html", tooltip="Generate restaurant map for city", target="_top"]
+	"UC2" -> "UC1" 
+	"UC3" -> "UC1" 
+	"UC3" -> "UC2" [arrowhead="onormal", style="dashed"]
+}

@@ -1,0 +1,11 @@
+UC1 Select city on map
+
+Primary: false
+
+1. The user opens the map web page.
+2. The system generates a map with available cities.
+3. The user selects a city on the map. #(create:city)
+
+Variation: 2a No cities available.
+2a1. System displays an empty map with message.
+2a2. Use case aborts. #(abort) #(mark:abort)

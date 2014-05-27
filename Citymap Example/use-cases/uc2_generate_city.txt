@@ -1,0 +1,11 @@
+UC2 Generate city
+
+Preceding: UC1 Select city on map
+
+1. The system asks MapServer to provide city information. #(use:city)
+2. MapServer provides the requested information. #(create:location)
+3. The system generates the map with default zoom settings. #(use:location)
+4. User adjusts zoom settings.
+
+Variation: 2a. MapServer error occurred.
+2a1. Use case aborts. #(abort) #(mark:abort)

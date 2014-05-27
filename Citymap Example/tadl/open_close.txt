@@ -1,0 +1,11 @@
+## after "open" there must be "close"
+CTL AG(open -> AF(close))
+
+## no multi-open
+CTL AG(open -> AX(A[!open U close]))
+
+## no multi-close
+CTL AG(close -> AX(!E[!open U (close & !open)]))
+
+## if there is "close" there must have been a "open" before
+LTL G(close -> O(open))

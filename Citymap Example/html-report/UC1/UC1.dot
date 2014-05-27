@@ -1,0 +1,42 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC1 {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC11" [xlabel="1", label="{<JMP>&bull;}", tooltip="The user opens the map web page.", width="0.5"]
+		"UC12" [xlabel="2", label="{<VAR>|<JMP>&bull;}", tooltip="The system generates a map with available cities.", width="1.0"]
+		"UC13" [xlabel="3", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="The user selects a city on the map.", width="0.5"]
+	}
+	subgraph cluster_UC12a {
+		label="Variation: 2a.\l No cities available. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC12a1" [xlabel="2a1", label="{<JMP>&bull;}", tooltip="System displays an empty map with message.", width="0.5"]
+		"UC12a2" [xlabel="2a2", fillcolor="#fbb4ae", label="{<JMP>&bull;}", tooltip="Use case aborts.", width="0.5"]
+	}
+	"UC11":"JMP" -> "UC12":"VAR" [URL="#UC1_1"]
+	"UC12":"JMP" -> "UC13":"JMP" [URL="#UC1_2"]
+	"UC12":"VAR" -> "UC12a1":"JMP" [URL="#UC1_2"]
+	"UC12a1":"JMP" -> "UC12a2":"JMP" [URL="#UC1_2a1"]
+}
