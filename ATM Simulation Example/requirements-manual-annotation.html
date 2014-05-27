@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 4.0.4.2 (Linux)">
+	<META NAME="CREATED" CONTENT="20140317;16135533">
+	<META NAME="CHANGEDBY" CONTENT="Viliam Simko">
+	<META NAME="CHANGED" CONTENT="20140321;15133000">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 2cm }
+		P { margin-bottom: 0.21cm }
+		A:link { so-language: zxx }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="cs-CZ" DIR="LTR">
+<H1>Requirements Statement for Example ATM System</H1>
+<P>The software to be designed will control a simulated automated
+teller machine (<A HREF="#ATM">ATM</A>) having a <A HREF="#Reader">magnetic
+stripe reader</A> for reading an <A HREF="#Card">ATM card</A>, a
+customer console (<A HREF="#Keyboard">keyboard</A> and <A HREF="#Display">display</A>)
+for interaction with the <A HREF="#Customer">customer</A>, a slot for
+depositing <A HREF="#Envelope">envelopes</A>, a <A HREF="#Dispenser">dispenser</A>
+for cash (in multiples of $20), a <A HREF="#ReceiptPrinter">printer</A>
+for printing <A HREF="#Receipt">customer receipts</A>, and a
+<A HREF="#OperatorPanel">key-operated switch</A> to allow an <A HREF="#Operator">operator</A>
+to start or stop the <A HREF="#ATM">machine</A>. The <A HREF="#ATM">ATM</A>
+will communicate with the <A HREF="#Bank">bank computer</A> over an
+appropriate communication link. (The software on the latter is not
+part of the requirements for this problem.)</P>
+<P>The <A HREF="#ATM">ATM</A> will service one <A HREF="#Customer">customer</A>
+at a time. A <A HREF="#Customer">customer</A> will be required to
+insert an <A HREF="#Card">ATM card</A> and enter a personal
+identification number (<A HREF="#Card.pin">PIN</A>) - both of which
+will be sent to the <A HREF="#Bank">bank</A> for validation as part
+of each <A HREF="#Transaction">transaction</A>. The <A HREF="#Customer">customer</A>
+will then be able to perform one or more <A HREF="#Transaction">transactions</A>.
+The <A HREF="#Card">card</A> will be retained in the <A HREF="#ATM">machine</A>
+until the <A HREF="#Customer">customer</A> indicates that he desires
+no further <A HREF="#Transaction">transactions</A>, at which point it
+will be returned - except as noted below.</P>
+<P>The <A HREF="#ATM">ATM</A> must be able to provide the following
+services to the <A HREF="#Customer">customer</A>:</P>
+<OL>
+	<LI><P>A <A HREF="#Customer">customer</A> must be able to make a
+	<A HREF="#Withdrawal">cash withdrawal</A> from any suitable <A HREF="#Account">account</A>
+	linked to the <A HREF="#Card">card</A>, in multiples of $20.00.
+	Approval must be obtained from the <A HREF="#Bank">bank</A> before
+	cash is dispensed.</P>
+	<LI><P>A <A HREF="#Customer">customer</A> must be able to <A HREF="#Deposit">make
+	a deposit</A> to any <A HREF="#Account">account</A> linked to the
+	<A HREF="#Card">card</A>, consisting of cash and checks in an
+	<A HREF="#Envelope">envelope</A>. The <A HREF="#Customer">customer</A>
+	will enter the <A HREF="#Transaction.amount">amount</A> of the
+	deposit into the <A HREF="#ATM">ATM</A>, subject to manual
+	verification when the <A HREF="#Envelope">envelope</A> is removed
+	from the <A HREF="#ATM">machine</A> by an <A HREF="#Operator">operator</A>.
+	Approval must be obtained from the <A HREF="#Bank">bank</A> before
+	physically accepting the <A HREF="#Envelope">envelope</A>.</P>
+	<LI><P>A <A HREF="#Customer">customer</A> must be able to make a
+	<A HREF="#Transfer">transfer of money</A> between any two <A HREF="#Account">accounts</A>
+	linked to the <A HREF="#Card">card</A>.</P>
+	<LI><P>A <A HREF="#Customer">customer</A> must be able to make a
+	<A HREF="#Inquiry">balance inquiry</A> of any <A HREF="#Account">account</A>
+	linked to the <A HREF="#Card">card</A>.</P>
+</OL>
+<P>A <A HREF="#Customer">customer</A> must be able to abort a
+<A HREF="#Transaction">transaction</A> in progress by pressing the
+<A HREF="#Keyboard.cancelKey">Cancel key</A> instead of responding to
+a request from the <A HREF="#ATM">machine</A>.</P>
+<P>The <A HREF="#ATM">ATM</A> will communicate each <A HREF="#Transaction">transaction</A>
+to the <A HREF="#Bank">bank</A> and obtain verification that it was
+allowed by the <A HREF="#Bank">bank</A>. Ordinarily, a <A HREF="#Transaction">transaction</A>
+will be considered complete by the <A HREF="#Bank">bank</A> once it
+has been approved. In the case of a <A HREF="#Deposit">deposit</A>, a
+second <A HREF="#Message">message</A> will be sent to the <A HREF="#Bank">bank</A>
+indicating that the <A HREF="#Customer">customer</A> has deposited
+the <A HREF="#Envelope">envelope</A>. (If the <A HREF="#Customer">customer</A>
+fails to deposit the <A HREF="#Envelope">envelope</A> within the
+timeout period, or presses <A HREF="#Keyboard.cancelKey">cancel</A>
+instead, no second <A HREF="#Message">message</A> will be sent to the
+<A HREF="#Bank">bank</A> and the deposit will not be credited to the
+<A HREF="#Customer">customer</A>.)</P>
+<P>If the <A HREF="#Bank">bank</A> determines that the <A HREF="#Card.pin">customer
+PIN</A> is invalid, the <A HREF="#Customer">customer</A> will be
+required to reenter the <A HREF="#Card.pin">PIN</A> before a
+<A HREF="#Transaction">transaction</A> can proceed. If the <A HREF="#Customer">customer</A>
+is unable to successfully enter the <A HREF="#Card.pin">PIN</A> after
+three tries, the <A HREF="#Card">card</A> will be permanently
+retained by the <A HREF="#ATM">machine</A>, and the <A HREF="#Customer">customer</A>
+will have to contact the <A HREF="#Bank">bank</A> to get it back.</P>
+<P>If a <A HREF="#Transaction">transaction</A> fails for any reason
+other than an invalid <A HREF="#Card.pin">PIN</A>, the <A HREF="#ATM">ATM</A>
+will display an explanation of the problem, and will then ask the
+<A HREF="#Customer">customer</A> whether he wants to do another
+<A HREF="#Transaction">transaction</A>.</P>
+<P>The <A HREF="#ATM">ATM</A> will provide the <A HREF="#Customer">customer</A>
+with a printed receipt for each successful <A HREF="#Transaction">transaction</A>,
+showing the date, time, <A HREF="#ATM.location">machine location</A>,
+type of <A HREF="#Transaction">transaction</A>, <A HREF="#Account">account</A>,
+<A HREF="#Transaction.amount">amount</A>, and ending and available
+<A HREF="#Account.balance">balance</A> of the affected account (&quot;to&quot;
+<A HREF="#Account">account</A> for transfers).</P>
+<P>The <A HREF="#ATM">ATM</A> will have a <A HREF="#OperatorPanel">key-operated
+switch</A> that will allow an <A HREF="#Operator">operator</A> to
+start and stop the servicing of <A HREF="#Customer">customers</A>.
+After turning the <A HREF="#OperatorPanel">switch</A> to the &quot;on&quot;
+<A HREF="#OperatorPanel.switchPosition">position</A>, the <A HREF="#Operator">operator</A>
+will be required to verify and enter the <A HREF="#Dispenser.currentAmount">total
+cash</A> on hand. The <A HREF="#ATM">machine</A> can only be turned
+off when it is not servicing a <A HREF="#Customer">customer</A>. When
+the <A HREF="#OperatorPanel">switch</A> is moved to the &quot;off&quot;
+<A HREF="#OperatorPanel.switchPosition">position</A>, the <A HREF="#ATM">machine</A>
+will shut down, so that the <A HREF="#Operator">operator</A> may
+remove <A HREF="#Envelope">deposit envelopes</A> and reload the
+<A HREF="#ATM">machine</A> with cash, blank receipts, etc.</P>
+<P>The <A HREF="#ATM">ATM</A> will also maintain an <A HREF="#Log">internal
+log</A> of <A HREF="#Transaction">transactions</A> to facilitate
+resolving ambiguities arising from a hardware failure in the middle
+of a <A HREF="#Transaction">transaction</A>. Entries will be made in
+the <A HREF="#Log">log</A> when the <A HREF="#ATM">ATM</A> is started
+up and shut down, for each <A HREF="#Message">message</A> sent to the
+<A HREF="#Bank">Bank</A> (along with the <A HREF="#Message">response</A>
+back, if one is expected), for the dispensing of cash, and for the
+receiving of an <A HREF="#Envelope">envelope</A>. Log entries may
+contain card numbers and dollar amounts, but for security will <EM>never
+</EM>contain a <A HREF="#Card.pin">PIN</A>.</P>
+</BODY>
+</HTML>

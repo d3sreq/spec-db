@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 4.0.4.2 (Linux)">
+	<META NAME="CREATED" CONTENT="20140317;16135533">
+	<META NAME="CHANGEDBY" CONTENT="Viliam Simko">
+	<META NAME="CHANGED" CONTENT="20140321;15125100">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 2cm }
+		H1 { margin-bottom: 0.21cm; font-size: 16pt }
+		P { margin-bottom: 0.21cm }
+		H2 { margin-bottom: 0.21cm; page-break-before: auto; page-break-after: auto }
+		H2.western { font-size: 14pt }
+		H2.ctl { font-family: "Lohit Hindi" }
+		A:link { so-language: zxx }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="cs-CZ" DIR="LTR">
+<H1>Use Cases for Example ATM System</H1>
+<H2 CLASS="western">System Startup Use Case</H2>
+<P>The <A HREF="#ATM">system</A> is started up when the <A HREF="#Operator">operator</A>
+turns the <A HREF="#OperatorPanel.switchPosition">operator switch</A>
+to the &quot;on&quot; <A HREF="#OperatorPanel.switchPosition">position</A>.
+The <A HREF="#Operator">operator</A> will be asked to enter the
+<A HREF="#Dispenser.currentAmount">amount of money</A> currently in
+the <A HREF="#Dispenser">cash dispenser</A>, and a connection to the
+<A HREF="#Bank">bank</A> will be established. Then the servicing of
+<A HREF="#Customer">customers</A> can begin.</P>
+<H2 CLASS="western">System Shutdown Use Case</H2>
+<P>The <A HREF="#ATM">system</A> is shut down when the <A HREF="#Operator">operator</A>
+makes sure that no <A HREF="#Customer">customer</A> is using the
+<A HREF="#ATM">machine</A>, and then turns the <A HREF="#OperatorPanel.switchPosition">operator
+switch</A> to the &quot;off&quot; <A HREF="#OperatorPanel.switchPosition">position</A>.
+The <A HREF="#ATM.connectionToBank">connection to the bank</A> will
+be shut down. Then the <A HREF="#Operator">operator</A> is free to
+remove deposited <A HREF="#Envelope">envelopes</A>, replenish cash
+and paper, etc.</P>
+<H2 CLASS="western">Session Use Case</H2>
+<P>A <A HREF="#Session">session</A> is started when a <A HREF="#Customer">customer</A>
+inserts an <A HREF="#Card">ATM card</A> into the <A HREF="#Reader">card
+reader slot</A> of the <A HREF="#ATM">machine</A>. The <A HREF="#ATM">ATM</A>
+pulls the <A HREF="#Card">card</A> into the <A HREF="#ATM">machine</A>
+and reads it. (If the <A HREF="#Reader">reader</A> cannot read the
+<A HREF="#Card">card</A> due to improper insertion or a damaged
+stripe, the <A HREF="#Card">card</A> is ejected, an error screen is
+displayed, and the <A HREF="#Session">session</A> is aborted.) The
+<A HREF="#Customer">customer</A> is asked to enter his <A HREF="#Card.pin">PIN</A>,
+and is then allowed to perform one or more <A HREF="#Transaction">transactions</A>,
+choosing from a menu of possible types of <A HREF="#Transaction">transaction</A>
+in each case. After each <A HREF="#Transaction">transaction</A>, the
+<A HREF="#Customer">customer</A> is asked whether he would like to
+perform another <A HREF="#Transaction">transaction</A>. When the
+<A HREF="#Customer">customer</A> is through performing <A HREF="#Transaction">transactions</A>,
+the <A HREF="#Card">card</A> is ejected from the <A HREF="#ATM">machine</A>
+and the <A HREF="#Session">session</A> ends. If a <A HREF="#Transaction">transaction</A>
+is aborted due to too many invalid <A HREF="#Card.pin">PIN</A>
+entries, the <A HREF="#Session">session</A> is also aborted, with the
+<A HREF="#Card">card</A> being retained in the <A HREF="#ATM">machine</A>.</P>
+<P>The <A HREF="#Customer">customer</A> may abort the <A HREF="#Session">session</A>
+by pressing the <A HREF="#Keyboard.cancelKey">Cancel key</A> when
+entering a <A HREF="#Card.pin">PIN</A> or choosing a <A HREF="#Transaction">transaction</A>
+type.</P>
+<H2 CLASS="western">Transaction Use Case</H2>
+<P><EM>Note: <A HREF="#Transaction">Transaction</A> is an abstract
+generalization. Each specific concrete type of <A HREF="#Transaction">transaction</A>
+implements certain operations in the appropriate way. The flow of
+events given here describes the behavior common to all types of
+<A HREF="#Transaction">transaction</A>. The flows of events for the
+individual types of <A HREF="#Transaction">transaction</A>
+(<A HREF="#Withdrawal">withdrawal</A>, <A HREF="#Deposit">deposit</A>,
+<A HREF="#Transfer">transfer</A>, <A HREF="#Inquiry">inquiry</A>)
+give the features that are specific to that type of <A HREF="#Transaction">transaction</A>.</EM></P>
+<P>A <A HREF="#Transaction">transaction</A> use case is started
+within a <A HREF="#Session">session</A> when the <A HREF="#Customer">customer</A>
+chooses a <A HREF="#Transaction">transaction</A> type from a menu of
+options. The <A HREF="#Customer">customer</A> will be asked to
+furnish appropriate details (e.g. <A HREF="#Account">account</A>(s)
+involved, <A HREF="#Transaction.amount">amount</A>). The <A HREF="#Transaction">transaction</A>
+will then be sent to the <A HREF="#Bank">bank</A>, along with
+information from the <A HREF="#Card">customer card</A> and the <A HREF="#Card.pin">PIN</A>
+the <A HREF="#Customer">customer</A> entered.</P>
+<P>If the <A HREF="#Bank">bank</A> approves the <A HREF="#Transaction">transaction</A>,
+any steps needed to complete the <A HREF="#Transaction">transaction</A>
+(e.g. dispensing cash or accepting an <A HREF="#Envelope">envelope</A>)
+will be performed, and then a <A HREF="#Receipt">receipt</A> will be
+printed. Then the <A HREF="#Customer">customer</A> will be asked
+whether he wishes to do another <A HREF="#Transaction">transaction</A>.</P>
+<P>If the <A HREF="#Bank">bank</A> reports that the <A HREF="#Card.pin">customer
+PIN</A> is invalid, the Invalid <A HREF="#Card.pin">PIN</A> extension
+will be performed and then an attempt will be made to continue the
+<A HREF="#Transaction">transaction</A>. If the <A HREF="#Card">customer
+card</A> is retained due to too many invalid <A HREF="#Card.pin">PINs</A>,
+the <A HREF="#Transaction">transaction</A> will be aborted, and the
+<A HREF="#Customer">customer</A> will not be offered the option of
+doing another <A HREF="#Transaction">transaction</A>.</P>
+<P>If a <A HREF="#Transaction">transaction</A> is cancelled by the
+<A HREF="#Customer">customer</A>, or fails for any reason other than
+repeated entries of an invalid <A HREF="#Card.pin">PIN</A>, a screen
+will be displayed informing the <A HREF="#Customer">customer</A> of
+the reason for the failure of the <A HREF="#Transaction">transaction</A>,
+and then the <A HREF="#Customer">customer</A> will be offered the
+opportunity to do another <A HREF="#Transaction">transaction</A>.</P>
+<P>The <A HREF="#Customer">customer</A> may cancel a <A HREF="#Transaction">transaction</A>
+by pressing the <A HREF="#Keyboard.cancelKey">Cancel key</A> as
+described for each individual type of <A HREF="#Transaction">transaction</A>
+below.</P>
+<P>All <A HREF="#Message">messages</A> to the <A HREF="#Bank">bank</A>
+and <A HREF="#Message">responses</A> back are recorded in the <A HREF="#Log">ATM
+log</A>.</P>
+<H2 CLASS="western">Withdrawal Transaction Use Case</H2>
+<P>A <A HREF="#Withdrawal">withdrawal transaction</A> asks the
+<A HREF="#Customer">customer</A> to choose a type of <A HREF="#Account">account</A>
+to withdraw from (e.g. checking) from a menu of possible <A HREF="#Account">accounts</A>,
+and to choose a dollar <A HREF="#Transaction.amount">amount</A> from
+a menu of possible <A HREF="#Transaction.amount">amounts</A>. The
+<A HREF="#ATM">system</A> verifies that it has sufficient money on
+hand to satisfy the request before sending the <A HREF="#Transaction">transaction</A>
+to the <A HREF="#Bank">bank</A>. (If not, the <A HREF="#Customer">customer</A>
+is informed and asked to enter a different <A HREF="#Transaction.amount">amount</A>.)
+If the <A HREF="#Transaction">transaction</A> is approved by the
+<A HREF="#Bank">bank</A>, the appropriate <A HREF="#Transaction.amount">amount
+of cash</A> is dispensed by the <A HREF="#ATM">machine</A> before it
+issues a <A HREF="#Receipt">receipt</A>. (The dispensing of cash is
+also recorded in the <A HREF="#Log">ATM log</A>.)</P>
+<P>A <A HREF="#Withdrawal">withdrawal transaction</A> can be
+cancelled by the <A HREF="#Customer">customer</A> pressing the <A HREF="#Keyboard.cancelKey">Cancel
+key</A> any time prior to choosing the dollar <A HREF="#Transaction.amount">amount</A>.</P>
+<H2 CLASS="western">Deposit Transaction Use Case</H2>
+<P>A <A HREF="#Deposit">deposit transaction</A> asks the <A HREF="#Customer">customer</A>
+to choose a type of <A HREF="#Account">account</A> to deposit to
+(e.g. checking) from a menu of possible <A HREF="#Account">accounts</A>,
+and to type in a dollar <A HREF="#Transaction.amount">amount</A> on
+the <A HREF="#Keyboard">keyboard</A>. The <A HREF="#Transaction">transaction</A>
+is initially sent to the <A HREF="#Bank">bank</A> to verify that the
+<A HREF="#ATM">ATM</A> can accept a deposit from this <A HREF="#Customer">customer</A>
+to this <A HREF="#Account">account</A>. If the <A HREF="#Transaction">transaction</A>
+is approved, the <A HREF="#ATM">machine</A> accepts an <A HREF="#Envelope">envelope</A>
+from the <A HREF="#Customer">customer</A> containing cash and checks
+before it issues a <A HREF="#Receipt">receipt</A>. Once the <A HREF="#Envelope">envelope</A>
+has been received, a second <A HREF="#Message">message</A> is sent to
+the <A HREF="#Bank">bank</A>, to confirm that the <A HREF="#Bank">bank</A>
+can credit the <A HREF="#Account">customer account</A> - contingent
+on manual verification of the <A HREF="#Envelope">deposit envelope</A>
+contents by an <A HREF="#Operator">operator</A> later. (The <A HREF="#Receipt">receipt</A>
+of an <A HREF="#Envelope">envelope</A> is also recorded in the <A HREF="#Log">ATM
+log</A>.)</P>
+<P>A <A HREF="#Deposit">deposit transaction</A> can be cancelled by
+the <A HREF="#Customer">customer</A> pressing the <A HREF="#Keyboard.cancelKey">Cancel
+key</A> any time prior to inserting the <A HREF="#Envelope">envelope</A>
+containing the deposit. The <A HREF="#Transaction">transaction</A> is
+automatically cancelled if the <A HREF="#Customer">customer</A> fails
+to insert the <A HREF="#Envelope">envelope</A> containing the deposit
+within a reasonable period of time after being asked to do so.</P>
+<H2 CLASS="western">Transfer Transaction Use Case</H2>
+<P>A <A HREF="#Transfer">transfer transaction</A> asks the <A HREF="#Customer">customer</A>
+to choose a type of <A HREF="#Account">account</A> to transfer from
+(e.g. checking) from a menu of possible <A HREF="#Account">accounts</A>,
+to choose a different <A HREF="#Account">account</A> to transfer to,
+and to type in a dollar <A HREF="#Transaction.amount">amount</A> on
+the <A HREF="#Keyboard">keyboard</A>. No further action is required
+once the <A HREF="#Transaction">transaction</A> is approved by the
+<A HREF="#Bank">bank</A> before printing the <A HREF="#Receipt">receipt</A>.</P>
+<P>A <A HREF="#Transfer">transfer transaction</A> can be cancelled by
+the <A HREF="#Customer">customer</A> pressing the <A HREF="#Keyboard.cancelKey">Cancel
+key</A> any time prior to entering a dollar <A HREF="#Transaction.amount">amount</A>.</P>
+<H2 CLASS="western">Inquiry Transaction Use Case</H2>
+<P>An <A HREF="#Inquiry">inquiry transaction</A> asks the <A HREF="#Customer">customer</A>
+to choose a type of <A HREF="#Account">account</A> to inquire about
+from a menu of possible <A HREF="#Account">accounts</A>. No further
+action is required once the <A HREF="#Transaction">transaction</A> is
+approved by the <A HREF="#Bank">bank</A> before printing the <A HREF="#Receipt">receipt</A>.</P>
+<P>An <A HREF="#Inquiry">inquiry transaction</A> can be cancelled by
+the <A HREF="#Customer">customer</A> pressing the <A HREF="#Keyboard.cancelKey">Cancel
+key</A> any time prior to choosing the <A HREF="#Account">account</A>
+to inquire about.</P>
+<H2 CLASS="western">Invalid PIN Extension</H2>
+<P>An invalid PIN extension is started from within a <A HREF="#Transaction">transaction</A>
+when the <A HREF="#Bank">bank</A> reports that the <A HREF="#Transaction">customer
+transaction</A> is disapproved due to an invalid <A HREF="#Card.pin">PIN</A>.
+The <A HREF="#Customer">customer</A> is required to reenter the <A HREF="#Card.pin">PIN</A>
+and the original <A HREF="#Message">request</A> is sent to the <A HREF="#Bank">bank</A>
+again. If the <A HREF="#Bank">bank</A> now approves the <A HREF="#Transaction">transaction</A>,
+or disapproves it for some other reason, the original use case is
+continued; otherwise the process of reentering the <A HREF="#Card.pin">PIN</A>
+is repeated. Once the <A HREF="#Card.pin">PIN</A> is successfully
+reentered, it is used for both the <A HREF="#Transaction">current
+transaction</A> and all subsequent <A HREF="#Transaction">transactions</A>
+in the <A HREF="#Session">session</A>. If the <A HREF="#Customer">customer</A>
+fails three times to enter the correct <A HREF="#Card.pin">PIN</A>,
+the <A HREF="#Card">card</A> is permanently retained, a screen is
+displayed informing the <A HREF="#Customer">customer</A> of this and
+suggesting he contact the <A HREF="#Bank">bank</A>, and the entire
+<A HREF="#Session">customer session</A> is aborted.</P>
+<P>If the <A HREF="#Customer">customer</A> presses <A HREF="#Keyboard.cancelKey">Cancel</A>
+instead of reentering a <A HREF="#Card.pin">PIN</A>, the original
+<A HREF="#Transaction">transaction</A> is cancelled.</P>
+</BODY>
+</HTML>

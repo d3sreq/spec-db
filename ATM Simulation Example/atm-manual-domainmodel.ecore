@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="atm" nsURI="atm" nsPrefix="atm">
+  <eClassifiers xsi:type="ecore:EClass" name="ATM">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operatorPanel" lowerBound="1"
+        eType="#//OperatorPanel" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectionToBank" eType="#//Bank"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cardReader" lowerBound="1"
+        eType="#//Reader" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cashDispenser" lowerBound="1"
+        eType="#//Dispenser" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operators" upperBound="-1"
+        eType="#//Operator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transactions" upperBound="-1"
+        eType="#//Transaction" eOpposite="#//Transaction/atm"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sessions" lowerBound="1"
+        upperBound="-1" eType="#//Session" eOpposite="#//Session/atm"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keyboard" lowerBound="1"
+        eType="#//Keyboard" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="log" lowerBound="1" eType="#//Log"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="envelopeAcceptor" lowerBound="1"
+        eType="#//EnvelopeAcceptor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receiptPrinter" lowerBound="1"
+        eType="#//ReceiptPrinter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="display" lowerBound="1"
+        eType="#//Display" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="location"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Bank">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="customers" upperBound="-1"
+        eType="#//Customer"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Customer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="account" lowerBound="1"
+        eType="#//Account"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Log"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Account">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="balance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="card" upperBound="-1" eType="#//Card"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Card">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pin"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reader">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="log" lowerBound="1" eType="#//Log"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dispenser">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentAmount"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="log" lowerBound="1" eType="#//Log"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Deposit" eSuperTypes="#//Transaction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Keyboard">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cancelKey"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetBank" lowerBound="1"
+        eType="#//Bank"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Session">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="insertedCard" eType="#//Card"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transactions" upperBound="-1"
+        eType="#//Transaction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="atm" lowerBound="1" eType="#//ATM"
+        eOpposite="#//ATM/sessions"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transaction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="withdrawAccount" lowerBound="1"
+        eType="#//Account"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="issuedReceipt" eType="#//Receipt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="atm" lowerBound="1" eType="#//ATM"
+        eOpposite="#//ATM/transactions"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="amount"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Receipt"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OperatorPanel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="switchPosition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transfer" eSuperTypes="#//Transaction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Withdrawal" eSuperTypes="#//Transaction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Inquiry" eSuperTypes="#//Transaction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EnvelopeAcceptor">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="log" lowerBound="1" eType="#//Log"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReceiptPrinter"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Display"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Envelope"/>
+</ecore:EPackage>

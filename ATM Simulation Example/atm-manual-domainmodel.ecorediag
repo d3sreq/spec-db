@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_SsDAALBdEeOjfaj6tETt2w" type="EcoreTools" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_c-5I0LBdEeOjfaj6tETt2w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_c-6-ALBdEeOjfaj6tETt2w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_c-8zMLBdEeOjfaj6tETt2w" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_7uJv0LB7EeOjfaj6tETt2w" type="2001">
+        <element xmi:type="ecore:EAttribute" href="atm-manual-domainmodel.ecore#//ATM/location"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_7uJv0bB7EeOjfaj6tETt2w"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_c-8zMbBdEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_c-8zMrBdEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_c-8zM7BdEeOjfaj6tETt2w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_c-9aQLBdEeOjfaj6tETt2w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_c-9aQbBdEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_c-9aQrBdEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_c-9aQ7BdEeOjfaj6tETt2w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_c-5I0bBdEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="8047085" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atm-manual-domainmodel.ecore#//ATM"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_c-5I0rBdEeOjfaj6tETt2w" x="288" y="12" height="507"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_hubaELBdEeOjfaj6tETt2w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_hucBILBdEeOjfaj6tETt2w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_hucBIbBdEeOjfaj6tETt2w" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_hucBIrBdEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_hucBI7BdEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_hucBJLBdEeOjfaj6tETt2w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_hucoMLBdEeOjfaj6tETt2w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_hucoMbBdEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_hucoMrBdEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_hucoM7BdEeOjfaj6tETt2w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_hubaEbBdEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="8047085" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atm-manual-domainmodel.ecore#//Operator"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hubaErBdEeOjfaj6tETt2w" x="84" y="12" width="123"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_o8DeYLBdEeOjfaj6tETt2w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_o8EFcrBdEeOjfaj6tETt2w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_o8EsgLBdEeOjfaj6tETt2w" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_o8EsgbBdEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_o8EsgrBdEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_o8Esg7BdEeOjfaj6tETt2w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_o8EshLBdEeOjfaj6tETt2w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_o8EshbBdEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_o8EshrBdEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_o8Esh7BdEeOjfaj6tETt2w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_o8EFcLBdEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="8047085" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atm-manual-domainmodel.ecore#//Bank"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_o8EFcbBdEeOjfaj6tETt2w" x="530" y="528" width="123"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_q3M8cLBdEeOjfaj6tETt2w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_q3NjgLBdEeOjfaj6tETt2w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_q3NjgbBdEeOjfaj6tETt2w" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_q3NjgrBdEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_q3Njg7BdEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_q3NjhLBdEeOjfaj6tETt2w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_q3NjhbBdEeOjfaj6tETt2w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_q3NjhrBdEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_q3Njh7BdEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_q3NjiLBdEeOjfaj6tETt2w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_q3M8cbBdEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="8047085" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atm-manual-domainmodel.ecore#//Customer"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q3M8crBdEeOjfaj6tETt2w" x="758" y="528" width="121"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="__e4LELBdEeOjfaj6tETt2w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="__e4LE7BdEeOjfaj6tETt2w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="__e4yILBdEeOjfaj6tETt2w" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="__e4yIbBdEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="__e4yIrBdEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="__e4yI7BdEeOjfaj6tETt2w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="__e4yJLBdEeOjfaj6tETt2w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="__e4yJbBdEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="__e4yJrBdEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="__e4yJ7BdEeOjfaj6tETt2w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="__e4LEbBdEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="8047085" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atm-manual-domainmodel.ecore#//Log"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__e4LErBdEeOjfaj6tETt2w" x="526" y="12"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_AWUwcLBeEeOjfaj6tETt2w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_AWVXgLBeEeOjfaj6tETt2w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_AWVXgbBeEeOjfaj6tETt2w" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_d5igQLBqEeOjfaj6tETt2w" type="2001">
+        <element xmi:type="ecore:EAttribute" href="atm-manual-domainmodel.ecore#//Account/balance"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_d5igQbBqEeOjfaj6tETt2w"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_AWVXgrBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_AWVXg7BeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_AWVXhLBeEeOjfaj6tETt2w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_AWVXhbBeEeOjfaj6tETt2w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_AWVXhrBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_AWVXh7BeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_AWVXiLBeEeOjfaj6tETt2w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_AWUwcbBeEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="8047085" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atm-manual-domainmodel.ecore#//Account"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AWUwcrBeEeOjfaj6tETt2w" x="758" y="612"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_CvnjELBeEeOjfaj6tETt2w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_CvoKILBeEeOjfaj6tETt2w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_CvoKIbBeEeOjfaj6tETt2w" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_ohxEMLBfEeOjfaj6tETt2w" type="2001">
+        <element xmi:type="ecore:EAttribute" href="atm-manual-domainmodel.ecore#//Card/pin"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ohxEMbBfEeOjfaj6tETt2w"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_CvoKIrBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_CvoKI7BeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_CvoKJLBeEeOjfaj6tETt2w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_CvoKJbBeEeOjfaj6tETt2w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_CvoKJrBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_CvoKJ7BeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_CvoKKLBeEeOjfaj6tETt2w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_CvnjEbBeEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="8047085" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atm-manual-domainmodel.ecore#//Card"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CvnjErBeEeOjfaj6tETt2w" x="72" y="756"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_DgDhgLBeEeOjfaj6tETt2w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_DgEvoLBeEeOjfaj6tETt2w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_DgFWsLBeEeOjfaj6tETt2w" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_DgFWsbBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_DgFWsrBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_DgFWs7BeEeOjfaj6tETt2w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_DgFWtLBeEeOjfaj6tETt2w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_DgFWtbBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_DgFWtrBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_DgFWt7BeEeOjfaj6tETt2w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_DgDhgbBeEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="8047085" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atm-manual-domainmodel.ecore#//Reader"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DgDhgrBeEeOjfaj6tETt2w" x="528" y="129" width="159"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_FfFaALBeEeOjfaj6tETt2w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_FfHPMLBeEeOjfaj6tETt2w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_FfHPMbBeEeOjfaj6tETt2w" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_NymoAbBhEeOjfaj6tETt2w" type="2001">
+        <element xmi:type="ecore:EAttribute" href="atm-manual-domainmodel.ecore#//Dispenser/currentAmount"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_NymoArBhEeOjfaj6tETt2w"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_FfHPMrBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_FfHPM7BeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_FfHPNLBeEeOjfaj6tETt2w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_FfH2QLBeEeOjfaj6tETt2w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_FfH2QbBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_FfH2QrBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_FfH2Q7BeEeOjfaj6tETt2w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_FfFaAbBeEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="8047085" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atm-manual-domainmodel.ecore#//Dispenser"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FfFaArBeEeOjfaj6tETt2w" x="528" y="240" width="159"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_IDkI8LBeEeOjfaj6tETt2w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_IDkwALBeEeOjfaj6tETt2w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_IDkwAbBeEeOjfaj6tETt2w" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_IDkwArBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_IDkwA7BeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_IDkwBLBeEeOjfaj6tETt2w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_IDkwBbBeEeOjfaj6tETt2w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_IDkwBrBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_IDkwB7BeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_IDkwCLBeEeOjfaj6tETt2w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_IDkI8bBeEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="8047085" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atm-manual-domainmodel.ecore#//Deposit"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IDkI8rBeEeOjfaj6tETt2w" x="372" y="756" height="15"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_LVHZQLBeEeOjfaj6tETt2w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_LVIAULBeEeOjfaj6tETt2w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_LVInYLBeEeOjfaj6tETt2w" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_Cjqf0LBgEeOjfaj6tETt2w" type="2001">
+        <element xmi:type="ecore:EAttribute" href="atm-manual-domainmodel.ecore#//Keyboard/cancelKey"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Cjqf0bBgEeOjfaj6tETt2w"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_LVInYbBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_LVInYrBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_LVInY7BeEeOjfaj6tETt2w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_LVInZLBeEeOjfaj6tETt2w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_LVInZbBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_LVInZrBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_LVInZ7BeEeOjfaj6tETt2w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_LVHZQbBeEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="8047085" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atm-manual-domainmodel.ecore#//Keyboard"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LVHZQrBeEeOjfaj6tETt2w" x="528" y="300" width="159"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_MbQh8LBeEeOjfaj6tETt2w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_MbRJALBeEeOjfaj6tETt2w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_MbRJAbBeEeOjfaj6tETt2w" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_MbRJArBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_MbRJA7BeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_MbRJBLBeEeOjfaj6tETt2w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_MbRJBbBeEeOjfaj6tETt2w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_MbRJBrBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_MbRJB7BeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_MbRJCLBeEeOjfaj6tETt2w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_MbQh8bBeEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="8047085" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atm-manual-domainmodel.ecore#//Message"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MbQh8rBeEeOjfaj6tETt2w" x="756" y="444" width="123"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_RKnNALBeEeOjfaj6tETt2w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_RKobILBeEeOjfaj6tETt2w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_RKpCMLBeEeOjfaj6tETt2w" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_RKpCMbBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_RKpCMrBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_RKpCM7BeEeOjfaj6tETt2w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_RKpCNLBeEeOjfaj6tETt2w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_RKpCNbBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_RKpCNrBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_RKpCN7BeEeOjfaj6tETt2w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_RKnNAbBeEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="8047085" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atm-manual-domainmodel.ecore#//Session"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RKnNArBeEeOjfaj6tETt2w" x="72" y="612"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_SMv_cLBeEeOjfaj6tETt2w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_SMx0oLBeEeOjfaj6tETt2w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_SMx0obBeEeOjfaj6tETt2w" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_fnLUgLBvEeOjfaj6tETt2w" type="2001">
+        <element xmi:type="ecore:EAttribute" href="atm-manual-domainmodel.ecore#//Transaction/amount"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_fnLUgbBvEeOjfaj6tETt2w"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_SMx0orBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_SMx0o7BeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_SMx0pLBeEeOjfaj6tETt2w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_SMybsLBeEeOjfaj6tETt2w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_SMybsbBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_SMybsrBeEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_SMybs7BeEeOjfaj6tETt2w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_SMwmgLBeEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="8047085" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atm-manual-domainmodel.ecore#//Transaction"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SMwmgbBeEeOjfaj6tETt2w" x="288" y="612" width="185" height="51"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_3TxDcLBgEeOjfaj6tETt2w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_3TyRkLBgEeOjfaj6tETt2w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_3Ty4oLBgEeOjfaj6tETt2w" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_3Ty4obBgEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_3Ty4orBgEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_3Ty4o7BgEeOjfaj6tETt2w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_3TzfsLBgEeOjfaj6tETt2w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_3TzfsbBgEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_3TzfsrBgEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_3Tzfs7BgEeOjfaj6tETt2w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_3TxDcbBgEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="8047085" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atm-manual-domainmodel.ecore#//Receipt"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3TxDcrBgEeOjfaj6tETt2w" x="578" y="708"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_AE_BcLBhEeOjfaj6tETt2w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_AFAPkLBhEeOjfaj6tETt2w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_AFA2oLBhEeOjfaj6tETt2w" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_G2nGQLBhEeOjfaj6tETt2w" type="2001">
+        <element xmi:type="ecore:EAttribute" href="atm-manual-domainmodel.ecore#//OperatorPanel/switchPosition"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_G2nGQbBhEeOjfaj6tETt2w"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_AFA2obBhEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_AFA2orBhEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_AFA2o7BhEeOjfaj6tETt2w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_AFA2pLBhEeOjfaj6tETt2w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_AFA2pbBhEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_AFA2prBhEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_AFA2p7BhEeOjfaj6tETt2w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_AE_BcbBhEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atm-manual-domainmodel.ecore#//OperatorPanel"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AE_BcrBhEeOjfaj6tETt2w" x="528" y="180" width="159"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_s-fKULBjEeOjfaj6tETt2w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_s-hmkLBjEeOjfaj6tETt2w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_s-iNoLBjEeOjfaj6tETt2w" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_s-iNobBjEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_s-iNorBjEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_s-iNo7BjEeOjfaj6tETt2w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_s-iNpLBjEeOjfaj6tETt2w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_s-iNpbBjEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_s-iNprBjEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_s-iNp7BjEeOjfaj6tETt2w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_s-fKUbBjEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="8047085" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atm-manual-domainmodel.ecore#//Transfer"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_s-fxYLBjEeOjfaj6tETt2w" x="372" y="720" height="27"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_tvLncLBjEeOjfaj6tETt2w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_tvMOgLBjEeOjfaj6tETt2w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_tvMOgbBjEeOjfaj6tETt2w" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_tvMOgrBjEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_tvMOg7BjEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_tvMOhLBjEeOjfaj6tETt2w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_tvMOhbBjEeOjfaj6tETt2w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_tvMOhrBjEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_tvMOh7BjEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_tvMOiLBjEeOjfaj6tETt2w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_tvLncbBjEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="8047085" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atm-manual-domainmodel.ecore#//Withdrawal"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tvLncrBjEeOjfaj6tETt2w" x="372" y="792" height="8"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_z9De8LBjEeOjfaj6tETt2w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_z9FUILBjEeOjfaj6tETt2w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_z9FUIbBjEeOjfaj6tETt2w" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_z9FUIrBjEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_z9FUI7BjEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_z9FUJLBjEeOjfaj6tETt2w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_z9FUJbBjEeOjfaj6tETt2w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_z9FUJrBjEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_z9FUJ7BjEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_z9FUKLBjEeOjfaj6tETt2w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_z9EGALBjEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="8047085" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atm-manual-domainmodel.ecore#//Inquiry"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z9EGAbBjEeOjfaj6tETt2w" x="374" y="684" height="15"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_XgRYcLBnEeOjfaj6tETt2w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_XgR_gLBnEeOjfaj6tETt2w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_XgR_gbBnEeOjfaj6tETt2w" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_XgR_grBnEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_XgR_g7BnEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_XgR_hLBnEeOjfaj6tETt2w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_XgR_hbBnEeOjfaj6tETt2w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_XgR_hrBnEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_XgR_h7BnEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_XgR_iLBnEeOjfaj6tETt2w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_XgRYcbBnEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="8047085" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atm-manual-domainmodel.ecore#//EnvelopeAcceptor"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XgRYcrBnEeOjfaj6tETt2w" x="528" y="360" width="159"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_mMx-QLBpEeOjfaj6tETt2w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_mMylULBpEeOjfaj6tETt2w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_mMylUbBpEeOjfaj6tETt2w" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_mMylUrBpEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_mMylU7BpEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_mMylVLBpEeOjfaj6tETt2w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_mMylVbBpEeOjfaj6tETt2w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_mMylVrBpEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_mMylV7BpEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_mMylWLBpEeOjfaj6tETt2w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_mMx-QbBpEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="8047085" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atm-manual-domainmodel.ecore#//ReceiptPrinter"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mMx-QrBpEeOjfaj6tETt2w" x="528" y="72" width="159"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_YQx2ELBsEeOjfaj6tETt2w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_YQzEMLBsEeOjfaj6tETt2w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_YQzEMbBsEeOjfaj6tETt2w" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_YQzEMrBsEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_YQzEM7BsEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_YQzENLBsEeOjfaj6tETt2w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_YQzENbBsEeOjfaj6tETt2w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_YQzENrBsEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_YQzEN7BsEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_YQzEOLBsEeOjfaj6tETt2w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_YQx2EbBsEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atm-manual-domainmodel.ecore#//Display"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YQx2ErBsEeOjfaj6tETt2w" x="528" y="408" width="159"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_2QhVYLBuEeOjfaj6tETt2w" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_2QjxoLBuEeOjfaj6tETt2w" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_2QjxobBuEeOjfaj6tETt2w" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_2QjxorBuEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_2Qjxo7BuEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_2QjxpLBuEeOjfaj6tETt2w"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_2QkYsLBuEeOjfaj6tETt2w" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_2QkYsbBuEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_2QkYsrBuEeOjfaj6tETt2w"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_2QkYs7BuEeOjfaj6tETt2w"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_2QhVYbBuEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="atm-manual-domainmodel.ecore#//Envelope"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2QhVYrBuEeOjfaj6tETt2w" x="768" y="360"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_SsDAAbBdEeOjfaj6tETt2w"/>
+  <element xmi:type="ecore:EPackage" href="atm-manual-domainmodel.ecore#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_YzJZwLBgEeOjfaj6tETt2w" type="3002" source="_SMv_cLBeEeOjfaj6tETt2w" target="_AWUwcLBeEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_YzKn4LBgEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_YzKn4bBgEeOjfaj6tETt2w" x="-47" y="12"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_YzKn4rBgEeOjfaj6tETt2w" visible="false" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_YzKn47BgEeOjfaj6tETt2w" x="-83" y="24"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_YzJZwbBgEeOjfaj6tETt2w" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_YzJZwrBgEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//Transaction/withdrawAccount"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_YzJZw7BgEeOjfaj6tETt2w" points="[2, 21, 2, -75]$[50, 95, 50, -1]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_5JkHcLBgEeOjfaj6tETt2w" type="3002" source="_SMv_cLBeEeOjfaj6tETt2w" target="_3TxDcLBgEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_5JkugbBgEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5JkugrBgEeOjfaj6tETt2w" x="-2" y="-20"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_5Jkug7BgEeOjfaj6tETt2w" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5JkuhLBgEeOjfaj6tETt2w" x="-25" y="4"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_5JkHcbBgEeOjfaj6tETt2w" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5JkHcrBgEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//Transaction/issuedReceipt"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5JkugLBgEeOjfaj6tETt2w" points="[35, 1, -79, 1]$[115, -7, 1, -7]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5Jnx0LBgEeOjfaj6tETt2w" id="(0.8648648648648649,0.5294117647058824)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5Jnx0bBgEeOjfaj6tETt2w" id="(0.1568627450980392,0.18604651162790697)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_B711YLBhEeOjfaj6tETt2w" type="3002" source="_c-5I0LBdEeOjfaj6tETt2w" target="_AE_BcLBhEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_B711ZLBhEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_B711ZbBhEeOjfaj6tETt2w" x="-50" y="8"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_B711ZrBhEeOjfaj6tETt2w" visible="false" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_B711Z7BhEeOjfaj6tETt2w" x="-95" y="20"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_B711YbBhEeOjfaj6tETt2w" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_B711YrBhEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//ATM/operatorPanel"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_B711Y7BhEeOjfaj6tETt2w" points="[18, 91, -171, 2]$[158, 91, -31, 2]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_B74RoLBhEeOjfaj6tETt2w" id="(0.8235294117647058,0.17647058823529413)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_B74RobBhEeOjfaj6tETt2w" id="(0.19834710743801653,0.20930232558139536)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_aQ4GkLBhEeOjfaj6tETt2w" type="3002" source="_c-5I0LBdEeOjfaj6tETt2w" target="_o8DeYLBdEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_aQ4toLBhEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_aQ4tobBhEeOjfaj6tETt2w" x="-3" y="133"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_aQ4torBhEeOjfaj6tETt2w" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_aQ4to7BhEeOjfaj6tETt2w" x="9" y="180"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_aQ4GkbBhEeOjfaj6tETt2w" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_aQ4GkrBhEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//ATM/connectionToBank"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aQ4Gk7BhEeOjfaj6tETt2w" points="[22, -27, -169, -68]$[222, -27, 31, -68]$[222, 21, 31, -20]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_aQ6i0LBhEeOjfaj6tETt2w" id="(0.7843137254901961,0.9821029082774049)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2rC88LBoEeOjfaj6tETt2w" id="(0.22764227642276422,0.5116279069767442)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_qxicgLBhEeOjfaj6tETt2w" type="3002" source="_RKnNALBeEeOjfaj6tETt2w" target="_CvnjELBeEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_qxjqoLBhEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_qxjqobBhEeOjfaj6tETt2w" x="-49" y="-53"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_qxkRsLBhEeOjfaj6tETt2w" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_qxkRsbBhEeOjfaj6tETt2w" x="-37" y="-24"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_qxicgbBhEeOjfaj6tETt2w" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_qxicgrBhEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//Session/insertedCard"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_qxicg7BhEeOjfaj6tETt2w" points="[-32, 35, 40, -110]$[-32, 138, 40, -7]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qxpKMLBhEeOjfaj6tETt2w" id="(0.803921568627451,0.16279069767441862)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qxpKMbBhEeOjfaj6tETt2w" id="(0.08823529411764706,0.1568627450980392)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_xESM8LBhEeOjfaj6tETt2w" type="3002" source="_c-5I0LBdEeOjfaj6tETt2w" target="_DgDhgLBeEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_xES0ALBhEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_xES0AbBhEeOjfaj6tETt2w" x="-63" y="8"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_xETbELBhEeOjfaj6tETt2w" visible="false" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_xETbEbBhEeOjfaj6tETt2w" x="-95" y="20"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_xESM8bBhEeOjfaj6tETt2w" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_xESM8rBhEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//ATM/cardReader"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xESM87BhEeOjfaj6tETt2w" points="[50, -120, -218, -5]$[190, -120, -78, -5]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_ch_YILBiEeOjfaj6tETt2w" type="3002" source="_c-5I0LBdEeOjfaj6tETt2w" target="_FfFaALBeEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_ch_YJLBiEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ch_YJbBiEeOjfaj6tETt2w" x="-52" y="8"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_ch__MLBiEeOjfaj6tETt2w" visible="false" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ch__MbBiEeOjfaj6tETt2w" x="-95" y="20"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_ch_YIbBiEeOjfaj6tETt2w" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_ch_YIrBiEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//ATM/cashDispenser"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ch_YI7BiEeOjfaj6tETt2w" points="[38, 171, -218, -12]$[178, 171, -78, -12]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ciB0YLBiEeOjfaj6tETt2w" id="(0.6274509803921569,0.13725490196078433)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_z8hI4LBiEeOjfaj6tETt2w" type="3002" source="_o8DeYLBdEeOjfaj6tETt2w" target="_q3M8cLBdEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_z8kMMLBiEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_z8kMMbBiEeOjfaj6tETt2w" x="-46" y="12"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_z8kMMrBiEeOjfaj6tETt2w" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_z8kMM7BiEeOjfaj6tETt2w" x="-69" y="24"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_z8hI4bBiEeOjfaj6tETt2w" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_z8hI4rBiEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//Bank/customers"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_z8hI47BiEeOjfaj6tETt2w" points="[61, -8, -166, -8]$[120, -8, -107, -8]$[168, -8, -59, -8]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_43J24LBiEeOjfaj6tETt2w" type="3002" source="_c-5I0LBdEeOjfaj6tETt2w" target="_hubaELBdEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_43NhQLBiEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_43NhQbBiEeOjfaj6tETt2w" x="-23" y="-8"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_43NhQrBiEeOjfaj6tETt2w" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_43NhQ7BiEeOjfaj6tETt2w" x="-3" y="-20"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_43J24bBiEeOjfaj6tETt2w" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_43J24rBiEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//ATM/operators"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_43J247BiEeOjfaj6tETt2w" points="[-50, -8, 166, -8]$[-166, -8, 50, -8]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_43PWcLBiEeOjfaj6tETt2w" id="(0.5,0.047058823529411764)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_5Pu5gLBjEeOjfaj6tETt2w" type="3003" source="_tvLncLBjEeOjfaj6tETt2w" target="_SMv_cLBeEeOjfaj6tETt2w">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_5Pu5gbBjEeOjfaj6tETt2w" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5Pu5grBjEeOjfaj6tETt2w" fontName="Sans"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5Pu5g7BjEeOjfaj6tETt2w" points="[-50, -3, 68, 172]$[-108, -3, 10, 172]$[-108, -134, 10, 41]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5Pyj4LBjEeOjfaj6tETt2w" id="(0.09154929577464789,0.17647058823529413)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_5j06MLBjEeOjfaj6tETt2w" type="3003" source="_IDkI8LBeEeOjfaj6tETt2w" target="_SMv_cLBeEeOjfaj6tETt2w">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_5j06MbBjEeOjfaj6tETt2w" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5j06MrBjEeOjfaj6tETt2w" fontName="Sans"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5j06M7BjEeOjfaj6tETt2w" points="[-50, -3, -7, 120]$[-96, -3, -53, 120]$[-96, -98, -53, 25]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_54s-ALBjEeOjfaj6tETt2w" type="3003" source="_s-fKULBjEeOjfaj6tETt2w" target="_SMv_cLBeEeOjfaj6tETt2w">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_54s-AbBjEeOjfaj6tETt2w" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_54s-ArBjEeOjfaj6tETt2w" fontName="Sans"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_54s-A7BjEeOjfaj6tETt2w" points="[-50, -3, -7, 84]$[-84, -3, -41, 84]$[-84, -62, -41, 25]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_6LsygLBjEeOjfaj6tETt2w" type="3003" source="_z9De8LBjEeOjfaj6tETt2w" target="_SMv_cLBeEeOjfaj6tETt2w">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_6LsygbBjEeOjfaj6tETt2w" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_6LsygrBjEeOjfaj6tETt2w" fontName="Sans"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6Lsyg7BjEeOjfaj6tETt2w" points="[-50, -3, -5, 48]$[-73, -3, -28, 48]$[-73, -26, -28, 25]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_Y5tX8LBkEeOjfaj6tETt2w" type="3002" source="_c-5I0LBdEeOjfaj6tETt2w" target="_SMv_cLBeEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_Y5umELBkEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Y5umEbBkEeOjfaj6tETt2w" x="-16" y="-52"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_Y5vNILBkEeOjfaj6tETt2w" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Y5vNIbBkEeOjfaj6tETt2w" x="-4" y="-23"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_Y5tX8bBkEeOjfaj6tETt2w" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Y5tX8rBkEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//ATM/transactions"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Y5tX87BkEeOjfaj6tETt2w" points="[13, 58, -40, -179]$[13, 213, -40, -24]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nfXgILBsEeOjfaj6tETt2w" id="(0.38235294117647056,0.8705882352941177)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nfXgIbBsEeOjfaj6tETt2w" id="(0.5,0.5)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_ys7eYLBkEeOjfaj6tETt2w" type="3002" source="_SMv_cLBeEeOjfaj6tETt2w" target="_c-5I0LBdEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_ys8FcLBkEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ys8FcbBkEeOjfaj6tETt2w" x="-7" y="25"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_ys8FcrBkEeOjfaj6tETt2w" visible="false" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ys8Fc7BkEeOjfaj6tETt2w" x="-19" y="16"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_ys7eYbBkEeOjfaj6tETt2w" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_ys7eYrBkEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//Transaction/atm"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ys7eY7BkEeOjfaj6tETt2w" points="[-40, -24, 13, 213]$[-40, -179, 13, 58]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HpmsoLBlEeOjfaj6tETt2w" id="(0.5,0.5)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HpmsobBlEeOjfaj6tETt2w" id="(0.38235294117647056,0.8705882352941177)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_KXOJcLBlEeOjfaj6tETt2w" type="3002" source="_RKnNALBeEeOjfaj6tETt2w" target="_SMv_cLBeEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_KXOJdLBlEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_KXOJdbBlEeOjfaj6tETt2w" x="-39" y="13"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_KXOJdrBlEeOjfaj6tETt2w" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_KXOJd7BlEeOjfaj6tETt2w" x="-67" y="25"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_KXOJcbBlEeOjfaj6tETt2w" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_KXOJcrBlEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//Session/transactions"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_KXOJc7BlEeOjfaj6tETt2w" points="[31, 2, -139, 1]$[172, -23, 2, -24]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KXP-oLBlEeOjfaj6tETt2w" id="(0.7549019607843137,0.46511627906976744)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KXP-obBlEeOjfaj6tETt2w" id="(0.14084507042253522,0.39215686274509803)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_kXIBALBlEeOjfaj6tETt2w" type="3002" source="_c-5I0LBdEeOjfaj6tETt2w" target="_RKnNALBeEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_kXJPILBlEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_kXJPIbBlEeOjfaj6tETt2w" x="10" y="-40"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_kXJPIrBlEeOjfaj6tETt2w" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_kXJPI7BlEeOjfaj6tETt2w" x="22" y="-23"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_kXIBAbBlEeOjfaj6tETt2w" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_kXIBArBlEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//ATM/sessions"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_kXIBA7BlEeOjfaj6tETt2w" points="[-39, 47, 199, -99]$[-209, 47, 29, -99]$[-209, 143, 29, -3]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__-wrYLBlEeOjfaj6tETt2w" id="(0.39215686274509803,0.7647058823529411)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__-wrYbBlEeOjfaj6tETt2w" id="(0.19607843137254902,0.09302325581395349)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_oJk-8LBlEeOjfaj6tETt2w" type="3002" source="_RKnNALBeEeOjfaj6tETt2w" target="_c-5I0LBdEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_oJlmALBlEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_oJlmAbBlEeOjfaj6tETt2w" x="13" y="8"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_oJmNELBlEeOjfaj6tETt2w" visible="false" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_oJmNEbBlEeOjfaj6tETt2w" x="-38" y="-21"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_oJk-8bBlEeOjfaj6tETt2w" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_oJk-8rBlEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//Session/atm"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_oJk-87BlEeOjfaj6tETt2w" points="[29, -3, -209, 143]$[29, -99, -209, 47]$[199, -99, -39, 47]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_oJnbMLBlEeOjfaj6tETt2w" id="(0.19607843137254902,0.09302325581395349)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_oJnbMbBlEeOjfaj6tETt2w" id="(0.39215686274509803,0.7647058823529411)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_GuXW8LBmEeOjfaj6tETt2w" type="3002" source="_c-5I0LBdEeOjfaj6tETt2w" target="_LVHZQLBeEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_GuYlELBmEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_GuYlEbBmEeOjfaj6tETt2w" x="-43" y="8"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_GuZMILBmEeOjfaj6tETt2w" visible="false" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_GuZMIbBmEeOjfaj6tETt2w" x="-87" y="24"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_GuXW8bBmEeOjfaj6tETt2w" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_GuXW8rBmEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//ATM/keyboard"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GuXW87BmEeOjfaj6tETt2w" points="[12, -159, -218, -12]$[152, -159, -78, -12]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GubBULBmEeOjfaj6tETt2w" id="(0.8823529411764706,0.9098039215686274)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_cN3lcLBmEeOjfaj6tETt2w" type="3002" source="_c-5I0LBdEeOjfaj6tETt2w" target="__e4LELBdEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_cN3ldLBmEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_cN3ldbBmEeOjfaj6tETt2w" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_cN4MgLBmEeOjfaj6tETt2w" visible="false" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_cN4MgbBmEeOjfaj6tETt2w" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_cN3lcbBmEeOjfaj6tETt2w" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_cN3lcrBmEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//ATM/log"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cN3lc7BmEeOjfaj6tETt2w" points="[49, 4, -145, -10]$[187, 4, -7, -10]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cN724LBmEeOjfaj6tETt2w" id="(0.5196078431372549,0.03137254901960784)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cN724bBmEeOjfaj6tETt2w" id="(0.0784313725490196,0.6744186046511628)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_wRkkULBmEeOjfaj6tETt2w" type="3002" source="_DgDhgLBeEeOjfaj6tETt2w" target="__e4LELBdEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_wRkkVLBmEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_wRkkVbBmEeOjfaj6tETt2w" x="-43" y="-104"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_wRkkVrBmEeOjfaj6tETt2w" visible="false" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_wRkkV7BmEeOjfaj6tETt2w" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_wRkkUbBmEeOjfaj6tETt2w" routing="Rectilinear" lineColor="15053796"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_wRkkUrBmEeOjfaj6tETt2w" fontColor="15053796" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//Reader/log"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wRkkU7BmEeOjfaj6tETt2w" points="[14, -5, 77, 110]$[61, -5, 124, 110]$[61, -101, 124, 14]$[-45, -101, 18, 14]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wRmZgLBmEeOjfaj6tETt2w" id="(0.9111111111111111,0.4883720930232558)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wRmZgbBmEeOjfaj6tETt2w" id="(0.8235294117647058,0.5581395348837209)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_5Jlt4LBmEeOjfaj6tETt2w" type="3002" source="_FfFaALBeEeOjfaj6tETt2w" target="__e4LELBdEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_5Jm8ALBmEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5Jm8AbBmEeOjfaj6tETt2w" x="-21" y="-224"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_5Jm8ArBmEeOjfaj6tETt2w" visible="false" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5Jm8A7BmEeOjfaj6tETt2w" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_5Jlt4bBmEeOjfaj6tETt2w" routing="Rectilinear" lineColor="15053796"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5Jlt4rBmEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//Dispenser/log"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5Jlt47BmEeOjfaj6tETt2w" points="[30, -1, 109, 220]$[89, -1, 168, 220]$[89, -217, 168, 4]$[-29, -217, 50, 4]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5JpYQLBmEeOjfaj6tETt2w" id="(0.8148148148148148,0.27450980392156865)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_wZYAALBnEeOjfaj6tETt2w" type="3002" source="_c-5I0LBdEeOjfaj6tETt2w" target="_XgRYcLBnEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_wZZOILBnEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_wZZOIbBnEeOjfaj6tETt2w" x="-41" y="12"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_wZZOIrBnEeOjfaj6tETt2w" visible="false" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_wZZOI7BnEeOjfaj6tETt2w" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_wZYAAbBnEeOjfaj6tETt2w" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_wZYAArBnEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//ATM/envelopeAcceptor"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wZYAA7BnEeOjfaj6tETt2w" points="[22, -43, -218, -8]$[162, -43, -78, -8]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wZbDULBnEeOjfaj6tETt2w" id="(0.7843137254901961,0.7986577181208053)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_2_zhcLBnEeOjfaj6tETt2w" type="3002" source="_XgRYcLBnEeOjfaj6tETt2w" target="__e4LELBdEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_2_0vkLBnEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_2_0vkbBnEeOjfaj6tETt2w" x="1" y="-356"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_2_0vkrBnEeOjfaj6tETt2w" visible="false" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_2_0vk7BnEeOjfaj6tETt2w" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_2_zhcbBnEeOjfaj6tETt2w" routing="Rectilinear" lineColor="15053796"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_2_zhcrBnEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//EnvelopeAcceptor/log"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2_zhc7BnEeOjfaj6tETt2w" points="[15, 2, 74, 346]$[86, 2, 145, 346]$[86, -346, 145, -2]$[-44, -346, 15, -2]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2_5oELBnEeOjfaj6tETt2w" id="(0.9056603773584906,0.2558139534883721)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2_6PILBnEeOjfaj6tETt2w" id="(0.8529411764705882,0.3488372093023256)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_5hjQALBoEeOjfaj6tETt2w" type="3002" source="_q3M8cLBdEeOjfaj6tETt2w" target="_AWUwcLBeEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_5hj3ELBoEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5hj3EbBoEeOjfaj6tETt2w" x="-28" y="-27"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_5hkeILBoEeOjfaj6tETt2w" visible="false" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5hkeIbBoEeOjfaj6tETt2w" x="-16" y="-14"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_5hjQAbBoEeOjfaj6tETt2w" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5hjQArBoEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//Customer/account"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5hjQA7BoEeOjfaj6tETt2w" points="[10, 21, -14, -99]$[10, 100, -14, -20]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5hmTULBoEeOjfaj6tETt2w" id="(0.2231404958677686,0.4883720930232558)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_o14ugLBpEeOjfaj6tETt2w" type="3002" source="_c-5I0LBdEeOjfaj6tETt2w" target="_mMx-QLBpEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_o15VkLBpEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_o15VkbBpEeOjfaj6tETt2w" x="-55" y="7"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_o158oLBpEeOjfaj6tETt2w" visible="false" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_o158obBpEeOjfaj6tETt2w" x="-87" y="19"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_o14ugbBpEeOjfaj6tETt2w" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_o14ugrBpEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//ATM/receiptPrinter"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_o14ug7BpEeOjfaj6tETt2w" points="[13, -7, -159, -1]$[153, -7, -19, -1]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_o17x0LBpEeOjfaj6tETt2w" id="(0.8725490196078431,0.15659955257270694)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_o17x0bBpEeOjfaj6tETt2w" id="(0.12578616352201258,0.32558139534883723)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_xejNcLBpEeOjfaj6tETt2w" type="3002" source="_AWUwcLBeEeOjfaj6tETt2w" target="_CvnjELBeEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_xej0gLBpEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_xej0gbBpEeOjfaj6tETt2w" x="-615" y="184"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_xej0grBpEeOjfaj6tETt2w" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_xej0g7BpEeOjfaj6tETt2w" x="-612" y="172"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_xejNcbBpEeOjfaj6tETt2w" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_xejNcrBpEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//Account/card"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xejNc7BpEeOjfaj6tETt2w" points="[16, 13, 670, -119]$[16, 216, 670, 84]$[-654, 216, 0, 84]$[-654, 157, 0, 25]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xemQwLBpEeOjfaj6tETt2w" id="(0.18627450980392157,0.7450980392156863)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_gQxygLBsEeOjfaj6tETt2w" type="3002" source="_c-5I0LBdEeOjfaj6tETt2w" target="_YQx2ELBsEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_gQyZkLBsEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_gQyZkbBsEeOjfaj6tETt2w" x="-76" y="9"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_gQzAoLBsEeOjfaj6tETt2w" visible="false" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_gQzAobBsEeOjfaj6tETt2w" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_gQxygbBsEeOjfaj6tETt2w" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_gQxygrBsEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//ATM/display"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gQxyg7BsEeOjfaj6tETt2w" points="[27, -51, -218, -8]$[167, -51, -78, -8]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gQ010LBsEeOjfaj6tETt2w" id="(0.7352941176470589,0.9105145413870246)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_A9Mv8LBuEeOjfaj6tETt2w" type="3002" source="_MbQh8LBeEeOjfaj6tETt2w" target="_o8DeYLBdEeOjfaj6tETt2w">
+    <children xmi:type="notation:Node" xmi:id="_A9Mv9LBuEeOjfaj6tETt2w" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_A9Mv9bBuEeOjfaj6tETt2w" x="-54" y="-23"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_A9Mv9rBuEeOjfaj6tETt2w" visible="false" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_A9Mv97BuEeOjfaj6tETt2w" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_A9Mv8bBuEeOjfaj6tETt2w" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_A9Mv8rBuEeOjfaj6tETt2w" fontColor="4210752" fontName="Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="atm-manual-domainmodel.ecore#//Message/targetBank"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_A9Mv87BuEeOjfaj6tETt2w" points="[-8, 6, 166, -88]$[-113, 98, 61, 4]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_A9OlILBuEeOjfaj6tETt2w" id="(0.07317073170731707,0.2558139534883721)"/>
+  </edges>
+</notation:Diagram>
