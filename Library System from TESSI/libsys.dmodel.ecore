@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="libsys" nsURI="http://libsys/1.0" nsPrefix="libsys">
+  <eClassifiers xsi:type="ecore:EClass" name="Medium">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="partialShelfmark" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identificationCode" lowerBound="1"
+        eType="#//MediumCode"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="additionalTitle" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="publicationYear" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instances" upperBound="-1"
+        eType="#//Instance" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="authors" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keywords" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Instance">
+    <eOperations name="reserveInstance"/>
+    <eOperations name="extendRentalPeriod"/>
+    <eOperations name="borrowInstance"/>
+    <eOperations name="returnInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shelfmark" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//InstanceStatus"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reservationList" upperBound="-1"
+        eType="#//ReservationEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rentalPeriod" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="borrowingList" upperBound="-1"
+        eType="#//BorrowedEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comments" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="components" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="User">
+    <eOperations name="registerAtSystem"/>
+    <eOperations name="identifyToSystem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="userAccount" lowerBound="1"
+        eType="#//UserAccount" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UserAccount">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="userNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="userClassification" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="userName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="telephoneNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="emailAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="validUntilDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postallAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unpaidFeeAmount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lockIndication" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="userData" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="borrowedInstances" upperBound="-1"
+        eType="#//Instance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reservationList" upperBound="-1"
+        eType="#//Instance"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Librarian"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UserAdministration">
+    <eOperations name="manageUserAccount"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="userAccounts" upperBound="-1"
+        eType="#//UserAccount"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MediaAdministration">
+    <eOperations name="addNewMediaInstance"/>
+    <eOperations name="removeMediaInstance"/>
+    <eOperations name="searchMedium"/>
+    <eOperations name="manageMedium"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mediaEntries" upperBound="-1"
+        eType="#//Medium"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Terminal"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="InstanceStatus">
+    <eLiterals name="Missing"/>
+    <eLiterals name="Overdue" value="2"/>
+    <eLiterals name="ReservedAndAvailable" value="1"/>
+    <eLiterals name="ReservedAndBorrowed" value="3" literal="Reserved and Borrowed"/>
+    <eLiterals name="AcquisitionProcess" value="6" literal="Acquisition Process"/>
+    <eLiterals name="ReadingRoom" value="7"/>
+    <eLiterals name="Available" value="4"/>
+    <eLiterals name="Borrowed" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SearchCriterion"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StatusSignal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtensionTime"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UnpaidFee">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="amount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reason" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IdentificationCard">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="userNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BarCodeScanner">
+    <eOperations name="readUserNumber"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Library">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="media" upperBound="-1"
+        eType="#//Medium" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="librarians" upperBound="-1"
+        eType="#//Librarian" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="users" eType="#//User"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MediumCode">
+    <eLiterals name="book" value="1"/>
+    <eLiterals name="magazine" value="2"/>
+    <eLiterals name="CD"/>
+    <eLiterals name="video" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BorrowedEntry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="user" lowerBound="1" eType="#//User"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReservationEntry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="user" lowerBound="1" eType="#//User"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Book" eSuperTypes="#//Medium">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="publisher" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="placeOfPublication" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="editor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ISBN" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Magazine" eSuperTypes="#//Medium">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="publisher" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="articles" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CD" eSuperTypes="#//Medium">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="genres" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tracks" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="artists" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Video" eSuperTypes="#//Medium">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="genres" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actors" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

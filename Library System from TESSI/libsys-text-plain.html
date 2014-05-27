@@ -1,0 +1,351 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 4.0.4.2 (Linux)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGEDBY" CONTENT="Viliam Simko">
+	<META NAME="CHANGED" CONTENT="20140321;16080200">
+	<STYLE TYPE="text/css">
+	<!--
+		H1 { margin-bottom: 0.21cm }
+		H1.cjk { font-size: 24pt }
+		H1.ctl { font-size: 24pt }
+		P { margin-bottom: 0.21cm; font-variant: normal }
+		P.western { font-style: normal }
+		H2 { margin-bottom: 0.21cm }
+		H2.ctl { font-family: "Lohit Hindi" }
+		H3 { margin-bottom: 0.21cm }
+		H3.ctl { font-family: "Lohit Hindi" }
+		H3.use-case-western { color: #800000 }
+		H3.use-case-cjk { color: #800000 }
+		H3.use-case-ctl { color: #800000; font-family: "Lohit Hindi" }
+		P.foam-use-case-summary-western { border: 1px solid #000000; padding: 0.25cm; font-style: italic }
+		P.foam-use-case-summary-cjk { border: 1px solid #000000; padding: 0.25cm }
+		P.foam-use-case-summary-ctl { border: 1px solid #000000; padding: 0.25cm }
+		A:link { color: #000000; so-language: zxx; background: #ffffcc; text-decoration: none }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-GB" LINK="#000000" DIR="LTR">
+<H1 CLASS="western">Library System Specification</H1>
+<H2 CLASS="western">1. Objective</H2>
+<P CLASS="western">Some Media and user
+of a library are managed by the library
+system. 
+</P>
+<H2 CLASS="western">2. Operational Area</H2>
+<P CLASS="western">The library system is
+operated by the library staff (librarian)
+and library user (user)
+through terminals. 
+</P>
+<H2 CLASS="western">3. Product overview</H2>
+<P CLASS="western">The library system contains
+a user administration and a media
+administration. 
+</P>
+<H3 CLASS="western">3.1 User administration</H3>
+<P CLASS="western">The user
+administration contains a user account
+for each user which contains all user
+data. A librarian is able to create a
+new user account, to edit and to delete an
+existing user account. A user
+is able to register at the system with his
+user number, to manage his
+user account, and to extend the media's
+rental period. A password is not necessary because the user
+number on the identification card
+is read with a bar code scanner. 
+</P>
+<H3 CLASS="western">3.2 Media
+administration</H3>
+<P CLASS="western">The media
+administration contains an entry for each medium
+in the library. Several instances
+of each medium may be available, and they may
+have different locations. A
+librarian is able to add a new media
+instance to the media
+administration, change the status
+of an instance and remove
+an instance from the media
+administration. A user is able to search
+for a medium by specifying one or more features of the media.
+User can choose and reserve
+a found instance. To this end, the user
+number on the identification card
+is scanned. If a user
+borrows an instance, it is
+added to his account and will only be
+deleted when
+it is returned. 
+</P>
+<H2 CLASS="western">4. Product function</H2>
+<P CLASS="western">A user account must be
+available for each user. A librarian
+has access to all accounts of all users.
+A user has only access to his own user
+account by using his user
+number. 
+</P>
+<UL>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">A user
+	is able to search a
+	medium (search
+	medium).</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">A user
+	is able to reserve one or more
+	instances (reserve
+	instance).</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">A user
+	is able to borrow one or more
+	instances (borrow instance).
+		</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">A user
+	is able to extend the rental
+	period of one or more instances (extend
+	instance).</P>
+	<LI><P CLASS="western">A user is able to return
+	one or more instances (return
+	instance).</P>
+	<LI><P CLASS="western">A librarian is able
+	to create, edit and delete a user account
+	(manage user).</P>
+</UL>
+<UL>
+	<LI><P CLASS="western">A librarian is able
+	to create, edit and delete a medium (manage
+	medium).</P>
+</UL>
+<H3 CLASS="use-case-western">4.1. Use Case: Search
+medium</H3>
+<P CLASS="foam-use-case-summary-western">The user
+specifies one or more titles and obtains
+a list of media which contain the titles.
+The search can be
+restricted to designated media types and
+attributes. 
+</P>
+<P CLASS="western">Procedure: 
+</P>
+<UL>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">1. The user
+	specifies one or more search criteria.
+		</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">2. It is searched
+	for matching media in the media
+	administration. 
+	</P>
+	<LI><P CLASS="western">3. The user receives a
+	list of media that match the search criteria.
+		</P>
+</UL>
+<H3 CLASS="use-case-western">4.2 Use Case: Reserve instance</H3>
+<P CLASS="foam-use-case-summary-western">The user
+specifies an instance which he would like to
+reserve (e.g. by selection
+after a search) and
+has to identify himself to the system. The
+instance is registered in the reservation
+list of his user account. The status
+of the instance is set to “available
+and reserved” or to “borrowed
+and reserved”. 
+</P>
+<P CLASS="western">Procedure: 
+</P>
+<UL>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">1. The user
+	enters the shelfmark of the
+	requested medium. 
+	</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">2. The user
+	receives a list of instances of the medium.
+		</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">3. The user
+	chooses an instance.</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">4. The user
+	identifies himself to the system.</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm"><B>Extension</B>:
+	if the user account is not valid any more
+	or closed</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">The procedure is
+	terminated with a status signal.</P>
+	<LI><P CLASS="western"><A NAME="bookmark"></A>6. The status
+	of the instance is set from “available”
+	to “available and
+	reserved” or from “borrowed”
+	to “borrowed and
+	reserved”.</P>
+</UL>
+<H3 CLASS="use-case-western">4.3. Use Case: Borrow instance</H3>
+<P CLASS="foam-use-case-summary-western">The user
+has to identify himself
+to the system and specifies a list of
+instances he wishes to borrow.
+The instances are listed in the borrowing
+list of his user account. Only
+instances can be borrowed
+which are “available”, or
+“available and
+reserved” and the user is the first on the
+reservation list. 
+</P>
+<P CLASS="western">Procedure: 
+</P>
+<UL>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">1. The user
+	identifies himself to the system
+	and chooses the ’borrow’ menu. 
+	</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm"><B>Extension</B>:
+	If the user account is not valid any more
+	or closed.</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">1. The procedure
+	is terminated.</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">3. The user
+	specifies an instance which should be
+	borrowed (shelfmark of the
+	instance is scanned). 
+	</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">4. If the
+	instance’s status is “available”
+	or “reserved and
+	available”, and the user is the first on
+	the reservation list, the
+	instance can be borrowed
+	otherwise borrowing the instance
+	is rejected. 
+	</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">5. The instance
+	is registered in the list
+	of borrowed media of the user account.</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">6. The user
+	is registered in the list of users
+	who have/had borrowed the instance. 
+	</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">7. The status
+	of the instance is changed to “borrowed”
+	or “reserved and
+	borrowed”. 
+	</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">8. The instance
+	is unlocked.</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm"><B>Extension</B>:
+	If a further instance shall be borrowed</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">1. Continue at
+	step 3.</P>
+	<LI><P CLASS="western">10. The user receives a
+	receipt for the newly borrowed instance. 
+	</P>
+</UL>
+<H3 CLASS="use-case-western">4.4. Use Case: Extend rental period of
+instance</H3>
+<P CLASS="foam-use-case-summary-western">The user
+has to identify himself to the system and
+specifies a medium
+ instances whose rental
+period he would like to extend. The return
+date
+ is updated according to the new rental
+period if it does not exceed the
+ maximum  rental
+period and if it is not reserved by another user.</P>
+<P CLASS="western">Procedure:</P>
+<UL>
+	<LI><P CLASS="western">1. User indicates his
+	wish to extend the rental period
+	of one or more
+ medium’s instances.
+</P>
+	<LI><P CLASS="western">2. System prompts the
+	user to identify himself.
+</P>
+	<LI><P CLASS="western">3. User identifies
+	himself to the system.
+</P>
+	<LI><P CLASS="western">4. System validates
+	that the user account is valid and is not
+	locked.
+</P>
+	<LI><P CLASS="western">5. System presents a
+	view containing a list of medium instances
+	the user
+ has currently borrowed.</P>
+	<LI><P CLASS="western">6. User selects an
+	instance whose rental
+	period he wants to extend.
+</P>
+	<LI><P CLASS="western">7. System validates
+	that the selected instance is not reserved
+	and that
+ its maximum rental time
+	will not be exceeded.
+</P>
+	<LI><P CLASS="western">8. System extends the
+	instance’s rental
+	period and adds the extension time
+ to the instance’s
+	total time for this rental.</P>
+</UL>
+<H3 CLASS="use-case-western">4.5. Use Case: Return instance</H3>
+<P CLASS="foam-use-case-summary-western">The user
+specifies a list of instances he would like
+to return. The
+ instances are removed from
+the borrowing list of his user account.
+The
+ status of the instances
+is set to “available” or “available and reserved”.</P>
+<P CLASS="western">Procedure:</P>
+<UL>
+	<LI><P CLASS="western">1. The user specifies an
+	instance he wants to return ( instance
+	is
+ recognised automatically at the terminal by scanning the
+	shelfmark).
+</P>
+	<LI><P CLASS="western">2. The instance is
+	locked.
+</P>
+	<LI><P CLASS="western">3. If the instance
+	did not have the status “borrowed” or “reserved and
+	borrowed”, the procedure is terminated with an error message.
+</P>
+	<LI><P CLASS="western">4. The return
+	date is added to the list of users who have
+	borrowed
+ the instance.
+</P>
+	<LI><P CLASS="western">5. The instance is
+	removed from the borrowing list of the user
+	account.
+</P>
+	<LI><P CLASS="western">6. The status
+	of the instance is changed to “available”
+	or “available and
+ reserved”.</P>
+</UL>
+<H3 CLASS="use-case-western">4.6. The system automatically</H3>
+<P CLASS="foam-use-case-summary-western">The system
+automatically
+ reminds the user when he has an
+instance that is overdue (by mail or eMail)
+,
+informs a user about a reserved and available
+instance, releases a
+ reserved instance
+not borrowed within a certain time period, and
+ informs the next user
+on the reservation list (if there is one).</P>
+<H2 CLASS="western">Requirements</H2>
+<H3 CLASS="western">Requirement SYS1.1:</H3>
+<P CLASS="western">Type: <B>Security</B> User
+name and telephone number
+are mandatory fields. 
+</P>
+</BODY>
+</HTML>

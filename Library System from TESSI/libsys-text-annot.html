@@ -1,0 +1,324 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 4.0.4.2 (Linux)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGEDBY" CONTENT="Viliam Simko">
+	<META NAME="CHANGED" CONTENT="20140321;16080200">
+	<STYLE TYPE="text/css">
+	<!--
+		H1 { margin-bottom: 0.21cm }
+		H1.cjk { font-size: 24pt }
+		H1.ctl { font-size: 24pt }
+		P { margin-bottom: 0.21cm; font-variant: normal }
+		P.western { font-style: normal }
+		H2 { margin-bottom: 0.21cm }
+		H2.ctl { font-family: "Lohit Hindi" }
+		H3 { margin-bottom: 0.21cm }
+		H3.ctl { font-family: "Lohit Hindi" }
+		H3.use-case-western { color: #800000 }
+		H3.use-case-cjk { color: #800000 }
+		H3.use-case-ctl { color: #800000; font-family: "Lohit Hindi" }
+		P.foam-use-case-summary-western { border: 1px solid #000000; padding: 0.25cm; font-style: italic }
+		P.foam-use-case-summary-cjk { border: 1px solid #000000; padding: 0.25cm }
+		P.foam-use-case-summary-ctl { border: 1px solid #000000; padding: 0.25cm }
+		A:link { color: #000000; so-language: zxx; background: #ffffcc; text-decoration: none }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-GB" LINK="#000000" DIR="LTR">
+<H1 CLASS="western">Library System Specification</H1>
+<H2 CLASS="western">1. Objective</H2>
+<P CLASS="western">Some <A HREF="#Medium">Media</A> and <A HREF="#User">user</A>
+of a <A HREF="#Library">library</A> are managed by the <A HREF="#Library">library
+system</A>. 
+</P>
+<H2 CLASS="western">2. Operational Area</H2>
+<P CLASS="western">The <A HREF="#Library">library system</A> is
+operated by the <A HREF="#Librarian">library staff</A> (<A HREF="#Librarian">librarian</A>)
+and <A HREF="#User">library user</A> (<A HREF="#User">user</A>)
+through <A HREF="#Terminal">terminals</A>. 
+</P>
+<H2 CLASS="western">3. Product overview</H2>
+<P CLASS="western">The <A HREF="#Library">library system</A> contains
+a <A HREF="#UserAdministration">user administration</A> and a <A HREF="#MediaAdministration">media
+administration</A>. 
+</P>
+<H3 CLASS="western">3.1 User administration</H3>
+<P CLASS="western">The <A HREF="#UserAdministration">user
+administration</A> contains a <A HREF="#UserAccount">user account</A>
+for each <A HREF="#User">user</A> which contains all <A HREF="#UserAccount.userData">user
+data</A>. A <A HREF="#Librarian">librarian</A> is able to create a
+new <A HREF="#UserAccount">user account</A>, to edit and to delete an
+existing <A HREF="#UserAccount">user account</A>. A <A HREF="#User">user</A>
+is able to register at the <A HREF="#Library">system</A> with his
+<A HREF="#UserAccount.userNumber">user number</A>, to manage <A HREF="#User">his</A>
+<A HREF="#UserAccount">user account</A>, and to extend the <A HREF="#Instance.rentalPeriod">media's
+rental period</A>. A password is not necessary because the <A HREF="#IdentificationCard.userNumber">user
+number</A> on the <A HREF="#IdentificationCard">identification card</A>
+is read with a <A HREF="#BarCodeScanner">bar code scanner</A>. 
+</P>
+<H3 CLASS="western">3.2 <A HREF="#MediaAdministration">Media
+administration</A></H3>
+<P CLASS="western">The <A HREF="#MediaAdministration">media
+administration</A> contains an entry for each <A HREF="#Medium">medium</A>
+in the <A HREF="#Library">library</A>. Several <A HREF="#Instance">instances</A>
+of each <A HREF="#Medium">medium</A> may be available, and they may
+have different <A HREF="#Instance.location">locations</A>. A
+<A HREF="#Librarian">librarian</A> is able to add a new <A HREF="#Instance">media
+instance</A> to the <A HREF="#MediaAdministration">media
+administration</A>, change the <A HREF="#Instance.status">status</A>
+of an <A HREF="#Instance">instance</A> and <A HREF="#MediaAdministration.removeMediaInstance">remove
+an instance</A> from the <A HREF="#MediaAdministration">media
+administration</A>. A <A HREF="#User">user</A> is able to <A HREF="#MediaAdministration.searchMedium">search
+for a medium</A> by specifying one or more features of the <A HREF="#Medium">media</A>.
+<A HREF="#User">User</A> can choose and <A HREF="#Instance.reserveInstance">reserve</A>
+a found <A HREF="#Instance">instance</A>. To this end, the <A HREF="#IdentificationCard.userNumber">user
+number</A> on the <A HREF="#IdentificationCard">identification card</A>
+is <A HREF="#BarCodeScanner.readUserNumber">scanned</A>. If a <A HREF="#User">user</A>
+<A HREF="#Instance.borrowInstance">borrows an instance</A>, it is
+added to his <A HREF="#UserAccount">account</A> and will only be
+<A HREF="#MediaAdministration.removeMediaInstance">deleted</A> when
+it is returned. 
+</P>
+<H2 CLASS="western">4. Product function</H2>
+<P CLASS="western">A <A HREF="#UserAccount">user account</A> must be
+available for each <A HREF="#User">user</A>. A <A HREF="#Librarian">librarian</A>
+has access to all <A HREF="#UserAccount">accounts</A> of all <A HREF="#User">users</A>.
+A <A HREF="#User">user</A> has only access to his own <A HREF="#UserAccount">user
+account</A> by using his <A HREF="#UserAccount.userNumber">user
+number</A>. 
+</P>
+<UL>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">A <A HREF="#User">user</A>
+	is able to <A HREF="#MediaAdministration.searchMedium">search a
+	medium</A> (<A HREF="#MediaAdministration.searchMedium">search
+	medium</A>).</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">A <A HREF="#User">user</A>
+	is able to <A HREF="#Instance.reserveInstance">reserve one or more
+	instances</A> (<A HREF="#Instance.reserveInstance">reserve
+	instance</A>).</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">A <A HREF="#User">user</A>
+	is able to <A HREF="#Instance.borrowInstance">borrow one or more
+	instances</A> (<A HREF="#Instance.borrowInstance">borrow instance</A>).
+		</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">A <A HREF="#User">user</A>
+	is able to <A HREF="#Instance.extendRentalPeriod">extend the rental
+	period</A> of one or more <A HREF="#Instance">instances</A> (<A HREF="#Instance.extendRentalPeriod">extend
+	instance</A>).</P>
+	<LI><P CLASS="western">A <A HREF="#User">user</A> is able to return
+	one or more <A HREF="#Instance">instances</A> (<A HREF="#Instance.returnInstance">return
+	instance</A>).</P>
+	<LI><P CLASS="western">A <A HREF="#Librarian">librarian</A> is able
+	to create, edit and delete a <A HREF="#UserAccount">user account</A>
+	(<A HREF="#UserAdministration.manageUserAccount">manage user</A>).</P>
+</UL>
+<UL>
+	<LI><P CLASS="western">A <A HREF="#Librarian">librarian</A> is able
+	to create, edit and delete a <A HREF="#Medium">medium</A> (<A HREF="#MediaAdministration.manageMedium">manage
+	medium</A>).</P>
+</UL>
+<H3 CLASS="use-case-western">4.1. Use Case: <A HREF="#MediaAdministration.searchMedium">Search
+medium</A></H3>
+<P CLASS="foam-use-case-summary-western">The <A HREF="#User">user</A>
+specifies one or more <A HREF="#Medium.title">titles</A> and obtains
+a list of <A HREF="#Medium">media</A> which contain the <A HREF="#Medium.title">titles</A>.
+The <A HREF="#MediaAdministration.searchMedium">search</A> can be
+restricted to designated <A HREF="#Medium">media</A> types and
+attributes. 
+</P>
+<P CLASS="western">Procedure: 
+</P>
+<UL>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">1. The <A HREF="#User">user</A>
+	specifies one or more <A HREF="#SearchCriterion">search criteria</A>.
+		</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">2. It is searched
+	for matching <A HREF="#Medium">media</A> in the <A HREF="#MediaAdministration">media
+	administration</A>. 
+	</P>
+	<LI><P CLASS="western">3. The <A HREF="#User">user</A> receives a
+	list of <A HREF="#Medium">media</A> that match the search <A HREF="#SearchCriterion">criteria</A>.
+		</P>
+</UL>
+<H3 CLASS="use-case-western">4.2 Use Case: Reserve instance</H3>
+<P CLASS="foam-use-case-summary-western">The <A HREF="#User">user</A>
+specifies an <A HREF="#Instance">instance</A> which he would like to
+<A HREF="#Instance.reserveInstance">reserve</A> (e.g. by selection
+after a <A HREF="#MediaAdministration.searchMedium">search</A>) and
+has to identify <A HREF="#User">himself</A> to the system. The
+<A HREF="#Instance">instance</A> is registered in the <A HREF="#UserAccount.reservationList">reservation
+list</A> of his <A HREF="#UserAccount">user account</A>. The <A HREF="#Instance.status">status</A>
+of the <A HREF="#Instance">instance</A> is set to “<A HREF="#InstanceStatus.ReservedAndAvailable">available
+and reserved</A>” or to “<A HREF="#InstanceStatus.ReservedAndBorrowed">borrowed
+and reserved</A>”. 
+</P>
+<P CLASS="western">Procedure: 
+</P>
+<UL>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">1. The <A HREF="#User">user</A>
+	enters the <A HREF="#Instance.shelfmark">shelfmark</A> of the
+	requested <A HREF="#Medium">medium</A>. 
+	</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">2. The <A HREF="#User">user</A>
+	receives a list of <A HREF="#Instance">instances</A> of the <A HREF="#Medium">medium</A>.
+		</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">3. The <A HREF="#User">user</A>
+	chooses an <A HREF="#Instance">instance</A>.</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">4. The <A HREF="#User">user</A>
+	identifies himself to the <A HREF="#Library">system</A>.</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm"><B>Extension</B>:
+	if the <A HREF="#UserAccount">user account</A> is not valid any more
+	or closed</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">The procedure is
+	terminated with a status signal.</P>
+	<LI><P CLASS="western"><A NAME="bookmark"></A>6. The <A HREF="#Instance.status">status</A>
+	of the <A HREF="#Instance">instance</A> is set from “<A HREF="#InstanceStatus.Available">available</A>”
+	to “<A HREF="#InstanceStatus.ReservedAndAvailable">available and
+	reserved</A>” or from “<A HREF="#InstanceStatus.Borrowed">borrowed</A>”
+	to “<A HREF="#InstanceStatus.ReservedAndBorrowed">borrowed and
+	reserved</A>”.</P>
+</UL>
+<H3 CLASS="use-case-western">4.3. Use Case: Borrow instance</H3>
+<P CLASS="foam-use-case-summary-western">The <A HREF="#User">user</A>
+has to <A HREF="#User.identifyToSystem">identify</A> <A HREF="#User">himself</A>
+to the <A HREF="#Library">system</A> and specifies a list of
+<A HREF="#Instance">instances</A> he wishes to <A HREF="#Instance.borrowInstance">borrow</A>.
+The <A HREF="#Instance">instances</A> are listed in the <A HREF="#UserAccount.borrowedInstances">borrowing
+list</A> of his <A HREF="#UserAccount">user account</A>. Only
+<A HREF="#Instance">instances</A> can be <A HREF="#Instance.borrowInstance">borrowed</A>
+which are “<A HREF="#InstanceStatus.Available">available</A>”, or
+“<A HREF="#InstanceStatus.ReservedAndAvailable">available and
+reserved</A>” and the <A HREF="#User">user</A> is the first on the
+<A HREF="#Instance.reservationList">reservation list</A>. 
+</P>
+<P CLASS="western">Procedure: 
+</P>
+<UL>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">1. The <A HREF="#User">user</A>
+	identifies <A HREF="#User">himself</A> to the <A HREF="#Library">system</A>
+	and chooses the ’borrow’ menu. 
+	</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm"><B>Extension</B>:
+	If the <A HREF="#UserAccount">user account</A> is not valid any more
+	or closed.</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">1. The procedure
+	is terminated.</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">3. The <A HREF="#User">user</A>
+	specifies an <A HREF="#Instance">instance</A> which should be
+	borrowed (<A HREF="#Instance.shelfmark">shelfmark</A> of the
+	<A HREF="#Instance">instance</A> is scanned). 
+	</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">4. If the
+	<A HREF="#Instance.status">instance’s status</A> is “<A HREF="#InstanceStatus.Available">available</A>”
+	or “<A HREF="#InstanceStatus.ReservedAndAvailable">reserved and
+	available</A>”, and the <A HREF="#User">user</A> is the first on
+	the <A HREF="#Instance.reservationList">reservation list</A>, the
+	<A HREF="#Instance">instance</A> can be <A HREF="#Instance.borrowInstance">borrowed</A>
+	otherwise <A HREF="#Instance.borrowInstance">borrowing the instance</A>
+	is rejected. 
+	</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">5. The <A HREF="#Instance">instance</A>
+	is registered in the <A HREF="#UserAccount.borrowedInstances">list
+	of borrowed media</A> of the <A HREF="#UserAccount">user account</A>.</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">6. The <A HREF="#User">user</A>
+	is registered in the <A HREF="#Instance.borrowingList">list of users
+	who have/had borrowed the instance</A>. 
+	</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">7. The <A HREF="#Instance.status">status
+	of the instance</A> is changed to “<A HREF="#InstanceStatus.Borrowed">borrowed</A>”
+	or “<A HREF="#InstanceStatus.ReservedAndBorrowed">reserved and
+	borrowed</A>”. 
+	</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">8. The <A HREF="#Instance">instance</A>
+	is unlocked.</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm"><B>Extension</B>:
+	If a further <A HREF="#Instance">instance</A> shall be <A HREF="#Instance.borrowInstance">borrowed</A></P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm">1. Continue at
+	step 3.</P>
+	<LI><P CLASS="western">10. The <A HREF="#User">user</A> receives a
+	receipt for the newly borrowed <A HREF="#Instance">instance</A>. 
+	</P>
+</UL>
+<H3 CLASS="use-case-western">4.4. Use Case: Extend rental period of
+instance</H3>
+<P CLASS="foam-use-case-summary-western">The <A HREF="#User">user</A>
+has to identify himself to the <A HREF="#Library">system</A> and
+specifies a medium <A HREF="#Instance">instances</A> whose <A HREF="#Instance.rentalPeriod">rental
+period</A> he would like to extend. The <A HREF="#Instance.returnDate">return
+date</A> is updated according to the new <A HREF="#Instance.rentalPeriod">rental
+period</A> if it does not exceed the maximum  <A HREF="#Instance.rentalPeriod">rental
+period</A> and if it is not reserved by another <A HREF="#User">user</A>.</P>
+<P CLASS="western">Procedure:</P>
+<UL>
+	<LI><P CLASS="western">1. <A HREF="#User">User</A> indicates his
+	wish to extend the <A HREF="#Instance.rentalPeriod">rental period</A>
+	of one or more <A HREF="#Medium">medium</A>’s <A HREF="#Instance">instances</A>.</P>
+	<LI><P CLASS="western">2. <A HREF="#Library">System</A> prompts the
+	<A HREF="#User">user</A> to identify <A HREF="#User">himself</A>.</P>
+	<LI><P CLASS="western">3. <A HREF="#User">User</A> identifies
+	<A HREF="#User">himself</A> to the <A HREF="#Library">system</A>.</P>
+	<LI><P CLASS="western">4. <A HREF="#Library">System</A> validates
+	that the <A HREF="#UserAccount">user account</A> is valid and is not
+	locked.</P>
+	<LI><P CLASS="western">5. <A HREF="#Library">System</A> presents a
+	view containing a list of <A HREF="#Instance">medium instances</A>
+	the <A HREF="#User">user</A> has currently borrowed.</P>
+	<LI><P CLASS="western">6. <A HREF="#User">User</A> selects an
+	<A HREF="#Instance">instance</A> whose <A HREF="#Instance.rentalPeriod">rental
+	period</A> he wants to extend.</P>
+	<LI><P CLASS="western">7. <A HREF="#Library">System</A> validates
+	that the selected <A HREF="#Instance">instance</A> is not reserved
+	and that its maximum <A HREF="#Instance.rentalPeriod">rental time</A>
+	will not be exceeded.</P>
+	<LI><P CLASS="western">8. <A HREF="#Library">System</A> extends the
+	<A HREF="#Instance">instance</A>’s <A HREF="#Instance.rentalPeriod">rental
+	period</A> and adds the extension time to the <A HREF="#Instance">instance</A>’s
+	total time for this rental.</P>
+</UL>
+<H3 CLASS="use-case-western">4.5. Use Case: Return instance</H3>
+<P CLASS="foam-use-case-summary-western">The <A HREF="#User">user</A>
+specifies a list of <A HREF="#Instance">instances</A> he would like
+to return. The <A HREF="#Instance">instances</A> are removed from
+the borrowing list of his <A HREF="#UserAccount">user account</A>.
+The <A HREF="#Instance.status">status</A> of the <A HREF="#Instance">instances</A>
+is set to “available” or “available and reserved”.</P>
+<P CLASS="western">Procedure:</P>
+<UL>
+	<LI><P CLASS="western">1. The <A HREF="#User">user</A> specifies an
+	<A HREF="#Instance">instance</A> he wants to return ( <A HREF="#Instance">instance</A>
+	is recognised automatically at the terminal by scanning the
+	<A HREF="#Instance.shelfmark">shelfmark</A>).</P>
+	<LI><P CLASS="western">2. The <A HREF="#Instance">instance</A> is
+	locked.</P>
+	<LI><P CLASS="western">3. If the <A HREF="#Instance">instance</A>
+	did not have the status “borrowed” or “reserved and
+	borrowed”, the procedure is terminated with an error message.</P>
+	<LI><P CLASS="western">4. The <A HREF="#Instance.returnDate">return
+	date</A> is added to the list of <A HREF="#User">users</A> who have
+	borrowed the <A HREF="#Instance">instance</A>.</P>
+	<LI><P CLASS="western">5. The <A HREF="#Instance">instance</A> is
+	removed from the borrowing list of the <A HREF="#UserAccount">user
+	account</A>.</P>
+	<LI><P CLASS="western">6. The <A HREF="#Instance.status">status</A>
+	of the <A HREF="#Instance">instance</A> is changed to “available”
+	or “available and reserved”.</P>
+</UL>
+<H3 CLASS="use-case-western">4.6. The system automatically</H3>
+<P CLASS="foam-use-case-summary-western">The <A HREF="#Library">system</A>
+automatically reminds the <A HREF="#User">user</A> when he has an
+<A HREF="#Instance">instance</A> that is overdue (by mail or eMail),
+informs a <A HREF="#User">user</A> about a reserved and available
+<A HREF="#Instance">instance</A>, releases a reserved <A HREF="#Instance">instance</A>
+not borrowed within a certain time period, and informs the next <A HREF="#User">user</A>
+on the reservation list (if there is one).</P>
+<H2 CLASS="western">Requirements</H2>
+<H3 CLASS="western">Requirement SYS1.1:</H3>
+<P CLASS="western">Type: <B>Security</B> <A HREF="#UserAccount.userName">User
+name</A> and <A HREF="#UserAccount.telephoneNumber">telephone number</A>
+are mandatory fields. 
+</P>
+</BODY>
+</HTML>
