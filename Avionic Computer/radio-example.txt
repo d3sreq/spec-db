@@ -1,0 +1,194 @@
+					===================
+					Radio Specification
+					===================
+
+
+This specification describes the requirements for controlling
+the communication radio with the avionic computer (BC).
+The next picture shows the connection of the radio to other
+equipments over the bus system. 
+
+
+					=======================
+					Interface Specification
+					=======================
+
+Referenced Documents:
+	* MMI concept for the display on the TA
+	* Bus Interface description
+	* MMI interface description 
+
+Explication of the used messages:
+The interface are used in the specification as followed:
+	* Signal is sent from R1 to the BC  => R1BC_[Name]
+	* Signal is sent from BC to R1 => BCR1_[Name]
+	* The detail specification of the interface and the display
+	  can be found in the databases. In the specification only
+	  the names of the signal in the messages are referenced.
+
+Interface definition of the TA:
+The messages covers the messages from the TA to the BA and vice versa. 
+The radio has three pages, white which the radio can be controlled.
+All the pages can be reached by direct access keys. The name of the
+keys are written recursive.
+
+1.Display and change the status of R1 (Display_Status_R1)
+Messages (Signal)  :  	BCAT_Radio1ONOFFDisplay
+		                BCAT_Radio1FrequencyDisplay
+		                BCAT_Radio1BITTestDisplay
+		                BCAT_Radio1_Acknowledge_Change_Frequency
+                        ATBC_Radio1_Demand_Switch_Power_OFF_ON
+	                    BCAT_Radio1_Achkowledge_Switch_Power_OFF_ON
+
+2.Administrate frequency lists (List_R1)
+Messages (Signal) :     ATBC_Radio1_Display_Frequency
+                        ATBC_Radio1_Srcoll_Up_Or_Down
+		                ATBC_Radio1_Search
+                        ATBC_RADIO1_Select_Entry
+                        BCAT_Radio1_List
+
+3.Load and save of  mass data (Load_R1) 
+Messages (Signal) :	    ATBC_Radio1_Demand_ReadPresetFrequency
+		                BCAT_Radio1_Achkowledge_ReadPresetFrequency
+	                    ATBC_Radio1_Demand_SavePresetFrequency
+	                    BCAT_Radio1_Ackkowledge_SavePresetFrequency
+
+Interface definition of the  mass data:
+The messages covers the messages from the MA to the BA and vice versa.
+
+1.Read from the MA
+Messages (Signal)  :  	BCMS_Radio1DemandReadData
+		                MSBC_Radio1AckowledgeDataSent
+		                MSBC_Radio1Frequenz
+
+2.Write into the MA
+Messages (Signal)  :  	BCMS_Radio1DemandSaveData
+		                MSBC_Radio1AckkowledgeDataSave
+		                BCMS_Radio1Frequency
+
+Radio 1:
+The messages covers the messages from the R1 to the BA and vice versa.
+
+1.Set radio frequency 
+Messages (Signal) :     BCR1_Demand_To_Radio1_Change_Frequency
+	                    R1BC_Ackknowledge_Change_Frequency_Radio1
+
+2.Radio switch on off
+Messages (Signal) :  	BCR1_Demand_To_Radio1_Switch_Power_OFF_ON
+		                R1BC_Acknowledge_Switch_Power_OFF_ON_Radio1
+
+3.Status Bit test
+Messages (Signal) :  	BCR1_BitteststatusRadio1
+
+
+					====================
+					Function description
+					====================
+
+This specification describes the control functions, which have to be
+implemented on the BC. The radio has interactions over the BC to the MA and the TA.
+
+The essential functions of the radio are the following:
+	1. With the AT you can switch On / Off the broadcast and receiving unit
+	2. With the TA  you can set the frequency 
+	3. The AT show the status of the radio
+	4. With the TA the preset frequency can be read out and written to the MA 
+
+
+Read and write the MA
+------------------------------------------------
+
+Description:
+The user can load the preset list of frequency into the BA with the TA.
+After changing the list of frequency during operation the list can be
+stored into the MA with the TA.
+
+Req_1: Read MA
+When the BC get the command  ATBC_Radio1_Demand_ReadPresetFrequency from
+the TA, the BC shall start with BCMS_Radio1DemandReadData  the loading
+of the data in the BC.  For every 20 msec read the content of the message
+MSBC_Radio1Frequenz. When the MSBC_Radio1AckowledgeDataSent set to TRUE
+the loading is be finished. The time out for MSBC_Radio1AckowledgeDataSent
+is 30 seconds.
+
+Req_2: Write MA
+When the BC get the command  ATBC_Radio1_Demand_SavePresetFrequency from
+the TA, the BC shall start with BCMS_Radio1DemandSaveData  the loading of
+the data in the MC.  For every 20 msec read the content of the message
+BCMS_Radio1Frequency. When the MSBC_Radio1AckkowledgeDataSave set to TRUE
+the loading is be finished. The time out for MSBC_Radio1AckkowledgeDataSave
+is 30 seconds.
+
+
+Administration of the frequency in the computer
+------------------------------------------------
+
+Description:
+The frequency list is administrated in the BC. In the list the user can scroll
+up and down with the help of the TA. No entries can be deleted or modified
+in the list.
+
+Req_3: Display of the list entries
+When the BC gets the command ATBC_Radio1_Display_Frequency,
+the list entries shall be displayed on TA (BCAT_Radio1_List).
+If no list entries in the BC dots shall be displayed.
+
+Req_4: Select list entries
+With the command ATBC_RADIO1_Select_Entry a list entry
+shall be selected.
+
+Req_5: Scroll up in the list
+When the BC gets the command ATBC_Radio1_Srcoll_Up_Or_Down [UP],
+on the TA (BCAT_Radio1_List) it shall be possible to scroll up
+element wise  in the list. The scrolling shall stop at the first
+element in the list.
+
+Req_6: Scroll down in the list
+When the BC gets the command ATBC_Radio1_Srcoll_Up_Or_Down [DOWN],
+on the TA (BCAT_Radio1_List) it shall be possible to scroll down
+element wise in the list. The scrolling shall stop at the last
+element.
+
+
+Radio Controlling:
+------------------------------------------------
+
+Description:
+The BC shall control the radio with the TA. The BC can switch off
+and on the broadcast and receiving unit and can set the frequency
+of the radio.
+
+Req_7: Switch Radio off and on
+When the BC gets the command ATBC_Radio1_Demand_Switch_Power_OFF_ON,
+the BC shall set the radio to on or off with the message
+BCR1_Demand_To_Radio1_Switch_Power_OFF_ON.  The radio acknowledge
+the command with R1BC_Acknowledge_Switch_Power_OFF_ON_Radio1.
+The time out for the command are 2s.
+
+Req_8: selecting a frequency for the radio
+When the BC gets the command ATBC_RADIO1_Select_Entry, the BC shall
+set the frequency with BCR1_Demand_To_Radio1_Change_Frequency.
+The radio acknowledge the command with
+R1BC_Ackknowledge_Change_Frequency_Radio1.
+The time out for the command are 2 s.
+
+
+Display:
+------------------------------------------------
+
+Description:
+All display are updated cyclically rate 0,05 sec.
+
+Req_9: display radio ON/OFF
+R1BC_Ackknowledge_Change_Frequency_Radio1 shall be displayed
+on the TA with BCAT_Radio1ONOFFDisplay 
+
+Req_10: Display frequency
+R1BC_Acknowledge_Switch_Power_OFF_ON_Radio1 shall be display
+on the TA with BCAT_Radio1FrequencyDisplay
+
+Req_11: Display BIT status
+BCR1_BitteststatusRadio1 shall be displayed on the TA
+with BCAT_Radio1BITTestDisplay.
+
+
