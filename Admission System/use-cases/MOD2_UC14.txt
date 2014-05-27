@@ -1,0 +1,13 @@
+UC214: Solve issues
+
+Primary: false
+
+Preceding: UC1 Login to the System
+
+1. System presents a list of current issues. #(use:issue)
+2. Selecting committee selects the issue.
+3. Selecting committee marks the issue as considered positively. #(mark:issueMarkedPositively)
+
+Extension: 3a. Selecting committee does not approve issue.
+3a1. Selecting committee marks the issue as considered negatively. #(mark:issueMarkedNegatively)
+3a2. Use case finishes. #(abort)

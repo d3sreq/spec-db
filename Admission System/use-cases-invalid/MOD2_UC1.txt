@@ -1,0 +1,18 @@
+UC201 Create a new admission
+
+Preceding: UC1 Login to the System
+
+1 Administrator chooses the creating−new−admission option.
+2 System presents the new−admission form. #(open:admissionForm)
+3 Administrator provides basic information concerning the admission.
+4 Administrator chooses starting and ending dates of the admission.
+5 System stores the admission. #(close:admissionForm)
+6 System informs that admission has been stored.
+
+Extension: 3a Some obligatory data was not provided.
+3a1 System informs that some required data is missing.
+3a2 Go back to step 3. #(goto:3)
+
+Extension: 4a Given dates is not valid.
+4a1 System informs that starting or ending dates are not valid.
+4a2 Go back to step 4. #(goto:4)

@@ -1,0 +1,20 @@
+UC101 Register in the system
+
+1. Candidate opens system main-page.
+2. Candidate chooses registration option.
+3. System presents a registration data form and asks to enter the registration data.
+4. Candidate fills the registration data form and submits the registration data form. #(open:registration)
+5. System verifies if data is correct.
+6. System informs that account has been created. #(close:registration)
+
+Extension: 5a. Some obligatory fields were not filled.
+5a1. Systems highlights the missing fields. #(close:registration)
+5a2. Back to step 4. #(goto:4)
+	
+Extension: 5b. Account with the given user name already exist.
+5b1. System informs that the user nameUserAccount.userName is in use. #(close:registration)
+5b2. Back to step 4. #(goto:4)
+	
+Extension: 5c. Given passwords don't match.
+5c1. System informs Candidate that passwords don't match. #(close:registration)
+5c2. Back to step 4. #(goto:4)

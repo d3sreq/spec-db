@@ -1,0 +1,22 @@
+UC1 Login to the system
+
+1 User opens main page.
+2 System presents main page with a login form.
+3 User fills the login form with the authentication data.
+4 System verifies the given data.
+5 System welcomes Candidate.
+
+Extension: 4a Not all obligatory data was given.
+4a1 System points which data is missing.
+4a2 Go back to step 3. #(goto:3)
+
+Extension: 4b No account with the certain login exists in the system.
+4b1 System informs the User that there is no account with the given user name in the system.
+4b2 System suggests the User to register in the system as a Candidate or contact Administrator to create new account.
+4b3 Go back to step 3. #(goto:3)
+
+Extension: 4b2a User decided to register as a Candidate.
+4b2a1 Include MOD1_UC1. #(include:UC101)
+
+Extension: 4b2b User decided to contact admin.
+4b2b1 Include MOD2_UC8. #(include:UC208)

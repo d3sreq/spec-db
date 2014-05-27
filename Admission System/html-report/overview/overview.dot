@@ -1,0 +1,53 @@
+digraph mygraph {
+	rankdir="BT"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="70"
+	node [
+		style="filled",
+		fontname="Arial",
+		shape="oval",
+		fillcolor="#f2f2f2",
+		height="0.1"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	"UC105" [URL="../UC105/UC105.html", tooltip="Check application status", target="_top"]
+	"UC1" [URL="../UC1/UC1.html", tooltip="Login to the system", target="_top"]
+	"UC106" [URL="../UC106/UC106.html", tooltip="Print application", target="_top"]
+	"UC108" [URL="../UC108/UC108.html", tooltip="Apply for payment cancellation", target="_top"]
+	"UC107" [URL="../UC107/UC107.html", tooltip="Define majors priorities", target="_top"]
+	"UC103" [URL="../UC103/UC103.html", tooltip="Choose a major", target="_top"]
+	"UC214" [URL="../UC214/UC214.html", tooltip="Solve issues", target="_top"]
+	"UC101" [URL="../UC101/UC101.html", tooltip="Register in the system", target="_top"]
+	"UC208" [URL="../UC208/UC208.html", tooltip="Add a new user", target="_top"]
+	"UC201" [URL="../UC201/UC201.html", tooltip="Create a new admission", target="_top"]
+	"UC212" [URL="../UC212/UC212.html", tooltip="Import admissions fees", target="_top"]
+	"UC102" [URL="../UC102/UC102.html", tooltip="Provide personal and education information", target="_top"]
+	"UC104" [URL="../UC104/UC104.html", tooltip="Assign an application fee to a major", target="_top"]
+	"UC105" -> "UC1" 
+	"UC105" -> "UC103" 
+	"UC1" -> "UC101" [arrowhead="onormal", style="dashed"]
+	"UC1" -> "UC208" [arrowhead="onormal", style="dashed"]
+	"UC106" -> "UC1" 
+	"UC106" -> "UC103" 
+	"UC108" -> "UC1" 
+	"UC108" -> "UC214" [arrowhead="onormal", style="dashed"]
+	"UC107" -> "UC1" 
+	"UC107" -> "UC103" 
+	"UC103" -> "UC1" 
+	"UC103" -> "UC102" 
+	"UC214" -> "UC1" 
+	"UC208" -> "UC1" 
+	"UC201" -> "UC1" 
+	"UC212" -> "UC1" 
+	"UC102" -> "UC1" 
+	"UC104" -> "UC1" 
+	"UC104" -> "UC103" 
+	"UC104" -> "UC212" [arrowhead="onormal", style="dashed"]
+}

@@ -1,0 +1,13 @@
+UC103 Choose a major
+
+Primary: false
+Preceding: UC1 Login to the System, UC102 Provide personal and education information
+
+1. Candidate chooses the adding−new−major option.
+2. System presents a list of majors for which admission is available.
+3. Candidate chooses a major. #(create:chosenMajor)
+4. System presents a list of majors chosen by Candidate.
+
+Extension: 3a. Candidate would like to apply for more majors.
+3a1. Candidate chooses many majors.
+3a2. Continue with step 4. #(goto:4)

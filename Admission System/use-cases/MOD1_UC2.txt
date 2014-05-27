@@ -1,0 +1,24 @@
+UC102 Provide personal and education information
+
+Preceding: UC1 Login to the System
+
+1. Candidate provides personal information.
+2. Candidate chooses to provide information concerning former education.
+3. System presents the education data form.
+4. Candidate fills the education data form and confirms.
+5. System stores the data.
+6. System displays a confirmation message.
+
+Extension: 4a. Some obligatory data was not provided.
+4a1. System informs that required some data was not provided and highlights the missing fields.
+4a2. Go back to step 2. #(goto:2)
+	
+Variation: 4a2a. Candidate logged to the system for the first time
+4a2a1. Go back to step 1. #(goto:1)
+		
+Extension: 4b. Some data was provided in wrong format.
+4b1. System informs that some data was not provided correctly and highlights the fields that were consider as wrongly formatted.
+4b2. Go back to step 2. #(goto:2)
+
+Variation: 4b2a. Candidate logged to the system for the first time
+4b2a1. Go back to step 1. #(goto:1)

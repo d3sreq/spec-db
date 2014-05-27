@@ -1,0 +1,42 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC214 {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC2141" [xlabel="1", label="{<JMP>&bull;}", tooltip="System presents a list of current issues.", width="0.5"]
+		"UC2142" [xlabel="2", label="{<JMP>&bull;}", tooltip="Selecting committee selects the issue.", width="0.5"]
+		"UC2143" [xlabel="3", fillcolor="#ccebc5", label="{<JMP>&bull;|<EXT>}", tooltip="Selecting committee marks the issue as considered positively.", width="1.0"]
+	}
+	subgraph cluster_UC2143a {
+		label="Extension: 3a.\l Selecting committee does not approve issue. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC2143a1" [xlabel="3a1", label="{<JMP>&bull;}", tooltip="Selecting committee marks the issue as considered negatively.", width="0.5"]
+		"UC2143a2" [xlabel="3a2", fillcolor="#fbb4ae", label="{<JMP>&bull;}", tooltip="Use case finishes.", width="0.5"]
+	}
+	"UC2141":"JMP" -> "UC2142":"JMP" [URL="#UC214_1"]
+	"UC2142":"JMP" -> "UC2143":"JMP" [URL="#UC214_2"]
+	"UC2143":"EXT" -> "UC2143a1":"JMP" [URL="#UC214_3"]
+	"UC2143a1":"JMP" -> "UC2143a2":"JMP" [URL="#UC214_3a1"]
+}

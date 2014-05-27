@@ -1,0 +1,53 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC208 {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC2081" [xlabel="1", label="{<JMP>&bull;}", tooltip="Administrator chooses an option to add user.", width="0.5"]
+		"UC2082" [xlabel="2", label="{<JMP>&bull;}", tooltip="System presents the new-user form.", width="0.5"]
+		"UC2083" [xlabel="3", label="{<JMP>&bull;|<EXT>}", tooltip="Administrator fills the form.", width="1.0"]
+		"UC2084" [xlabel="4", label="{<JMP>&bull;}", tooltip="Administrator grants roles to the user in the system.", width="0.5"]
+		"UC2085" [xlabel="5", label="{<JMP>&bull;}", tooltip="System stores the user data.", width="0.5"]
+		"UC2086" [xlabel="6", label="{<JMP>&bull;}", tooltip="System grants the user roles.", width="0.5"]
+		"UC2087" [xlabel="7", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="System displays confirmation message.", width="0.5"]
+	}
+	subgraph cluster_UC2083a {
+		label="Extension: 3a.\l Not all obligatory data was given. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC2083a1" [xlabel="3a1", label="{<JMP>&bull;}", tooltip="System informs that some data is missing.", width="0.5"]
+		"UC2083a2" [xlabel="3a2", label="{<JMP>&bull;}", tooltip="System highlights the missing fields.", width="0.5"]
+		"UC2083a3" [xlabel="3a3", label="{<JMP>&bull;}", tooltip="Go back to step 3.", width="0.5"]
+	}
+	"UC2081":"JMP" -> "UC2082":"JMP" [URL="#UC208_1"]
+	"UC2082":"JMP" -> "UC2083":"JMP" [URL="#UC208_2"]
+	"UC2083":"EXT" -> "UC2084":"JMP" [URL="#UC208_3"]
+	"UC2084":"JMP" -> "UC2085":"JMP" [URL="#UC208_4"]
+	"UC2085":"JMP" -> "UC2086":"JMP" [URL="#UC208_5"]
+	"UC2086":"JMP" -> "UC2087":"JMP" [URL="#UC208_6"]
+	"UC2083":"EXT" -> "UC2083a1":"JMP" [URL="#UC208_3"]
+	"UC2083a1":"JMP" -> "UC2083a2":"JMP" [URL="#UC208_3a1"]
+	"UC2083a2":"JMP" -> "UC2083a3":"JMP" [URL="#UC208_3a2"]
+	"UC2083a3":"JMP" -> "UC2083":"JMP" [URL="#UC208_3a3"]
+}

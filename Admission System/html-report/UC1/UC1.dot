@@ -1,0 +1,84 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC1 {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC11" [xlabel="1", label="{<JMP>&bull;}", tooltip="User opens main page.", width="0.5"]
+		"UC12" [xlabel="2", label="{<JMP>&bull;}", tooltip="System presents main page with a login form.", width="0.5"]
+		"UC13" [xlabel="3", label="{<JMP>&bull;}", tooltip="User fills the login form with the authentication data.", width="0.5"]
+		"UC14" [xlabel="4", label="{<JMP>&bull;|<EXT>}", tooltip="System verifies the given data.", width="1.0"]
+		"UC15" [xlabel="5", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="System welcomes Candidate.", width="0.5"]
+	}
+	subgraph cluster_UC14b2a {
+		label="Extension: 4b2a.\l User decided to register as a Candidate. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC14b2a1" [xlabel="4b2a1", label="{<JMP>&bull;|<EXT>}", tooltip="Include MOD1_UC1.", width="1.0"]
+	}
+	subgraph cluster_UC14b2b {
+		label="Extension: 4b2b.\l User decided to contact admin. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC14b2b1" [xlabel="4b2b1", label="{<JMP>&bull;|<EXT>}", tooltip="Include MOD2_UC8.", width="1.0"]
+	}
+	subgraph cluster_UC14a {
+		label="Extension: 4a.\l Not all obligatory data was given. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC14a1" [xlabel="4a1", label="{<JMP>&bull;}", tooltip="System points which data is missing.", width="0.5"]
+		"UC14a2" [xlabel="4a2", label="{<JMP>&bull;}", tooltip="Go back to step 3.", width="0.5"]
+	}
+	subgraph cluster_UC14b {
+		label="Extension: 4b.\l No account with the certain login exists in the system. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC14b1" [xlabel="4b1", label="{<JMP>&bull;}", tooltip="System informs the User that there is no account with the given user name in the system.", width="0.5"]
+		"UC14b2" [xlabel="4b2", label="{<JMP>&bull;|<EXT>|<OUT>}", tooltip="System suggests the User to register in the system as a Candidate or contact Administrator to create new account.", width="1.5"]
+		"UC14b3" [xlabel="4b3", label="{<JMP>&bull;}", tooltip="Go back to step 3.", width="0.5"]
+	}
+	"UC101" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC101 Register in the system", URL="../UC101/UC101.html", target="_top"]
+	"UC208" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC208 Add a new user", URL="../UC208/UC208.html", target="_top"]
+	"UC14b2a1":"JMP" -> "UC101" [URL="#UC1_4b2a1"]
+	"UC101" -> "UC14b2a1":"EXT" 
+	"UC14b2b1":"JMP" -> "UC208" [URL="#UC1_4b2b1"]
+	"UC208" -> "UC14b2b1":"EXT" 
+	"UC11":"JMP" -> "UC12":"JMP" [URL="#UC1_1"]
+	"UC12":"JMP" -> "UC13":"JMP" [URL="#UC1_2"]
+	"UC13":"JMP" -> "UC14":"JMP" [URL="#UC1_3"]
+	"UC14":"EXT" -> "UC15":"JMP" [URL="#UC1_4"]
+	"UC14b2":"EXT" -> "UC14b2a1":"JMP" [URL="#UC1_4b2"]
+	"UC14b2a1":"EXT" -> "UC14b2":"OUT" [URL="#UC1_4b2a1"]
+	"UC14b2":"EXT" -> "UC14b2b1":"JMP" [URL="#UC1_4b2"]
+	"UC14b2b1":"EXT" -> "UC14b2":"OUT" [URL="#UC1_4b2b1"]
+	"UC14":"EXT" -> "UC14a1":"JMP" [URL="#UC1_4"]
+	"UC14a1":"JMP" -> "UC14a2":"JMP" [URL="#UC1_4a1"]
+	"UC14a2":"JMP" -> "UC13":"JMP" [URL="#UC1_4a2"]
+	"UC14":"EXT" -> "UC14b1":"JMP" [URL="#UC1_4"]
+	"UC14b1":"JMP" -> "UC14b2":"JMP" [URL="#UC1_4b1"]
+	"UC14b2":"OUT" -> "UC14b3":"JMP" [URL="#UC1_4b2"]
+	"UC14b3":"JMP" -> "UC13":"JMP" [URL="#UC1_4b3"]
+}

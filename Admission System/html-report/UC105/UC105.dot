@@ -1,0 +1,30 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC105 {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC1051" [xlabel="1", label="{<JMP>&bull;}", tooltip="Candidate chooses an option of presenting current status of his applications.", width="0.5"]
+		"UC1052" [xlabel="2", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="System presents a chosen−major list with information concerning current status of each application.", width="0.5"]
+	}
+	"UC1051":"JMP" -> "UC1052":"JMP" [URL="#UC105_1"]
+}

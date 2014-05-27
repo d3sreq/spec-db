@@ -1,0 +1,24 @@
+UC104 Assign an application fee to a major
+
+Preceding: UC1 Login to the System, UC103 Choose a major
+
+1 Candidate proceeds to the chosen−majors view.
+2 System presents list containing chosen majors.
+3 Candidate chooses a major that he/she wants to pay for. #(use:chosenMajor)
+4 System presents a payment form and asks about the method of payment. #(open:payment)
+5 Candidate chooses to use a credit card.
+6 Candidate provides credit card data and confirms payment. #(close:payment)
+7 System presents updated list of the chosen majors.
+
+Variation: 5a Candidate chooses to pay by money transfer.
+5a1 System presents Candidate’s individual account number.
+5a2 Candidate performs money transfer ( outside the system ).
+5a3 Money is registered by the System (MOD2 UC12) #(include:UC212)
+5a4 After money is registered candidate assigns the payment to a major. #(use:registeredMoney)
+5a5 Use cases finishes. #(close:payment), #(abort)
+
+Extension: 5a3a Error occurred while registering the money.
+5a3a1 Transaction terminated. #(guard:!create_registeredMoney), #(close:payment), #(abort)
+
+Variation: 5a4a If he/she don’t do that
+5a4a1 the payment will be assigned automatically according to priorities.

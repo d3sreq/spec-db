@@ -1,0 +1,45 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC103 {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC1031" [xlabel="1", label="{<JMP>&bull;}", tooltip="Candidate chooses the adding−new−major option.", width="0.5"]
+		"UC1032" [xlabel="2", label="{<JMP>&bull;}", tooltip="System presents a list of majors for which admission is available.", width="0.5"]
+		"UC1033" [xlabel="3", label="{<JMP>&bull;|<EXT>}", tooltip="Candidate chooses a major.", width="1.0"]
+		"UC1034" [xlabel="4", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="System presents a list of majors chosen by Candidate.", width="0.5"]
+	}
+	subgraph cluster_UC1033a {
+		label="Extension: 3a.\l Candidate would like to apply for more majors. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC1033a1" [xlabel="3a1", label="{<JMP>&bull;}", tooltip="Candidate chooses many majors.", width="0.5"]
+		"UC1033a2" [xlabel="3a2", label="{<JMP>&bull;}", tooltip="Continue with step 4.", width="0.5"]
+	}
+	"UC1031":"JMP" -> "UC1032":"JMP" [URL="#UC103_1"]
+	"UC1032":"JMP" -> "UC1033":"JMP" [URL="#UC103_2"]
+	"UC1033":"EXT" -> "UC1034":"JMP" [URL="#UC103_3"]
+	"UC1033":"EXT" -> "UC1033a1":"JMP" [URL="#UC103_3"]
+	"UC1033a1":"JMP" -> "UC1033a2":"JMP" [URL="#UC103_3a1"]
+	"UC1033a2":"JMP" -> "UC1034":"JMP" [URL="#UC103_3a2"]
+}

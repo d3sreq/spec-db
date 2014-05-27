@@ -1,0 +1,16 @@
+UC108 Apply for payment cancellation
+
+Preceding: UC1 Login to the System
+
+1.	Candidate chooses one of the selected and payed majors.
+2.	Candidate chooses the apply for cancellation option.
+3.	System presents the application form.
+4.	Candidate provides justification for the payment cancellation.
+5.	System stores the application.
+6.	Selecting committee analyses application as an issue. #(create:issue), #(include:UC214)
+7.	Selecting committee confirms payment cancellation. #(assert:issueMarkedPositively)
+8.	System sends information to the Candidate that the cancellation has been accepted and how money can be refunded.
+
+Variation: 7a. The issue was marked negatively.
+7a1. System sends information to the Candidate that the cancellation has been refused. #(guard:issueMarkedNegatively)
+7a2. Use case aborted. #(abort)

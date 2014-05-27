@@ -1,0 +1,13 @@
+UC212 Import admissions fees
+
+Primary: false
+
+Preceding: UC1 Login to the System
+
+1. Administrator chooses an option to import payments from the bank system.
+2. System imports payment entries from the bank.
+3. System displays a list containing information about all imported admission fees. #(create:registeredMoney), #(mark:create_registeredMoney)
+
+Extension: 2a. Error occurred during the import.
+2a1. System displays error message with the detailed information concerning the source of the failure.
+2a2. Use case finishes. #(abort)

@@ -1,0 +1,34 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC106 {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC1061" [xlabel="1", label="{<JMP>&bull;}", tooltip="Candidate proceeds to the chosen-majors-view.", width="0.5"]
+		"UC1062" [xlabel="2", label="{<JMP>&bull;}", tooltip="System presents list containing chosen majors.", width="0.5"]
+		"UC1063" [xlabel="3", label="{<JMP>&bull;}", tooltip="Candidate selects major and chooses a print-application option.", width="0.5"]
+		"UC1064" [xlabel="4", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="System prints application filled with Candidate's data.", width="0.5"]
+	}
+	"UC1061":"JMP" -> "UC1062":"JMP" [URL="#UC106_1"]
+	"UC1062":"JMP" -> "UC1063":"JMP" [URL="#UC106_2"]
+	"UC1063":"JMP" -> "UC1064":"JMP" [URL="#UC106_3"]
+}

@@ -1,0 +1,78 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC102 {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC1021" [xlabel="1", label="{<JMP>&bull;}", tooltip="Candidate provides personal information.", width="0.5"]
+		"UC1022" [xlabel="2", label="{<JMP>&bull;}", tooltip="Candidate chooses to provide information concerning former education.", width="0.5"]
+		"UC1023" [xlabel="3", label="{<JMP>&bull;}", tooltip="System presents the education data form.", width="0.5"]
+		"UC1024" [xlabel="4", label="{<JMP>&bull;|<EXT>}", tooltip="Candidate fills the education data form and confirms.", width="1.0"]
+		"UC1025" [xlabel="5", label="{<JMP>&bull;}", tooltip="System stores the data.", width="0.5"]
+		"UC1026" [xlabel="6", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="System displays a confirmation message.", width="0.5"]
+	}
+	subgraph cluster_UC1024b2a {
+		label="Variation: 4b2a.\l Candidate logged to the system for the first time "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC1024b2a1" [xlabel="4b2a1", label="{<JMP>&bull;}", tooltip="Go back to step 1.", width="0.5"]
+	}
+	subgraph cluster_UC1024a {
+		label="Extension: 4a.\l Some obligatory data was not provided. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC1024a1" [xlabel="4a1", label="{<JMP>&bull;}", tooltip="System informs that required some data was not provided and highlights the missing fields.", width="0.5"]
+		"UC1024a2" [xlabel="4a2", label="{<VAR>|<JMP>&bull;}", tooltip="Go back to step 2.", width="1.0"]
+	}
+	subgraph cluster_UC1024b {
+		label="Extension: 4b.\l Some data was provided in wrong format. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC1024b1" [xlabel="4b1", label="{<JMP>&bull;}", tooltip="System informs that some data was not provided correctly and highlights the fields that were consider as wrongly formatted.", width="0.5"]
+		"UC1024b2" [xlabel="4b2", label="{<VAR>|<JMP>&bull;}", tooltip="Go back to step 2.", width="1.0"]
+	}
+	subgraph cluster_UC1024a2a {
+		label="Variation: 4a2a.\l Candidate logged to the system for the first time "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC1024a2a1" [xlabel="4a2a1", label="{<JMP>&bull;}", tooltip="Go back to step 1.", width="0.5"]
+	}
+	"UC1021":"JMP" -> "UC1022":"JMP" [URL="#UC102_1"]
+	"UC1022":"JMP" -> "UC1023":"JMP" [URL="#UC102_2"]
+	"UC1023":"JMP" -> "UC1024":"JMP" [URL="#UC102_3"]
+	"UC1024":"EXT" -> "UC1025":"JMP" [URL="#UC102_4"]
+	"UC1025":"JMP" -> "UC1026":"JMP" [URL="#UC102_5"]
+	"UC1024b2":"VAR" -> "UC1024b2a1":"JMP" [URL="#UC102_4b2"]
+	"UC1024b2a1":"JMP" -> "UC1021":"JMP" [URL="#UC102_4b2a1"]
+	"UC1024":"EXT" -> "UC1024a1":"JMP" [URL="#UC102_4"]
+	"UC1024a1":"JMP" -> "UC1024a2":"VAR" [URL="#UC102_4a1"]
+	"UC1024a2":"JMP" -> "UC1022":"JMP" [URL="#UC102_4a2"]
+	"UC1024":"EXT" -> "UC1024b1":"JMP" [URL="#UC102_4"]
+	"UC1024b1":"JMP" -> "UC1024b2":"VAR" [URL="#UC102_4b1"]
+	"UC1024b2":"JMP" -> "UC1022":"JMP" [URL="#UC102_4b2"]
+	"UC1024a2":"VAR" -> "UC1024a2a1":"JMP" [URL="#UC102_4a2"]
+	"UC1024a2a1":"JMP" -> "UC1021":"JMP" [URL="#UC102_4a2a1"]
+}

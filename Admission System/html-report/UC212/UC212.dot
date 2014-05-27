@@ -1,0 +1,42 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC212 {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC2121" [xlabel="1", label="{<JMP>&bull;}", tooltip="Administrator chooses an option to import payments from the bank system.", width="0.5"]
+		"UC2122" [xlabel="2", label="{<JMP>&bull;|<EXT>}", tooltip="System imports payment entries from the bank.", width="1.0"]
+		"UC2123" [xlabel="3", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="System displays a list containing information about all imported admission fees.", width="0.5"]
+	}
+	subgraph cluster_UC2122a {
+		label="Extension: 2a.\l Error occurred during the import. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC2122a1" [xlabel="2a1", label="{<JMP>&bull;}", tooltip="System displays error message with the detailed information concerning the source of the failure.", width="0.5"]
+		"UC2122a2" [xlabel="2a2", fillcolor="#fbb4ae", label="{<JMP>&bull;}", tooltip="Use case finishes.", width="0.5"]
+	}
+	"UC2121":"JMP" -> "UC2122":"JMP" [URL="#UC212_1"]
+	"UC2122":"EXT" -> "UC2123":"JMP" [URL="#UC212_2"]
+	"UC2122":"EXT" -> "UC2122a1":"JMP" [URL="#UC212_2"]
+	"UC2122a1":"JMP" -> "UC2122a2":"JMP" [URL="#UC212_2a1"]
+}

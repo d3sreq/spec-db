@@ -1,0 +1,16 @@
+UC208 Add a new user
+
+Preceding: UC1 Login to the System
+
+1. Administrator chooses an option to add user.
+2. System presents the new-user form.
+3. Administrator fills the form. #(open:newUserForm)
+4. Administrator grants roles to the user in the system.
+5. System stores the user data. #(close:newUserForm)
+6. System grants the user roles.
+7. System displays confirmation message.
+
+Extension: 3a. Not all obligatory data was given.
+3a1. System informs that some data is missing. #(close:newUserForm)
+3a2. System highlights the missing fields.
+3a3. Go back to step 3. #(goto:3)

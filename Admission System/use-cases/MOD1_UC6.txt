@@ -1,0 +1,8 @@
+UC106 Print application
+
+Preceding: UC1 Login to the System, UC103 Choose a major
+
+1. Candidate proceeds to the chosen-majors-view.
+2. System presents list containing chosen majors. #(use:chosenMajor)
+3. Candidate selects major and chooses a print-application option.
+4. System prints application filled with Candidate's data.

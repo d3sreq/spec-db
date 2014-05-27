@@ -1,0 +1,76 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC201 {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC2011" [xlabel="1", label="{<JMP>&bull;}", tooltip="Administrator chooses the creating−new−admission option.", width="0.5"]
+		"UC2012" [xlabel="2", label="{<JMP>&bull;}", tooltip="System presents the new−admission form.", width="0.5"]
+		"UC2013" [xlabel="3", label="{<JMP>&bull;|<EXT>}", tooltip="Administrator provides basic information concerning the admission.", width="1.0"]
+		"UC2014" [xlabel="4", label="{<JMP>&bull;|<EXT>}", tooltip="Administrator chooses starting and ending dates of the admission.", width="1.0"]
+		"UC2015" [xlabel="5", label="{<JMP>&bull;}", tooltip="System stores the admission.", width="0.5"]
+		"UC2016" [xlabel="6", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="System informs that admission has been stored.", width="0.5"]
+	}
+	subgraph cluster_UC2013a {
+		label="Extension: 3a.\l Some obligatory data was not provided. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC2013a1" [xlabel="3a1", label="{<JMP>&bull;}", tooltip="System informs that some required data is missing.", width="0.5"]
+		"UC2013a2" [xlabel="3a2", label="{<JMP>&bull;}", tooltip="Go back to step 3.", width="0.5"]
+	}
+	subgraph cluster_UC2013b {
+		label="Extension: 3b.\l Catching an infinite loop. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC2013b1" [xlabel="3b1", fillcolor="#fbb4ae", label="{<JMP>&bull;}", tooltip="Use case aborted.", width="0.5"]
+	}
+	subgraph cluster_UC2014a {
+		label="Extension: 4a.\l Given dates is not valid. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC2014a1" [xlabel="4a1", label="{<JMP>&bull;}", tooltip="System informs that starting or ending dates are not valid.", width="0.5"]
+		"UC2014a2" [xlabel="4a2", label="{<JMP>&bull;}", tooltip="Go back to step 4.", width="0.5"]
+	}
+	subgraph cluster_UC2014b {
+		label="Extension: 4b.\l Catching an infinite loop. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC2014b1" [xlabel="4b1", fillcolor="#fbb4ae", label="{<JMP>&bull;}", tooltip="Use case aborted.", width="0.5"]
+	}
+	"UC2011":"JMP" -> "UC2012":"JMP" [URL="#UC201_1"]
+	"UC2012":"JMP" -> "UC2013":"JMP" [URL="#UC201_2"]
+	"UC2013":"EXT" -> "UC2014":"JMP" [URL="#UC201_3"]
+	"UC2014":"EXT" -> "UC2015":"JMP" [URL="#UC201_4"]
+	"UC2015":"JMP" -> "UC2016":"JMP" [URL="#UC201_5"]
+	"UC2013":"EXT" -> "UC2013a1":"JMP" [URL="#UC201_3"]
+	"UC2013a1":"JMP" -> "UC2013a2":"JMP" [URL="#UC201_3a1"]
+	"UC2013a2":"JMP" -> "UC2013":"JMP" [URL="#UC201_3a2"]
+	"UC2013":"EXT" -> "UC2013b1":"JMP" [URL="#UC201_3"]
+	"UC2014":"EXT" -> "UC2014a1":"JMP" [URL="#UC201_4"]
+	"UC2014a1":"JMP" -> "UC2014a2":"JMP" [URL="#UC201_4a1"]
+	"UC2014a2":"JMP" -> "UC2014":"JMP" [URL="#UC201_4a2"]
+	"UC2014":"EXT" -> "UC2014b1":"JMP" [URL="#UC201_4"]
+}

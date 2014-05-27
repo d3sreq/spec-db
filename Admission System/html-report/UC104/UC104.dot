@@ -1,0 +1,76 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC104 {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC1041" [xlabel="1", label="{<JMP>&bull;}", tooltip="Candidate proceeds to the chosen−majors view.", width="0.5"]
+		"UC1042" [xlabel="2", label="{<JMP>&bull;}", tooltip="System presents list containing chosen majors.", width="0.5"]
+		"UC1043" [xlabel="3", label="{<JMP>&bull;}", tooltip="Candidate chooses a major that he/she wants to pay for.", width="0.5"]
+		"UC1044" [xlabel="4", label="{<JMP>&bull;}", tooltip="System presents a payment form and asks about the method of payment.", width="0.5"]
+		"UC1045" [xlabel="5", label="{<VAR>|<JMP>&bull;}", tooltip="Candidate chooses to use a credit card.", width="1.0"]
+		"UC1046" [xlabel="6", label="{<JMP>&bull;}", tooltip="Candidate provides credit card data and confirms payment.", width="0.5"]
+		"UC1047" [xlabel="7", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="System presents updated list of the chosen majors.", width="0.5"]
+	}
+	subgraph cluster_UC1045a {
+		label="Variation: 5a.\l Candidate chooses to pay by money transfer. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC1045a1" [xlabel="5a1", label="{<JMP>&bull;}", tooltip="System presents Candidate ’s individual account number.", width="0.5"]
+		"UC1045a2" [xlabel="5a2", label="{<JMP>&bull;}", tooltip="Candidate performs money transfer ( outside the system ).", width="0.5"]
+		"UC1045a3" [xlabel="5a3", label="{<JMP>&bull;|<EXT>}", tooltip="Money is registered by the System (MOD2 UC12)", width="1.0"]
+		"UC1045a4" [xlabel="5a4", label="{<VAR>|<JMP>&bull;|<OUT>}", tooltip="After money is registered candidate assigns the payment to a major.", width="1.5"]
+		"UC1045a5" [xlabel="5a5", fillcolor="#fbb4ae", label="{<JMP>&bull;}", tooltip="Use cases finishes.", width="0.5"]
+	}
+	subgraph cluster_UC1045a3a {
+		label="Extension: 5a3a.\l Error occurred while registering the money. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC1045a3a1" [xlabel="5a3a1", fillcolor="#fbb4ae", label="{<JMP>&bull;}", tooltip="Transaction terminated.", width="0.5"]
+	}
+	subgraph cluster_UC1045a4a {
+		label="Variation: 5a4a.\l If he/she don’t do that "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC1045a4a1" [xlabel="5a4a1", label="{<JMP>&bull;}", tooltip="the payment will be assigned automatically according to priorities.", width="0.5"]
+	}
+	"UC212" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC212 Import admissions fees", URL="../UC212/UC212.html", target="_top"]
+	"UC1045a3":"JMP" -> "UC212" [URL="#UC104_5a3"]
+	"UC212" -> "UC1045a3":"EXT" 
+	"UC1041":"JMP" -> "UC1042":"JMP" [URL="#UC104_1"]
+	"UC1042":"JMP" -> "UC1043":"JMP" [URL="#UC104_2"]
+	"UC1043":"JMP" -> "UC1044":"JMP" [URL="#UC104_3"]
+	"UC1044":"JMP" -> "UC1045":"VAR" [URL="#UC104_4"]
+	"UC1045":"JMP" -> "UC1046":"JMP" [URL="#UC104_5"]
+	"UC1046":"JMP" -> "UC1047":"JMP" [URL="#UC104_6"]
+	"UC1045":"VAR" -> "UC1045a1":"JMP" [URL="#UC104_5"]
+	"UC1045a1":"JMP" -> "UC1045a2":"JMP" [URL="#UC104_5a1"]
+	"UC1045a2":"JMP" -> "UC1045a3":"JMP" [URL="#UC104_5a2"]
+	"UC1045a3":"EXT" -> "UC1045a4":"VAR" [URL="#UC104_5a3"]
+	"UC1045a4":"OUT" -> "UC1045a5":"JMP" [URL="#UC104_5a4"]
+	"UC1045a3":"EXT" -> "UC1045a3a1":"JMP" [URL="#UC104_5a3"]
+	"UC1045a4":"VAR" -> "UC1045a4a1":"JMP" [URL="#UC104_5a4"]
+	"UC1045a4a1":"JMP" -> "UC1045a4":"OUT" [URL="#UC104_5a4a1"]
+}

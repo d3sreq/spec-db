@@ -1,0 +1,55 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC108 {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC1081" [xlabel="1", label="{<JMP>&bull;}", tooltip="Candidate chooses one of the selected and payed majors.", width="0.5"]
+		"UC1082" [xlabel="2", label="{<JMP>&bull;}", tooltip="Candidate chooses the apply for cancellation option.", width="0.5"]
+		"UC1083" [xlabel="3", label="{<JMP>&bull;}", tooltip="System presents the application form.", width="0.5"]
+		"UC1084" [xlabel="4", label="{<JMP>&bull;}", tooltip="Candidate provides justification for the payment cancellation.", width="0.5"]
+		"UC1085" [xlabel="5", label="{<JMP>&bull;}", tooltip="System stores the application.", width="0.5"]
+		"UC1086" [xlabel="6", label="{<JMP>&bull;|<EXT>}", tooltip="Selecting committee analyses application as an issue.", width="1.0"]
+		"UC1087" [xlabel="7", label="{<VAR>|<JMP>&bull;}", tooltip="Selecting committee confirms payment cancellation.", width="1.0"]
+		"UC1088" [xlabel="8", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="System sends information to the Candidate that the cancellation has been accepted and how money can be refunded.", width="0.5"]
+	}
+	subgraph cluster_UC1087a {
+		label="Variation: 7a.\l The issue was marked negatively. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC1087a1" [xlabel="7a1", label="{<JMP>&bull;}", tooltip="System sends information to the Candidate that the cancellation has been refused.", width="0.5"]
+		"UC1087a2" [xlabel="7a2", fillcolor="#fbb4ae", label="{<JMP>&bull;}", tooltip="Use case aborted.", width="0.5"]
+	}
+	"UC214" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC214 Solve issues", URL="../UC214/UC214.html", target="_top"]
+	"UC1086":"JMP" -> "UC214" [URL="#UC108_6"]
+	"UC214" -> "UC1086":"EXT" 
+	"UC1081":"JMP" -> "UC1082":"JMP" [URL="#UC108_1"]
+	"UC1082":"JMP" -> "UC1083":"JMP" [URL="#UC108_2"]
+	"UC1083":"JMP" -> "UC1084":"JMP" [URL="#UC108_3"]
+	"UC1084":"JMP" -> "UC1085":"JMP" [URL="#UC108_4"]
+	"UC1085":"JMP" -> "UC1086":"JMP" [URL="#UC108_5"]
+	"UC1086":"EXT" -> "UC1087":"VAR" [URL="#UC108_6"]
+	"UC1087":"JMP" -> "UC1088":"JMP" [URL="#UC108_7"]
+	"UC1087":"VAR" -> "UC1087a1":"JMP" [URL="#UC108_7"]
+	"UC1087a1":"JMP" -> "UC1087a2":"JMP" [URL="#UC108_7a1"]
+}

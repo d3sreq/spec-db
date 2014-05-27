@@ -1,0 +1,8 @@
+UC107 Define majors priorities
+
+Preceding: UC1 Login to the System, UC103 Choose a major
+
+1. Candidate proceeds to the chosen-majors-view. 
+2. System presents a list containing chosen majors. #(use:chosenMajor)
+3. Candidate assigns priority value to each major. #(create:prioritiesOfMajors)
+4. System stores priorities and presents updated majors-list. #(use:prioritiesOfMajors)

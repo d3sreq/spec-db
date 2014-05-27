@@ -1,0 +1,6 @@
+UC105 Check application status
+
+Preceding: UC1 Login to the System, UC103 Choose a major
+
+1 Candidate chooses an option of presenting current status of his applications.
+2 System presents a chosen−major list with information concerning current status of each application. #(use:chosenMajor)
