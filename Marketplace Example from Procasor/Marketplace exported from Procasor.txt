@@ -1,0 +1,299 @@
+Project: Marketplace
+UseCase: Seller submits offer
+Scope: Marketplace
+SuD: Marketplace Information System
+Primary actor: Seller
+Supporting actor: Trade Commission
+Main success scenario specification:
+1. Seller submits item description
+2. System validates the description
+3. Seller adjusts/enters price and enters contact and billing information
+4. System validates the seller's contact information
+5. System verifies the seller's history to permit the seller to operate
+6. System validates the whole offer with the Trade Commission
+7. System lists the offer in published offers
+8. System responds with an uniquely identified authorization number
+Extensions:
+2a. Item not valid
+2a1. Use case aborted
+5a. Seller's history inappropriate
+5a1. Use case aborted
+6a. Trade commission rejects the offer
+Sub-variations:
+2b. Price assessment available
+2b1. System provides the seller with a prise assessment
+
+UseCase: Buyer searches for an offer
+Scope: Marketplace
+SuD: Marketplace Information System
+Primary actor: Buyer
+Main success scenario specification:
+1. Buyer enters basic search criteria
+2. System responds with the list of matches
+3. Buyer requests the complete listing of a selected offer
+4. System responds with the requested information
+Extensions:
+2a. No matches found
+2a1. Use case aborted
+Sub-variations:
+2b. The amount of matches is too high
+2b1. Buyer narrows the search results with additional criteria
+
+UseCase: Buyer buys a selected item
+Scope: Marketplace
+SuD: Marketplace Information System
+Primary actor: Buyer
+Supporting actor: Seller
+Supporting actor: Credit Verification Agency
+Main success scenario specification:
+1. Buyer chooses to accept a selected offer
+2. System validates the offer
+3. User enters billing information, select a payment method and provides the payment details
+4. System validates the buyer's information with the Credit Verification Agency
+5. System performs the sale
+6. System informs the seller that the offer has been accepted and provides the shipping
+information
+7. System transfers the payment to the sellers account
+8. System responds to the buyer with an uniquely identified authorization number
+Extensions:
+2a. Offer is not valid
+
+UseCase: Seller cancels an offer
+Scope: Marketplace
+SuD: Marketplace Information System
+Primary actor: Seller
+Main success scenario specification:
+1. Seller locates a previously submitted offer
+2. Seller requests the system to cancel the offer
+3. System responds with a request for the seller to prove identity
+4. Seller responds with the authorization number obtained when the offer was submitted
+5. System validates the request and seller's identity
+6. System removes the offer
+Extensions:
+4a. Seller cannot provide the authorization number
+4a1. Use case is aborted
+5a. Authorization number is not valid
+
+UseCase: Seller checks on the status of an offer
+Scope: Marketplace
+SuD: Marketplace Information System
+Primary actor: Seller
+Main success scenario specification:
+1. Seller locates a previously submitted offer
+2. Seller requests the system to provide status of the offer
+3. System responds with a request for the seller to prove identity
+4. Seller responds with the authorization number submitted returned when the offer was submitted
+5. System validates the request and seller's identiy
+6. System returns the status of the offer
+
+Extensions:
+4a. Seller cannot provide the authorization number
+4a1. Use case is aborted
+5a. Authorization number is not valid
+
+UseCase: Seller updates an offer
+Scope: Marketplace
+SuD: Marketplace Information System
+Primary actor: Seller
+Main success scenario specification:
+1. Seller locates a previously submitted offer
+2. Seller requests the system to update the offer, providing new details (e.g., price)
+3. System responds with a request for the seller to prove identity
+4. Seller responds with the authorization number returned when the offer was submitted
+5. System validates the request and seller's identity
+6. System updates the offer
+Extensions:
+4a. Seller cannot provide the authorization number
+4a1. Use case is aborted
+5a. Authorization number is not valid
+
+UseCase: Buyer makes a purchase
+Scope: Marketplace
+SuD: Marketplace Information System
+Primary actor: Buyer
+Supporting actor: Seller
+Supporting actor: Credit Verification Agency
+Main success scenario specification:
+1. Buyer searches for an offer
+2. Buyer buys a selected item
+Extensions:
+1a. The Buyer did not find any matching offer
+1a1. Use case aborted
+Sub-variations:
+1b. The Buyer decides not to accept the offer
+
+UseCase: Clerk submits an offer on behalf of a Seller
+Scope: Marketplace
+SuD: Computer System
+Primary actor: Clerk
+Supporting actor: Trade Commission
+Supporting actor: Supervisor
+Supporting actor: Seller
+Main success scenario specification:
+
+1. Clerk submits information describing an item
+2. System validates the description
+3. Clerk adjusts/enters price and enters seller's contact and billing information
+4. System validates the seller's contact information
+5. System asks the Supervisor to validate the seller
+6. Supervisor permits the seller to operate on the marketplace
+7. System validates the whole offer with the Trade Commission
+8. System lists the offer in published offers
+9. System responds with an uniquely identified authorization number
+Extensions:
+2a. Validation performed by the system fails
+2a1. Use case aborted
+7a. Trade commission rejects the offer
+7a1. Use case aborted
+Sub-variations:
+2b. Price assessment available
+2b1. System provides the seller with a price assessment
+
+UseCase: Buyer searches for an offer
+Scope: Marketplace
+SuD: Computer System
+Primary actor: Buyer
+Main success scenario specification:
+1. Buyer enters basic search criterion
+2. System responds with the list of matches
+3. Buyer requests the complete listing of a selected offer
+4. System responds with the requested information
+Extensions:
+2a. No matches found
+2a1. Use case aborted
+Sub-variations:
+2b. The amount of matches is too high
+2b1. Buyer narrows the search results with additional criteria
+
+UseCase: Clerk buys a selected item on behalf of a Buyer
+Scope: Marketplace
+SuD: Computer System
+Primary actor: Clerk
+Supporting actor: Seller
+Supporting actor: Credit Verification Agency
+Supporting actor: Buyer
+Main success scenario specification:
+1. Clerk is contacted by a buyer who has decided to accept a selected offer
+2. System validates the offer
+3. Clerk enters billing information, select a payment method and provides the necessary detail
+
+4. System validates this information with a Credit Verification Agency
+5. System performs the trade
+6. System informs the seller that the offer has been accepted and provides the shipping
+information
+7. System transfers the payment to the sellers account
+8. System responds to the buyer with an uniquely identified authorization number
+Extensions:
+2a. Offer is not valid
+2a1. Use case abort
+
+UseCase: Seller cancels an offer
+Scope: Marketplace
+SuD: Computer System
+Primary actor: Seller
+Main success scenario specification:
+1. Seller locates a previously submitted offer
+2. Seller requests the system to cancel the offer
+3. System responds with a request for the seller to prove identity
+4. Seller responds with the authorization number returned when the offer was submitted
+5. System validates the request and seller's identity
+6. System removes the offer
+Extensions:
+4a. Seller cannot provide the authorization number
+4a1. Use case is aborted
+5a. Authorization number is not valid
+5a1. Use case is aborted
+
+UseCase: Seller checks on the status of the offer
+Scope: Marketplace
+SuD: Computer System
+Primary actor: Seller
+Main success scenario specification:
+1. Seller locates a previously submitted offer
+2. Seller requests the system to provide status of the offer
+3. System responds with a request for the seller to prove identity
+4. Seller responds with the authorization number returned when the offer was submitted
+5. System validates the request and seller's identity
+6. System returns the status of the offer
+Extensions:
+4a. Seller cannot provide the authorization number
+4a1. Use case is aborted
+5a. Authorization number is not valid
+5a1. Use case aborted
+
+UseCase: Seller updates an offer
+Scope: Marketplace
+
+SuD: Computer System
+Primary actor: Seller
+Main success scenario specification:
+1. Seller locates a previously submitted offer
+2. Seller requests the system to update the offer, providing new details (e.g., price)
+3. System responds with a request for the seller to prove identity
+4. Seller responds with the authorization number returned when the offer was submitted
+5. System validates the request and seller's identity
+6. System updates the offer
+Extensions:
+4a. Seller cannot provide the authorization number
+4a1. Use case is aborted
+5a. Authorization number is not valid
+5a1. Use case aborted
+
+UseCase: Supervisor makes an internal audit
+Scope: Marketplace
+SuD: Computer System
+Primary actor: Supervisor
+Main success scenario specification:
+1. Supervisor searches the database of offers for sensitive keywords in item description
+2. System displays the description of the item
+3. Supervisor removes the item from the database of currently visible offers
+Extensions:
+1a. Supervisor did not find any match
+1a1. Use case terminates
+2a. Supervisor did not find any offending items
+2a1. Use case terminates
+
+UseCase: Seller to Clerk
+Scope: Marketplace
+SuD: Clerk
+Primary actor: Seller
+Supporting actor: Computer System
+Main success scenario specification:
+1. Seller submits item description to the clerk
+2. Clerk submits the description to the system
+3. Clerk reports the system response to the seller
+4. Seller submits the price, billing and contact information to the clerk
+5. Clerk enters the price, billing and contact information to the system
+6. Clerk reports the system response to the seller
+Extensions:
+2a. Validation performed by the system fails
+2a1. Use case abort
+
+UseCase: Buyer to Clerk
+Scope: Marketplace
+SuD: Clerk
+Primary actor: Buyer
+Supporting actor: Computer System
+Main success scenario specification:
+1. Buyer submits to the clerk a reference to a selected offer
+2. Clerk submits the reference to the system
+3. Clerk reports the system response to the seller and requests billing and shipping information,
+payment method and payment details
+4. Buyer submits to the clerk the requested billing and shipping information, payment method and
+payment details
+5. Clerk enters the billing and shipping information, payment method and payment details
+6. Clerk reports the system response (with the unique acknowledgment) to the buyer
+Extensions:
+4a. System failed to validate the offer
+4a1. Use case abort
+
+UseCase: Supervisor validates a seller
+Scope: Marketplace
+SuD: Supervisor
+Primary actor: Computer System
+Main success scenario specification:
+1. Computer system asks the supervisor to decide on permitting a seller to operate on the
+marketplace
+2. Supervisor validates the seller and signals the system to permit the seller to operate
+
+

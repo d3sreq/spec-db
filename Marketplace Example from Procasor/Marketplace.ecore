@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="marketplace" nsURI="http://marketplace/1.0" nsPrefix="marketplace">
+  <eClassifiers xsi:type="ecore:EClass" name="Seller">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="history"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="account"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TradeCommision"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComputerSystem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Clerk"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Supervisor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Offer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="price"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contact"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="billingInfo"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="itemDescription"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EClass0"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MIS">
+    <eOperations name="searchOffer"/>
+    <eOperations name="buyItem"/>
+    <eOperations name="locateSubmittedOffer"/>
+    <eOperations name="removeVisibleOffer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="publishedOffers" upperBound="-1"
+        eType="#//Offer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="submittedOffers" upperBound="-1"
+        eType="#//Offer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="visibleOffers" upperBound="-1"
+        eType="#//Offer"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Buyer"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CreditVerificationAgency"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AuthorizationNumber"/>
+</ecore:EPackage>
