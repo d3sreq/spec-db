@@ -1,0 +1,4 @@
+UC8 Priprava online dotazniku.
+
+1. Koordinator s Designerom vytvoria dotaznik.
+2. System zviditelni novy dotaznik na webe.

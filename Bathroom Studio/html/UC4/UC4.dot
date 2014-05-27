@@ -1,0 +1,60 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC4 {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC41" [xlabel="1", label="{<JMP>&bull;}", tooltip="Koordinator priradi designera ku zakazke.", width="0.5"]
+		"UC42" [xlabel="2", label="{<JMP>&bull;}", tooltip="System notifikuje designera o zakazke.", width="0.5"]
+		"UC43" [xlabel="3", label="{<JMP>&bull;}", tooltip="Designer si prezrie zakazku.", width="0.5"]
+		"UC44" [xlabel="4", fillcolor="#ccebc5", label="{<VAR>|<JMP>&bull;}", tooltip="Designer suhlasi s prevzatim zakazky.", width="1.0"]
+	}
+	subgraph cluster_UC44a {
+		label="Variation: 4a.\l Designer nesuhlasi s prevzatim zakazky. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC44a1" [xlabel="4a1", label="{<JMP>&bull;}", tooltip="Designer informuje koordinatora o nesuhlase.", width="0.5"]
+		"UC44a2" [xlabel="4a2", label="{<JMP>&bull;}", tooltip="Koordinator odstrani designera zo zakazky.", width="0.5"]
+		"UC44a3" [xlabel="4a3", label="{<JMP>&bull;}", tooltip="Koordinator priradi zakazku inemu designerovi.", width="0.5"]
+	}
+	subgraph cluster_UC44b {
+		label="Variation: 4b.\l Ziadny designer nesuhlasi s prevzatim zakazky. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC44b1" [xlabel="4b1", label="{<JMP>&bull;|<EXT>}", tooltip="Storno zakazky.", width="1.0"]
+		"UC44b2" [xlabel="4b2", fillcolor="#fbb4ae", label="{<JMP>&bull;}", tooltip="Use-case is terminated.", width="0.5"]
+	}
+	"UC10" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC10 Storno zakazky.", URL="../UC10/UC10.html", target="_top"]
+	"UC44b1":"JMP" -> "UC10" [URL="#UC4_4b1"]
+	"UC10" -> "UC44b1":"EXT" 
+	"UC41":"JMP" -> "UC42":"JMP" [URL="#UC4_1"]
+	"UC42":"JMP" -> "UC43":"JMP" [URL="#UC4_2"]
+	"UC43":"JMP" -> "UC44":"VAR" [URL="#UC4_3"]
+	"UC44":"VAR" -> "UC44a1":"JMP" [URL="#UC4_4"]
+	"UC44a1":"JMP" -> "UC44a2":"JMP" [URL="#UC4_4a1"]
+	"UC44a2":"JMP" -> "UC44a3":"JMP" [URL="#UC4_4a2"]
+	"UC44a3":"JMP" -> "UC41":"JMP" [URL="#UC4_4a3"]
+	"UC44":"VAR" -> "UC44b1":"JMP" [URL="#UC4_4"]
+	"UC44b1":"EXT" -> "UC44b2":"JMP" [URL="#UC4_4b1"]
+}

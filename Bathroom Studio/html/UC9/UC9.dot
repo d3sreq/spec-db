@@ -1,0 +1,28 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC9 {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC91" [xlabel="1", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="Koordinator odkaze klienta na online dotaznik.", width="0.5"]
+	}
+}

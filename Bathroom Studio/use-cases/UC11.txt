@@ -1,0 +1,6 @@
+UC11. Vymazanie zakazky.
+Primary: false
+
+1. Koordinator zada systemu vymazanie zakazky.
+2. System vymaze zakazku. #(close:commission)
+

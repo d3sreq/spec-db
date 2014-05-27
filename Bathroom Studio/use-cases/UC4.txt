@@ -1,0 +1,17 @@
+UC4. Priradenie zakazky designerovi.
+Primary: false
+Preceding: UC3.
+
+1. Koordinator priradi designera ku zakazke.
+2. System notifikuje designera o zakazke.
+3. Designer si prezrie zakazku.
+4. Designer suhlasi s prevzatim zakazky.
+
+Variation: 4a. Designer nesuhlasi s prevzatim zakazky.
+4a1. Designer informuje koordinatora o nesuhlase. #(guard:!designerAgain) #(mark:designerAgain)
+4a2. Koordinator odstrani designera zo zakazky.
+4a3. Koordinator priradi zakazku inemu designerovi. #(goto:1)
+
+Variation: 4b. Ziadny designer nesuhlasi s prevzatim zakazky.
+4b1. Storno zakazky. #(include:UC10)
+4b2. Use-case is terminated. #(abort) #(mark:abort)

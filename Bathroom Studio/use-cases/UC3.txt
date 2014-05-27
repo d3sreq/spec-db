@@ -1,0 +1,16 @@
+UC3. Kontrola a uprava dotaznika.
+Primary: false
+Preceding: UC1.
+
+1. Koordinator skontroluje uplnost dotaznika. #(use:basicSpecification)
+2. Dotaznik je uplny.
+
+Extension: 1a. Dotaznik je spam.
+1a1. Vymazanie zakazky. #(include:UC11)
+1a2. Use-case is terminated. #(abort) #(mark:abort)
+
+Extension: 1b. V dotazniku chyba dolezity udaj.
+1b1. Ziadost o doplnujuce udaje. #(include:UC2)
+
+Variation: 2a. There was an abort.
+2a1. Use-case is terminated. #(guard:abort) #(abort) #(mark:abort)

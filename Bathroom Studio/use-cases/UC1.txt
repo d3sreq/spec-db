@@ -1,0 +1,16 @@
+UC1 Vznik zakazky
+Primary: false
+Preceding: UC8 Priprava online dotazniku
+
+1. Klient vyplni dotaznik. #(create:basicSpecification)
+2. System skontroluje spravnost dotazniku. #(use:basicSpecification)
+3. System zalozi novu zakazku. #(open:commission)
+4. System vytvori zlozku zakazky na serveri. #(create:commissionFolder)
+5. System ulozi dotaznik do vytvorenej zlozky. #(use:basicSpecification) #(use:commissionFolder)
+6. System odosle email koordinatorovi o zalozeni zakazky.
+
+Extension: 2a. Dotaznik nie je kompletny.
+2a1. System upozorni na chyby.
+2a2. Klient opravi chyby v dotazniku. #(use:basicSpecification)
+2a3. Opakovana kontrola. #(goto:2)
+

@@ -1,0 +1,63 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC3 {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC31" [xlabel="1", label="{<JMP>&bull;|<EXT>|<OUT>}", tooltip="Koordinator skontroluje uplnost dotaznika.", width="1.5"]
+		"UC32" [xlabel="2", fillcolor="#ccebc5", label="{<VAR>|<JMP>&bull;}", tooltip="Dotaznik je uplny.", width="1.0"]
+	}
+	subgraph cluster_UC31a {
+		label="Extension: 1a.\l Dotaznik je spam. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC31a1" [xlabel="1a1", label="{<JMP>&bull;|<EXT>}", tooltip="Vymazanie zakazky.", width="1.0"]
+		"UC31a2" [xlabel="1a2", fillcolor="#fbb4ae", label="{<JMP>&bull;}", tooltip="Use-case is terminated.", width="0.5"]
+	}
+	subgraph cluster_UC31b {
+		label="Extension: 1b.\l V dotazniku chyba dolezity udaj. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC31b1" [xlabel="1b1", label="{<JMP>&bull;|<EXT>}", tooltip="Ziadost o doplnujuce udaje.", width="1.0"]
+	}
+	subgraph cluster_UC32a {
+		label="Variation: 2a.\l There was an abort. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC32a1" [xlabel="2a1", fillcolor="#fbb4ae", label="{<JMP>&bull;}", tooltip="Use-case is terminated.", width="0.5"]
+	}
+	"UC11" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC11 Vymazanie zakazky.", URL="../UC11/UC11.html", target="_top"]
+	"UC2" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC2 Ziadost o doplnujuce udaje.", URL="../UC2/UC2.html", target="_top"]
+	"UC31a1":"JMP" -> "UC11" [URL="#UC3_1a1"]
+	"UC11" -> "UC31a1":"EXT" 
+	"UC31b1":"JMP" -> "UC2" [URL="#UC3_1b1"]
+	"UC2" -> "UC31b1":"EXT" 
+	"UC31":"OUT" -> "UC32":"VAR" [URL="#UC3_1"]
+	"UC31":"EXT" -> "UC31a1":"JMP" [URL="#UC3_1"]
+	"UC31a1":"EXT" -> "UC31a2":"JMP" [URL="#UC3_1a1"]
+	"UC31":"EXT" -> "UC31b1":"JMP" [URL="#UC3_1"]
+	"UC31b1":"EXT" -> "UC31":"OUT" [URL="#UC3_1b1"]
+	"UC32":"VAR" -> "UC32a1":"JMP" [URL="#UC3_2"]
+}

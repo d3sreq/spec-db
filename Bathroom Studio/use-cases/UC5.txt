@@ -1,0 +1,16 @@
+UC5. Termin prvej schodzky.
+Primary: false
+Preceding: UC4 Priradenie zakazky designerovi.
+
+1. Koordinator s designerom dohodnu termin schodzky.
+2. Koordinator zada termin do kalendara.
+3. Koordinator navrhne termin schodzky klientovi.
+4. Klient potvrdi termin.
+
+Variation: 4a. Klientovi termin nevyhovuje.
+4a1. Zadanie noveho terminu. #(goto:1) #(guard:!dateNegotiation) #(mark:dateNegotiation)
+
+Variation: 4b. Koordinator a Klient sa nezhodnu na ziadnom termine.
+4b1. Storno zakazky. #(include:UC10)
+4b2. Use-case terminates. #(abort)
+

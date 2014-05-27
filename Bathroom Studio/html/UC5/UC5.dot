@@ -1,0 +1,56 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC5 {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC51" [xlabel="1", label="{<JMP>&bull;}", tooltip="Koordinator s designerom dohodnu termin schodzky.", width="0.5"]
+		"UC52" [xlabel="2", label="{<JMP>&bull;}", tooltip="Koordinator zada termin do kalendara.", width="0.5"]
+		"UC53" [xlabel="3", label="{<JMP>&bull;}", tooltip="Koordinator navrhne termin schodzky klientovi.", width="0.5"]
+		"UC54" [xlabel="4", fillcolor="#ccebc5", label="{<VAR>|<JMP>&bull;}", tooltip="Klient potvrdi termin.", width="1.0"]
+	}
+	subgraph cluster_UC54a {
+		label="Variation: 4a.\l Klientovi termin nevyhovuje. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC54a1" [xlabel="4a1", label="{<JMP>&bull;}", tooltip="Zadanie noveho terminu.", width="0.5"]
+	}
+	subgraph cluster_UC54b {
+		label="Variation: 4b.\l Koordinator a Klient sa nezhodnu na ziadnom termine. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC54b1" [xlabel="4b1", label="{<JMP>&bull;|<EXT>}", tooltip="Storno zakazky.", width="1.0"]
+		"UC54b2" [xlabel="4b2", fillcolor="#fbb4ae", label="{<JMP>&bull;}", tooltip="Use-case terminates.", width="0.5"]
+	}
+	"UC10" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC10 Storno zakazky.", URL="../UC10/UC10.html", target="_top"]
+	"UC54b1":"JMP" -> "UC10" [URL="#UC5_4b1"]
+	"UC10" -> "UC54b1":"EXT" 
+	"UC51":"JMP" -> "UC52":"JMP" [URL="#UC5_1"]
+	"UC52":"JMP" -> "UC53":"JMP" [URL="#UC5_2"]
+	"UC53":"JMP" -> "UC54":"VAR" [URL="#UC5_3"]
+	"UC54":"VAR" -> "UC54a1":"JMP" [URL="#UC5_4"]
+	"UC54a1":"JMP" -> "UC51":"JMP" [URL="#UC5_4a1"]
+	"UC54":"VAR" -> "UC54b1":"JMP" [URL="#UC5_4"]
+	"UC54b1":"EXT" -> "UC54b2":"JMP" [URL="#UC5_4b1"]
+}

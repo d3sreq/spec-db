@@ -1,0 +1,30 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC11 {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC111" [xlabel="1", label="{<JMP>&bull;}", tooltip="Koordinator zada systemu vymazanie zakazky.", width="0.5"]
+		"UC112" [xlabel="2", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="System vymaze zakazku.", width="0.5"]
+	}
+	"UC111":"JMP" -> "UC112":"JMP" [URL="#UC11_1"]
+}

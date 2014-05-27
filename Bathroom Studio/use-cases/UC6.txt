@@ -1,0 +1,4 @@
+UC6. Dokoncenie zakazky.
+Preceding: UC5
+
+1. Koordinator oznaci zakazku za dokoncenu. #(close:commission)

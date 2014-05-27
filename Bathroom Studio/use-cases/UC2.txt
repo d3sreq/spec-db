@@ -1,0 +1,15 @@
+UC2. Ziadost o doplnujuce udaje.
+Primary: false
+
+1. Koordinator kontaktuje klienta.
+2. Klient poskytne chybajuce info.
+3. Koordinator updatene zakazku.
+
+Extension: 1a. Nepodari sa nadviazat kontakt. 
+1a1. Koordinator si zaznamena do kalendara datum nasledovneho kontaktu. #(guard:!contactAgain) #(mark:contactAgain)
+1a2. Koordinator sa pokusi znova o kontakt. #(goto:1)
+
+Extension: 1b. Nepodari sa nadviazat kontakt opakovane.
+1b1. Storno zakazky. #(include:UC10)
+1b2. Use-case is terminated. #(abort) #(mark:abort)
+

@@ -1,0 +1,30 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC8 {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC81" [xlabel="1", label="{<JMP>&bull;}", tooltip="Koordinator s Designerom vytvoria dotaznik.", width="0.5"]
+		"UC82" [xlabel="2", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="System zviditelni novy dotaznik na webe.", width="0.5"]
+	}
+	"UC81":"JMP" -> "UC82":"JMP" [URL="#UC8_1"]
+}

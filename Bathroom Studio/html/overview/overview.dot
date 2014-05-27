@@ -1,0 +1,41 @@
+digraph mygraph {
+	rankdir="BT"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="70"
+	node [
+		style="filled",
+		fontname="Arial",
+		shape="oval",
+		fillcolor="#f2f2f2",
+		height="0.1"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	"UC1" [URL="../UC1/UC1.html", tooltip="Vznik zakazky", target="_top"]
+	"UC11" [URL="../UC11/UC11.html", tooltip="Vymazanie zakazky.", target="_top"]
+	"UC8" [URL="../UC8/UC8.html", tooltip="Priprava online dotazniku.", target="_top"]
+	"UC5" [URL="../UC5/UC5.html", tooltip="Termin prvej schodzky.", target="_top"]
+	"UC3" [URL="../UC3/UC3.html", tooltip="Kontrola a uprava dotaznika.", target="_top"]
+	"UC2" [URL="../UC2/UC2.html", tooltip="Ziadost o doplnujuce udaje.", target="_top"]
+	"UC10" [URL="../UC10/UC10.html", tooltip="Storno zakazky.", target="_top"]
+	"UC6" [URL="../UC6/UC6.html", tooltip="Dokoncenie zakazky.", target="_top"]
+	"UC9" [URL="../UC9/UC9.html", tooltip="Klient kontaktuje koordinatora telefonicky.", target="_top"]
+	"UC4" [URL="../UC4/UC4.html", tooltip="Priradenie zakazky designerovi.", target="_top"]
+	"UC1" -> "UC8" 
+	"UC5" -> "UC4" 
+	"UC5" -> "UC10" [arrowhead="onormal", style="dashed"]
+	"UC3" -> "UC1" 
+	"UC3" -> "UC11" [arrowhead="onormal", style="dashed"]
+	"UC3" -> "UC2" [arrowhead="onormal", style="dashed"]
+	"UC2" -> "UC10" [arrowhead="onormal", style="dashed"]
+	"UC6" -> "UC5" 
+	"UC9" -> "UC8" 
+	"UC4" -> "UC3" 
+	"UC4" -> "UC10" [arrowhead="onormal", style="dashed"]
+}

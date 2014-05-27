@@ -1,0 +1,2 @@
+## the "exclude" annotation can appear only once on a single trace
+CTL AG(exclude -> AX(AG(!exclude)))

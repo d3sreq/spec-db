@@ -1,0 +1,6 @@
+UC9. Klient kontaktuje koordinatora telefonicky.
+
+Preceding: UC8. Priprava dotazniku.
+
+1. Koordinator odkaze klienta na online dotaznik.
+

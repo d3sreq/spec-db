@@ -1,0 +1,56 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC2 {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC21" [xlabel="1", label="{<JMP>&bull;|<EXT>}", tooltip="Koordinator kontaktuje klienta.", width="1.0"]
+		"UC22" [xlabel="2", label="{<JMP>&bull;}", tooltip="Klient poskytne chybajuce info.", width="0.5"]
+		"UC23" [xlabel="3", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="Koordinator updatene zakazku.", width="0.5"]
+	}
+	subgraph cluster_UC21a {
+		label="Extension: 1a.\l Nepodari sa nadviazat kontakt. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC21a1" [xlabel="1a1", label="{<JMP>&bull;}", tooltip="Koordinator si zaznamena do kalendara datum nasledovneho kontaktu.", width="0.5"]
+		"UC21a2" [xlabel="1a2", label="{<JMP>&bull;}", tooltip="Koordinator sa pokusi znova o kontakt.", width="0.5"]
+	}
+	subgraph cluster_UC21b {
+		label="Extension: 1b.\l Nepodari sa nadviazat kontakt opakovane. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC21b1" [xlabel="1b1", label="{<JMP>&bull;|<EXT>}", tooltip="Storno zakazky.", width="1.0"]
+		"UC21b2" [xlabel="1b2", fillcolor="#fbb4ae", label="{<JMP>&bull;}", tooltip="Use-case is terminated.", width="0.5"]
+	}
+	"UC10" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC10 Storno zakazky.", URL="../UC10/UC10.html", target="_top"]
+	"UC21b1":"JMP" -> "UC10" [URL="#UC2_1b1"]
+	"UC10" -> "UC21b1":"EXT" 
+	"UC21":"EXT" -> "UC22":"JMP" [URL="#UC2_1"]
+	"UC22":"JMP" -> "UC23":"JMP" [URL="#UC2_2"]
+	"UC21":"EXT" -> "UC21a1":"JMP" [URL="#UC2_1"]
+	"UC21a1":"JMP" -> "UC21a2":"JMP" [URL="#UC2_1a1"]
+	"UC21a2":"JMP" -> "UC21":"JMP" [URL="#UC2_1a2"]
+	"UC21":"EXT" -> "UC21b1":"JMP" [URL="#UC2_1"]
+	"UC21b1":"EXT" -> "UC21b2":"JMP" [URL="#UC2_1b1"]
+}

@@ -1,0 +1,6 @@
+UC10. Storno zakazky.
+Primary: false
+
+1. Koordinator zada systemu storno zakazky.
+2. System stornuje zakazku. #(close:commission)
+

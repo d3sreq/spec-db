@@ -1,0 +1,51 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC1 {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC11" [xlabel="1", label="{<JMP>&bull;}", tooltip="Klient vyplni dotaznik.", width="0.5"]
+		"UC12" [xlabel="2", label="{<JMP>&bull;|<EXT>}", tooltip="System skontroluje spravnost dotazniku.", width="1.0"]
+		"UC13" [xlabel="3", label="{<JMP>&bull;}", tooltip="System zalozi novu zakazku.", width="0.5"]
+		"UC14" [xlabel="4", label="{<JMP>&bull;}", tooltip="System vytvori zlozku zakazky na serveri.", width="0.5"]
+		"UC15" [xlabel="5", label="{<JMP>&bull;}", tooltip="System ulozi dotaznik do vytvorenej zlozky.", width="0.5"]
+		"UC16" [xlabel="6", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="System odosle email koordinatorovi o zalozeni zakazky.", width="0.5"]
+	}
+	subgraph cluster_UC12a {
+		label="Extension: 2a.\l Dotaznik nie je kompletny. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC12a1" [xlabel="2a1", label="{<JMP>&bull;}", tooltip="System upozorni na chyby.", width="0.5"]
+		"UC12a2" [xlabel="2a2", label="{<JMP>&bull;}", tooltip="Klient opravi chyby v dotazniku.", width="0.5"]
+		"UC12a3" [xlabel="2a3", label="{<JMP>&bull;}", tooltip="Opakovana kontrola.", width="0.5"]
+	}
+	"UC11":"JMP" -> "UC12":"JMP" [URL="#UC1_1"]
+	"UC12":"EXT" -> "UC13":"JMP" [URL="#UC1_2"]
+	"UC13":"JMP" -> "UC14":"JMP" [URL="#UC1_3"]
+	"UC14":"JMP" -> "UC15":"JMP" [URL="#UC1_4"]
+	"UC15":"JMP" -> "UC16":"JMP" [URL="#UC1_5"]
+	"UC12":"EXT" -> "UC12a1":"JMP" [URL="#UC1_2"]
+	"UC12a1":"JMP" -> "UC12a2":"JMP" [URL="#UC1_2a1"]
+	"UC12a2":"JMP" -> "UC12a3":"JMP" [URL="#UC1_2a2"]
+	"UC12a3":"JMP" -> "UC12":"JMP" [URL="#UC1_2a3"]
+}
