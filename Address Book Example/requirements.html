@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1250">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.0.1  (Win32)">
+	<META NAME="CREATED" CONTENT="20140317;17254613">
+	<META NAME="CHANGED" CONTENT="20140317;17320115">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 2cm }
+		P { margin-bottom: 0.21cm }
+		H2 { margin-bottom: 0.21cm }
+		H2.western { font-family: "Arial", sans-serif; font-size: 14pt; font-style: italic }
+		H2.cjk { font-family: "Microsoft YaHei"; font-size: 14pt; font-style: italic }
+		H2.ctl { font-family: "Mangal"; font-size: 14pt; font-style: italic }
+		H1 { margin-bottom: 0.21cm }
+		H1.western { font-family: "Arial", sans-serif; font-size: 16pt }
+		H1.cjk { font-family: "Microsoft YaHei"; font-size: 16pt }
+		H1.ctl { font-family: "Mangal"; font-size: 16pt }
+		A:link { so-language: zxx }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="cs-CZ" DIR="LTR">
+<H1 CLASS="western"><FONT SIZE=4><SPAN STYLE="font-weight: normal">Requirements
+and User Interface for a Simple Address Book</SPAN></FONT></H1>
+<H2 CLASS="western">Requirements Statement</H2>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#000000"><FONT FACE="Times New Roman"><FONT SIZE=4>The
+software to be designed is a program that can be used to maintain an
+address book. An address book holds a collection of entries, each
+recording a person's first and last names, address, city, state, zip,
+and phone number.</FONT></FONT></FONT></P>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#000000"><FONT FACE="Times New Roman"><FONT SIZE=4>It
+must be possible to add a new person to an address book, to edit
+existing information about a person (except the person's name), and
+to delete a person. It must be possible to sort the entries in the
+address book alphabetically by last name (with ties broken by first
+name if necessary), or by ZIP code (with ties broken by name if
+necessary). It must be possible to print out all the entries in the
+address book in &quot;mailing label&quot; format.</FONT></FONT></FONT></P>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#000000"><FONT FACE="Times New Roman"><FONT SIZE=4>It
+must be possible to create a new address book, to open a disk file
+containing an existing address book to close an address book, and to
+save an address book to a disk file, using standard New, Open, Close,
+Save and Save As ... File menu options. The program's File menu will
+also have a Quit option to allow closing all open address books and
+terminating the program.</FONT></FONT></FONT></P>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#000000"><FONT FACE="Times New Roman"><FONT SIZE=4>The
+initial requirements call for the program to only be able to work
+with a single address book at a time; therefore, if the user chooses
+the New or Open menu option, any current address book will be closed
+before creating/opening a new one. A later extension might allow for
+multiple address books to be open, each with its own window which can
+be closed separately, with closing the last open window resulting in
+terminating the program. In this case, New and Open will result in
+creating a new window, without affecting the current window.</FONT></FONT></FONT></P>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#000000"><FONT FACE="Times New Roman"><FONT SIZE=4>The
+program will keep track of whether any changes have been made to an
+address book since it was last saved, and will offer the user the
+opportunity to save changes when an address book is closed either
+explicitly or as a result of choosing to create/open another or to
+quit the program.</FONT></FONT></FONT></P>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#000000"><FONT FACE="Times New Roman"><FONT SIZE=4>The
+program will keep track of the file that the current address book was
+read from or most recently saved to, will display the file's name as
+the title of the main window, and will use that file when executing
+the Save option. When a New address book is initially created, its
+window will be titled &quot;Untitled&quot;, and a Save operation will
+be converted to Save As ... - i.e. the user will be required to
+specify a file.</FONT></FONT></FONT></P>
+<H2 CLASS="western"><FONT COLOR="#000000"><FONT FACE="Times New Roman"><SPAN STYLE="font-style: normal">User
+Interface</SPAN></FONT></FONT></H2>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#000000"><FONT FACE="Times New Roman"><FONT SIZE=4>Because
+this is to be a &quot;standard GUI&quot; style application, some
+attention needs to be given to the user interface at this point. A
+user interface like the following might be adopted. Not shown in the
+screen shot is a File menu with New, Open, Close, Save, Save&nbsp;As&nbsp;...,
+Print, and Quit options. For the &quot;Edit&quot; and &quot;Delete&quot;
+buttons, the user must first select a person in the scrolling list of
+names, and then can click the appropriate button to edit/delete that
+person.</FONT></FONT></FONT></P>
+<P><BR><BR>
+</P>
+</BODY>
+</HTML>

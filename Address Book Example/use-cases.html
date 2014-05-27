@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1250">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.0.1  (Win32)">
+	<META NAME="CREATED" CONTENT="20140317;17254613">
+	<META NAME="CHANGED" CONTENT="20140317;17314548">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 2cm }
+		P { margin-bottom: 0.21cm }
+		H2 { margin-bottom: 0.21cm }
+		H2.western { font-family: "Arial", sans-serif; font-size: 14pt; font-style: italic }
+		H2.cjk { font-family: "Microsoft YaHei"; font-size: 14pt; font-style: italic }
+		H2.ctl { font-family: "Mangal"; font-size: 14pt; font-style: italic }
+		H1 { margin-bottom: 0.21cm }
+		H1.western { font-family: "Arial", sans-serif; font-size: 16pt }
+		H1.cjk { font-family: "Microsoft YaHei"; font-size: 16pt }
+		H1.ctl { font-family: "Mangal"; font-size: 16pt }
+		A:link { so-language: zxx }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="cs-CZ" DIR="LTR">
+<H1 CLASS="western"><A NAME="Add"></A><FONT COLOR="#000000"><FONT FACE="Times New Roman"><SPAN STYLE="font-style: normal">Flows
+of Events for Individual Use Cases</SPAN></FONT></FONT></H1>
+<H2 CLASS="western">Add a Person Use Case</H2>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#000000"><FONT FACE="Times New Roman"><FONT SIZE=4>The
+Add a Person use case is initiated when the user clicks the &quot;Add&quot;
+button in the main window. A dialog box appears, with title &quot;New
+Person&quot;, containing fields for the user to fill in the new
+person's first and last names and other information. The box can be
+dismissed by clicking either &quot;OK&quot; or &quot;Cancel&quot;. If
+the &quot;OK&quot; button is clicked, a new person is added to the
+end of the address book, and the person's name is added to the end of
+the list of names in the main window. If the &quot;Cancel&quot;
+button is clicked, no changes are made either to the address book or
+to the main window.</FONT></FONT></FONT></P>
+<P><BR><BR>
+</P>
+<H2 CLASS="western">Edit a Person Use Case</H2>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#000000"><FONT FACE="Times New Roman"><FONT SIZE=4>The
+Edit a Person use case is initiated when the user either highlights a
+name in the list of names in the main window and then clicks the
+&quot;Edit&quot; button, or the user double-clicks a name. In either
+case, a dialog box, with title &quot;Edit person's name&quot;,
+appears containing current information about the person selected,
+(except the person's name, which appears only in the title). The user
+can then edit the individual fields. The box can be dismissed by
+clicking either &quot;OK&quot; or &quot;Cancel&quot;. If the &quot;OK&quot;
+button is clicked, the entry in the address book for the selected
+person is updated to reflect any changes made by the user. If the
+&quot;Cancel&quot; button is clicked, no changes are made to the
+address book.</FONT></FONT></FONT></P>
+<P><BR><BR>
+</P>
+<H2 CLASS="western">Delete a Person Use Case</H2>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#000000"><FONT FACE="Times New Roman"><FONT SIZE=4>The
+Delete a Person use case is initiated when the user highlights a name
+in the list of names in the main window and then clicks the &quot;Delete&quot;
+button. A dialog box appears, asking the user to confirm deleting
+this particular individual. The box can be dismissed by clicking
+either &quot;OK&quot; or &quot;Cancel&quot;. If the &quot;OK&quot;
+button is clicked, the entry in the address book for the selected
+person is deleted, and the person's name is deleted from the list of
+names in the main window. If the &quot;Cancel&quot; button is
+clicked, no changes are made either to the address book or to the
+main window.</FONT></FONT></FONT></P>
+<P><BR><BR>
+</P>
+<H2 CLASS="western">Sort Entries by Name Use Case</H2>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#000000"><FONT FACE="Times New Roman"><FONT SIZE=4>The
+Sort Entries by Name use case is initiated when the user clicks the
+Sort by Name button in the main window. The entries in the address
+book are sorted alphabetically by name, and the list in the main
+window is updated to reflect this order as well.</FONT></FONT></FONT></P>
+<P><BR><BR>
+</P>
+<H2 CLASS="western">Sort Entries by ZIP Use Case</H2>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#000000"><FONT FACE="Times New Roman"><FONT SIZE=4>The
+Sort Entries by ZIP use case is initiated when the user clicks the
+Sort by ZIP button in the main window. The entries in the address
+book are sorted by zip code, and the list in the main window is
+updated to reflect this order as well.</FONT></FONT></FONT></P>
+<P><BR><BR>
+</P>
+<H2 CLASS="western">Print Entries Use Case</H2>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#000000"><FONT FACE="Times New Roman"><FONT SIZE=4>The
+Print Entries use case is initiated when the user chooses &quot;Print&quot;
+from the File menu. A save file dialog is displayed, and the user is
+allowed to choose a file to print the labels to. (If the user cancels
+the file dialog, the Print operation is canceled.) The current
+contents of the address book are written out to the specified file
+(in their current order) in &quot;mailing label&quot; format. No
+information maintained by the program is changed.</FONT></FONT></FONT></P>
+<P><BR><BR>
+</P>
+<H2 CLASS="western">Create New Address Book Use Case</H2>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#000000"><FONT FACE="Times New Roman"><FONT SIZE=4>The
+Create a New Address Book use case is initiated when the user chooses
+&quot;New&quot; from the File menu. If the current address book
+contents have been changed since the last successful New, Open, Save,
+or Save&nbsp;As&nbsp;... operation was done, the Offer to Save
+Changes extension is executed. Unless the user cancels the operation,
+a new empty address book is then created and replaces the current
+address book. This results in the list of names in the main window
+being cleared, the current file becoming undefined, and the title of
+the main window becomes &quot;Untitled&quot;. (NOTE: These conditions
+will also be in effect when the program initially starts up.)</FONT></FONT></FONT></P>
+<P><BR><BR>
+</P>
+<H2 CLASS="western">Open Existing Address Book Use Case</H2>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#000000"><FONT FACE="Times New Roman"><FONT SIZE=4>The
+Open Existing Address Book use case is initiated when the user
+chooses &quot;Open&quot; from the File menu. If the current address
+book contents have been changed since the last successful New, Open,
+Save, or Save&nbsp;As&nbsp;... operation was done, the Offer to Save
+Changes extension is executed. Unless the user cancels the operation,
+a load file dialog is displayed and the user is allowed to choose a
+file to open. Once the user chooses a file, the current address book
+is replaced by the result of reading in the specified address book.
+This results in the list of names in the main window being replaced
+by the names in the address book that was read, the file that was
+opened becoming the current file, and its name being displayed as the
+title of the main window. (If the user cancels the file dialog, or
+attempting to read the file results in an error, the current address
+book is left unchanged. If the cancellation results from an error
+reading the file, a dialog box is displayed warning the user of the
+error.)</FONT></FONT></FONT></P>
+<P><A NAME="Save"></A><BR><BR>
+</P>
+<H2 CLASS="western">Save Address Book Use Case</H2>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#000000"><FONT FACE="Times New Roman"><FONT SIZE=4>The
+Save Address Book use case is initiated when the user chooses &quot;Save&quot;
+from the File menu. (The Save option is grayed out unless changes
+have been made to the address book since the last New, Open, Save, or
+Save&nbsp;As&nbsp;... operation was done.) If there is a current
+file, the current address book is saved to this file. (If attempting
+to write the file results in an error, a dialog box is displayed
+warning the user of the error.) If there is no current file, the Save
+Address Book As .. use case is done instead. In all cases, the
+current address book and window list are left unchanged.</FONT></FONT></FONT></P>
+<P><A NAME="SaveAs"></A><BR><BR>
+</P>
+<H2 CLASS="western">Save Address Book As ... Use Case</H2>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#000000"><FONT FACE="Times New Roman"><FONT SIZE=4>The
+Save Address Book As ... use case is initiated when the user chooses
+&quot;Save&nbsp;As&nbsp;...&quot; from the File menu. (The
+Save&nbsp;As&nbsp;... option is always available.) A save file dialog
+is displayed and the user is allowed to choose the name of a file in
+which to save the address book. (If the user cancels the file dialog,
+the Save&nbsp;As&nbsp;... operation is canceled.) The current address
+book is saved to the specified file, and the file to which it was
+saved becomes the current file and its name is displayed as the title
+of the main window. (If attempting to write the file results in an
+error, a dialog box is displayed warning the user of the error, and
+the current file and main window title are unchanged.) In all cases,
+the current address book and window list are left unchanged.</FONT></FONT></FONT></P>
+<P><BR><BR>
+</P>
+<H2 CLASS="western">Quit Program Use Case</H2>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#000000"><FONT FACE="Times New Roman"><FONT SIZE=4>The
+Quit Program use case is initiated when the user chooses &quot;Quit&quot;
+from the File menu, or clicks the close box for the main window. In
+either case, if the current address book contents have been changed
+since the last New, Open, Save, or Save&nbsp;As&nbsp;... operation
+was done, the Offer to Save Changes extension is executed. Unless the
+user cancels the operation, the program is terminated.</FONT></FONT></FONT></P>
+<P><BR><BR>
+</P>
+<H2 CLASS="western">Offer to Save Changes Extension</H2>
+<P><FONT COLOR="#000000"><FONT FACE="Times New Roman"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">The
+Offer to Save Changes extension is initiated from within the Create
+New Address Book, Open Existing Address Book, or Quit program use
+cases, if the current address book has been changed since the last
+successful New, Open, Save, or Save&nbsp;As&nbsp;... operation was
+done. A dialog box is displayed, informing the user that there are
+unsaved changes, and asking the user whether to save changes, not
+save changes, or cancel the operation. If the user chooses to save
+changes, the Save Address Book Use Case is executed (which may result
+in executing the Save Address Book As ... Use Case if there is no
+current file). If the user chooses not to save changes, the original
+operation is simply resumed. If the user chooses to cancel (or
+cancels the save file dialog if one is needed), the original
+operation is canceled.</SPAN></SPAN></FONT></FONT></FONT></P>
+</BODY>
+</HTML>
