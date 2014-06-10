@@ -1,0 +1,1015 @@
+<rdf:RDF
+    xmlns="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#"
+    xmlns:tessi-doc="http://www.tu-chemnitz.de/ontologies/tessi/tessi-doc#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:tessi-ooa="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:tessi-core="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" > 
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseReserve_instance">
+    <tessi-ooa:hasSequence rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Reserve_instance_default"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</tessi-doc:hasId>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reserve instance</tessi-core:hasName>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#UseCase"/>
+    <tessi-ooa:isAssociatedTo rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Actor_User"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Reserve_Instance_Standardchange_status_of_instanceRelation">
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_change_status_of_instance"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Reserve_instance_default"/>
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</tessi-core:hasOrdinal>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_userNumber">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_User_account"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">46</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">userNumber</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Extend_Rental_Period_Standardextend_rental_period_and_increase_total_rental_timeRelation">
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_extend_rental_period_and_increase_total_rental_time"/>
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</tessi-core:hasOrdinal>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Extend_rental_period_default"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Reserve_Instance_Standardidentify_to_systemRelation">
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_identify_to_system"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</tessi-core:hasOrdinal>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Reserve_instance_default"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_borrowed">
+    <tessi-ooa:isFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isFinal>
+    <tessi-ooa:isTargetStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_borrow_instance"/>
+    <tessi-ooa:isStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#StateMachine_Instance_states"/>
+    <tessi-ooa:isSourceStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_extend_rental_period"/>
+    <tessi-ooa:isSourceStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_return_instance"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">borrowed</tessi-core:hasName>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#State"/>
+    <tessi-ooa:isSourceStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_reserve_borrowed_instance"/>
+    <tessi-ooa:isTargetStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_extend_rental_period"/>
+    <tessi-ooa:isTargetStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_borrow_reserved_instance"/>
+    <tessi-doc:hasId>106</tessi-doc:hasId>
+    <tessi-ooa:isStart rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isStart>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_available">
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">available</tessi-core:hasName>
+    <tessi-ooa:isTargetStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_return_instance"/>
+    <tessi-ooa:isSourceStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_sort_instance_out"/>
+    <tessi-ooa:isSourceStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_register_instance_as_missing"/>
+    <tessi-ooa:isTargetStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_remove_reservation"/>
+    <tessi-ooa:isTargetStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_release_missing_instance"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#State"/>
+    <tessi-ooa:isStart rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isStart>
+    <tessi-ooa:isSourceStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_borrow_instance"/>
+    <tessi-ooa:isStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#StateMachine_Instance_states"/>
+    <tessi-ooa:isFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isFinal>
+    <tessi-doc:hasId>105</tessi-doc:hasId>
+    <tessi-ooa:isTargetStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_release_instance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_titleList">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_CD"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">51</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">titleList</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_sorted_out">
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#State"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sorted out</tessi-core:hasName>
+    <tessi-ooa:isStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#StateMachine_Instance_states"/>
+    <tessi-ooa:isFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</tessi-ooa:isFinal>
+    <tessi-ooa:isStart rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isStart>
+    <tessi-doc:hasId>108</tessi-doc:hasId>
+    <tessi-ooa:isTargetStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_sort_instance_out"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_borrowedByList">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediumInstance"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">70</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">borrowedByList</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Reserve_Instance_Standardenter_shelfmark_of_requested_mediumRelation">
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_enter_shelfmark_of_requested_medium"/>
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</tessi-core:hasOrdinal>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Reserve_instance_default"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_eMailAddress">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_User_account"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">56</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eMailAddress</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseCreate_account">
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Create account</tessi-core:hasName>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#UseCase"/>
+    <tessi-ooa:isAssociatedTo rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Actor_Librarian"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_title">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Medium"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">49</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">title</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Library">
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Library</tessi-core:hasName>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">38</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Search_Medium_Standardreturn_list_of_instancesRelation">
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_return_list_of_instances"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Search_medium_default"/>
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</tessi-core:hasOrdinal>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user">
+    <owl:imports rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa"/>
+    <tessi-doc:nextId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">123</tessi-doc:nextId>
+    <owl:imports rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core"/>
+    <owl:imports rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-doc"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#StateMachine_Instance_states">
+    <tessi-ooa:hasTransition rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_sort_instance_out"/>
+    <tessi-ooa:hasTransition rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_release_missing_instance"/>
+    <tessi-ooa:hasState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_start"/>
+    <tessi-ooa:hasState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_available"/>
+    <tessi-ooa:hasTransition rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_borrow_instance"/>
+    <tessi-ooa:hasState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_missing"/>
+    <tessi-ooa:hasTransition rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_reserve_borrowed_instance"/>
+    <tessi-ooa:hasState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_newly_aquired"/>
+    <tessi-ooa:hasTransition rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_return_instance"/>
+    <tessi-ooa:isStateMachineOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediumInstance"/>
+    <tessi-ooa:hasTransition rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_remove_reservation"/>
+    <tessi-doc:hasId>103</tessi-doc:hasId>
+    <tessi-ooa:hasTransition rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_return_reserved_instance"/>
+    <tessi-ooa:hasState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_sorted_out"/>
+    <tessi-ooa:hasTransition rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_borrow_reserved_instance"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Instance states</tessi-core:hasName>
+    <tessi-ooa:hasTransition rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_buy_new_instance"/>
+    <tessi-ooa:hasTransition rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_release_instance"/>
+    <tessi-ooa:hasTransition rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_register_instance_as_missing"/>
+    <tessi-ooa:hasTransition rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_extend_rental_period"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#StateMachine"/>
+    <tessi-ooa:hasState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_borrowed_and_reserved"/>
+    <tessi-ooa:hasState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_borrowed"/>
+    <tessi-ooa:hasState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_available_and_reserved"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_returnDate">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediumInstance"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">69</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">returnDate</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Reserve_instance_default">
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reserve instance default</tessi-core:hasName>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Sequence"/>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Reserve_Instance_Standardchange_status_of_instanceRelation"/>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Reserve_Instance_Standardreturn_list_of_instancesRelation"/>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Reserve_Instance_Standardenter_shelfmark_of_requested_mediumRelation"/>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Reserve_Instance_Standardidentify_to_systemRelation"/>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Reserve_Instance_Standardchoose_instanceRelation"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12</tessi-doc:hasId>
+    <tessi-ooa:isSequenceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseReserve_instance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_borrowedInstances">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_User_account"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">59</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">borrowedInstances</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_missing">
+    <tessi-ooa:isSourceStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_release_missing_instance"/>
+    <tessi-ooa:isTargetStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_register_instance_as_missing"/>
+    <tessi-doc:hasId>107</tessi-doc:hasId>
+    <tessi-ooa:isStart rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isStart>
+    <tessi-ooa:isFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isFinal>
+    <tessi-ooa:isStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#StateMachine_Instance_states"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#State"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">missing</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Reserve_Instance_Standardchoose_instanceRelation">
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_choose_instance"/>
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</tessi-core:hasOrdinal>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Reserve_instance_default"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_authorsList">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Medium"/>
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Magazine"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">64</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">authorsList</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_publicationPlace">
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">publicationPlace</tessi-core:hasName>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">75</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Book"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_User_account">
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_classification"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_reservedInstances"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_eMailAddress"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">45</tessi-doc:hasId>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_validUntil"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_unpaidFees"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_userNumber"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_telephoneNumber"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_isLocked"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User account</tessi-core:hasName>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_name"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_borrowedInstances"/>
+    <tessi-ooa:isCompositionPartOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_User_administration"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_postalAddress"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_receive_receipt_for_newly_borrowed_instance">
+    <tessi-ooa:hasSender rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+    <tessi-ooa:isReply rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</tessi-ooa:isReply>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Message"/>
+    <tessi-ooa:hasReceiver rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Actor_User"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">36</tessi-doc:hasId>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Borrow instance defaultMessage_receive_receipt_for_newly_borrowed_instanceRelation"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">receive receipt for newly borrowed instance</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_return_list_of_matching_media">
+    <tessi-ooa:hasSender rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">20</tessi-doc:hasId>
+    <tessi-ooa:hasReceiver rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Actor_User"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Message"/>
+    <tessi-ooa:isReply rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</tessi-ooa:isReply>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">return list of matching media</tessi-core:hasName>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Reserve_Instance_Standardreturn_list_of_instancesRelation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Reserve_Instance_Standardreturn_list_of_instancesRelation">
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_return_list_of_instances"/>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Reserve_instance_default"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</tessi-core:hasOrdinal>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_reservedInstances">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_User_account"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">60</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reservedInstances</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_articlesList">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Magazine"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">78</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">articlesList</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_editor">
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">editor</tessi-core:hasName>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">76</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Book"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Actor_User">
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User</tessi-core:hasName>
+    <tessi-ooa:isAssociatedTo rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseManage_account"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Actor"/>
+    <tessi-ooa:isAssociatedTo rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCasereturn_instance"/>
+    <tessi-ooa:isAssociatedTo rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseReserve_instance"/>
+    <tessi-ooa:isAssociatedTo rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseExtend_rental_period"/>
+    <tessi-ooa:isSenderOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_specify_one_or_more_search_criteria"/>
+    <tessi-ooa:isReceiverOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_return_list_of_instances"/>
+    <tessi-ooa:isReceiverOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_receive_receipt_for_newly_borrowed_instance"/>
+    <tessi-ooa:isSenderOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_choose_instance"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5</tessi-doc:hasId>
+    <tessi-ooa:isSenderOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_identify_to_system"/>
+    <tessi-ooa:isSenderOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_enter_shelfmark_of_requested_medium"/>
+    <tessi-ooa:isAssociatedTo rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseSearch_medium"/>
+    <tessi-ooa:isReceiverOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_return_list_of_matching_media"/>
+    <tessi-ooa:isAssociatedTo rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseborrow_instance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_add_return_date_to_list_of_users_who_have_or_had_borrowed_the_instance">
+    <tessi-ooa:hasSender rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">28</tessi-doc:hasId>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Return_Instance_Standardadd_return_date_to_list_of_users_who_have_or_had_borrowed_the_instanceRelation"/>
+    <tessi-ooa:isReply rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isReply>
+    <tessi-ooa:hasReceiver rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Message"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">add return date to list of users who have or had borrowed the instance</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Return_Instance_Standardchange_status_of_instanceRelation">
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_change_status_of_instance"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Return_instance_default"/>
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</tessi-core:hasOrdinal>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Return_instance_default">
+    <tessi-ooa:isSequenceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCasereturn_instance"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Sequence"/>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Return_Instance_Standardlock_instanceRelation"/>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Return_Instance_Standardchange_status_of_instanceRelation"/>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Return_Instance_Standardremove_instance_from_borrowing_list_of_the_user_accountRelation"/>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Return_Instance_Standardchoose_instanceRelation"/>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Return_Instance_Standardadd_return_date_to_list_of_users_who_have_or_had_borrowed_the_instanceRelation"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Return instance default</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Search_Medium_Standardsearch_for_matching_mediaRelation">
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_search_for_matching_media"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Search_medium_default"/>
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</tessi-core:hasOrdinal>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Borrow instance defaultMessage_change_status_of_instanceRelation">
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</tessi-core:hasOrdinal>
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_change_status_of_instance"/>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Borrow_instance_default"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Borrow instance defaultMessage_identify_to_systemRelation">
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</tessi-core:hasOrdinal>
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_identify_to_system"/>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Borrow_instance_default"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_telephoneNumber">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_User_account"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">55</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">telephoneNumber</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_reservedByList">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediumInstance"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">71</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reservedByList</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_publicationYear">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Medium"/>
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Magazine"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">65</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">publicationYear</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Extend_rental_period_default">
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Extend rental period default</tessi-core:hasName>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Sequence"/>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Extend_Rental_Period_Standardchoose_instanceRelation"/>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Extend_Rental_Period_Standardidentify_to_systemRelation"/>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Extend_Rental_Period_Standardvalidate_new_rental_periodRelation"/>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Extend_Rental_Period_Standardreturn_list_of_instancesRelation"/>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Extend_Rental_Period_Standardextend_rental_period_and_increase_total_rental_timeRelation"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14</tessi-doc:hasId>
+    <tessi-ooa:isSequenceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseExtend_rental_period"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseSearch_medium">
+    <tessi-ooa:hasSequence rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Search_medium_default"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Search medium</tessi-core:hasName>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#UseCase"/>
+    <tessi-ooa:isAssociatedTo rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Actor_User"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_status">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediumInstance"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">68</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">status</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_search_for_matching_media">
+    <tessi-ooa:hasSender rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Search_Medium_Standardsearch_for_matching_mediaRelation"/>
+    <tessi-ooa:isReply rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isReply>
+    <tessi-ooa:hasReceiver rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">19</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Message"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">search for matching media</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_add_user_to_list_of_users_who_have_or_had_borrowed_the_instance">
+    <tessi-ooa:hasReceiver rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+    <tessi-ooa:hasSender rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Message"/>
+    <tessi-ooa:isReply rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isReply>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">34</tessi-doc:hasId>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">add user to list of users who have or had borrowed the instance</tessi-core:hasName>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Borrow instance defaultMessage_add_user_to_list_of_users_who_have_or_had_borrowed_the_instanceRelation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediumInstance">
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">44</tessi-doc:hasId>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_reservedByList"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_belongingToList"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MediumInstance</tessi-core:hasName>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_comments"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_shelfmark"/>
+    <tessi-ooa:isCompositionPartOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+    <tessi-ooa:hasStateMachine rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#StateMachine_Instance_states"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_borrowedByList"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_status"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_returnDate"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_comments">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediumInstance"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">73</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">comments</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_actorsList">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Video"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">80</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">actorsList</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_sort_instance_out">
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Transition"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sort instance out</tessi-core:hasName>
+    <tessi-ooa:hasSourceState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_available"/>
+    <tessi-ooa:isTransitionOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#StateMachine_Instance_states"/>
+    <tessi-ooa:hasTargetState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_sorted_out"/>
+    <tessi-doc:hasId>115</tessi-doc:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Extend_Rental_Period_Standardchoose_instanceRelation">
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_choose_instance"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Extend_rental_period_default"/>
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</tessi-core:hasOrdinal>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCasereturn_instance">
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">return instance</tessi-core:hasName>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#UseCase"/>
+    <tessi-ooa:isAssociatedTo rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Actor_User"/>
+    <tessi-ooa:hasSequence rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Return_instance_default"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseExtend_rental_period">
+    <tessi-ooa:hasSequence rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Extend_rental_period_default"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Extend rental period</tessi-core:hasName>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#UseCase"/>
+    <tessi-ooa:isAssociatedTo rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Actor_User"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_choose_instance">
+    <tessi-ooa:hasReceiver rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">choose instance</tessi-core:hasName>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Reserve_Instance_Standardchoose_instanceRelation"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">25</tessi-doc:hasId>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Return_Instance_Standardchoose_instanceRelation"/>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Borrow instance defaultMessage_choose_instanceRelation"/>
+    <tessi-ooa:isReply rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isReply>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Extend_Rental_Period_Standardchoose_instanceRelation"/>
+    <tessi-ooa:hasSender rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Actor_User"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Message"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_belongingToList">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediumInstance"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">72</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">belongingToList</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Return_Instance_Standardlock_instanceRelation">
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_lock_instance"/>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Return_instance_default"/>
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</tessi-core:hasOrdinal>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Borrow instance defaultMessage_add_user_to_list_of_users_who_have_or_had_borrowed_the_instanceRelation">
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</tessi-core:hasOrdinal>
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_add_user_to_list_of_users_who_have_or_had_borrowed_the_instance"/>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Borrow_instance_default"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_buy_new_instance">
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Transition"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">buy new instance</tessi-core:hasName>
+    <tessi-ooa:hasSourceState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_start"/>
+    <tessi-ooa:isTransitionOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#StateMachine_Instance_states"/>
+    <tessi-ooa:hasTargetState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_newly_aquired"/>
+    <tessi-doc:hasId>111</tessi-doc:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Return_Instance_Standardchoose_instanceRelation">
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_choose_instance"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Return_instance_default"/>
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</tessi-core:hasOrdinal>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Search_medium_default">
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Search medium default</tessi-core:hasName>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Search_Medium_Standardreturn_list_of_instancesRelation"/>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Search_Medium_Standardsearch_for_matching_mediaRelation"/>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Search_Medium_Standardspecify_one_or_more_search_criteriaRelation"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Sequence"/>
+    <tessi-ooa:isSequenceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseSearch_medium"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_validate_new_rental_period">
+    <tessi-ooa:hasSender rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Extend_Rental_Period_Standardvalidate_new_rental_periodRelation"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">31</tessi-doc:hasId>
+    <tessi-ooa:isReply rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isReply>
+    <tessi-ooa:hasReceiver rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Message"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">validate new rental period</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_publisher">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Magazine"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">74</tessi-doc:hasId>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">publisher</tessi-core:hasName>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Book"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Borrow_instance_default">
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Borrow instance defaultMessage_add_user_to_list_of_users_who_have_or_had_borrowed_the_instanceRelation"/>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Borrow instance defaultMessage_receive_receipt_for_newly_borrowed_instanceRelation"/>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Borrow instance defaultMessage_choose_instanceRelation"/>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Borrow instance defaultMessage_change_status_of_instanceRelation"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13</tessi-doc:hasId>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Borrow instance defaultMessage_add_instance_to_borrowing_list_of_the_user_accountRelation"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Borrow instance default</tessi-core:hasName>
+    <tessi-ooa:isSequenceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseborrow_instance"/>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Borrow instance defaultMessage_identify_to_systemRelation"/>
+    <tessi-core:isSourceOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Borrow instance defaultMessage_unlock_instanceRelation"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Sequence"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseborrow_instance">
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">borrow instance</tessi-core:hasName>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2</tessi-doc:hasId>
+    <tessi-ooa:isAssociatedTo rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Actor_User"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#UseCase"/>
+    <tessi-ooa:hasSequence rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Borrow_instance_default"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration">
+    <tessi-ooa:isReceiverOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_extend_rental_period_and_increase_total_rental_time"/>
+    <tessi-ooa:isReceiverOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_validate_new_rental_period"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MediaAdministration</tessi-core:hasName>
+    <tessi-ooa:isSenderOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_remove_instance_from_borrowing_list_of_the_user_account"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class"/>
+    <tessi-ooa:hasCompositionPart rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediumInstance"/>
+    <tessi-ooa:isReceiverOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_change_status_of_instance"/>
+    <tessi-ooa:isReceiverOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_choose_instance"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17</tessi-doc:hasId>
+    <tessi-ooa:isReceiverOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_lock_instance"/>
+    <tessi-ooa:isReceiverOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_add_return_date_to_list_of_users_who_have_or_had_borrowed_the_instance"/>
+    <tessi-ooa:isReceiverOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_unlock_instance"/>
+    <tessi-ooa:isReceiverOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_specify_one_or_more_search_criteria"/>
+    <tessi-ooa:isReceiverOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_add_user_to_list_of_users_who_have_or_had_borrowed_the_instance"/>
+    <tessi-ooa:hasCompositionPart rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Medium"/>
+    <tessi-ooa:isReceiverOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_enter_shelfmark_of_requested_medium"/>
+    <tessi-ooa:isReceiverOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_search_for_matching_media"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_add_instance_to_borrowing_list_of_the_user_account">
+    <tessi-ooa:hasSender rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+    <tessi-ooa:isReply rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isReply>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Borrow instance defaultMessage_add_instance_to_borrowing_list_of_the_user_accountRelation"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">33</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Message"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">add instance to borrowing list of the user account</tessi-core:hasName>
+    <tessi-ooa:hasReceiver rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_User_administration"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_CD">
+    <tessi-ooa:isSubClassOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Medium"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_titleList"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD</tessi-core:hasName>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_genre"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_artistsList"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">41</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_unpaidFees">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_User_account"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">61</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unpaidFees</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_validUntil">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_User_account"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">57</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">validUntil</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_lock_instance">
+    <tessi-ooa:hasReceiver rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+    <tessi-ooa:isReply rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isReply>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lock instance</tessi-core:hasName>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Message"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">29</tessi-doc:hasId>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Return_Instance_Standardlock_instanceRelation"/>
+    <tessi-ooa:hasSender rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Borrow instance defaultMessage_unlock_instanceRelation">
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6</tessi-core:hasOrdinal>
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_unlock_instance"/>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Borrow_instance_default"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_return_instance">
+    <tessi-ooa:isAssociatedTo rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCasereturn_instance"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">return instance</tessi-core:hasName>
+    <tessi-ooa:hasSourceState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_borrowed"/>
+    <tessi-ooa:isTransitionOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#StateMachine_Instance_states"/>
+    <tessi-ooa:hasTargetState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_available"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Transition"/>
+    <tessi-doc:hasId>117</tessi-doc:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_partialShelfmark">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Medium"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">62</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">partialShelfmark</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseDelete_account">
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Delete account</tessi-core:hasName>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#UseCase"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</tessi-doc:hasId>
+    <tessi-ooa:isAssociatedTo rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Actor_Librarian"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Borrow instance defaultMessage_add_instance_to_borrowing_list_of_the_user_accountRelation">
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</tessi-core:hasOrdinal>
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_add_instance_to_borrowing_list_of_the_user_account"/>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Borrow_instance_default"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_isbn">
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isbn</tessi-core:hasName>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">77</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Book"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Medium">
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_publicationYear"/>
+    <tessi-ooa:hasSubClass rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Video"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_identificationCode"/>
+    <tessi-ooa:isCompositionPartOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">37</tessi-doc:hasId>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_title"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_keywordsList"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Medium</tessi-core:hasName>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_authorsList"/>
+    <tessi-ooa:hasSubClass rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Magazine"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_additionalTitle"/>
+    <tessi-ooa:hasSubClass rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Book"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_partialShelfmark"/>
+    <tessi-ooa:hasSubClass rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_CD"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseManage_medium">
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manage medium</tessi-core:hasName>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#UseCase"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</tessi-doc:hasId>
+    <tessi-ooa:isAssociatedTo rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Actor_Librarian"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Return_Instance_Standardadd_return_date_to_list_of_users_who_have_or_had_borrowed_the_instanceRelation">
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_add_return_date_to_list_of_users_who_have_or_had_borrowed_the_instance"/>
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</tessi-core:hasOrdinal>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Return_instance_default"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_available_and_reserved">
+    <tessi-ooa:isSourceStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_borrow_reserved_instance"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">available and reserved</tessi-core:hasName>
+    <tessi-ooa:isStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#StateMachine_Instance_states"/>
+    <tessi-ooa:isFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isFinal>
+    <tessi-ooa:isStart rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isStart>
+    <tessi-doc:hasId>110</tessi-doc:hasId>
+    <tessi-ooa:isTargetStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_return_reserved_instance"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#State"/>
+    <tessi-ooa:isSourceStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_remove_reservation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Borrow instance defaultMessage_receive_receipt_for_newly_borrowed_instanceRelation">
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7</tessi-core:hasOrdinal>
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_receive_receipt_for_newly_borrowed_instance"/>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Borrow_instance_default"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_borrow_instance">
+    <tessi-ooa:isAssociatedTo rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseborrow_instance"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">borrow instance</tessi-core:hasName>
+    <tessi-ooa:hasSourceState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_available"/>
+    <tessi-ooa:isTransitionOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#StateMachine_Instance_states"/>
+    <tessi-ooa:hasTargetState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_borrowed"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Transition"/>
+    <tessi-doc:hasId>113</tessi-doc:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_classification">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_User_account"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">52</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">classification</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Actor_Librarian">
+    <tessi-ooa:isAssociatedTo rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseManage_medium"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</tessi-doc:hasId>
+    <tessi-ooa:isAssociatedTo rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseDelete_account"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Librarian</tessi-core:hasName>
+    <tessi-ooa:isAssociatedTo rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseCreate_account"/>
+    <tessi-ooa:isAssociatedTo rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseEdit_account"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Actor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_name">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_User_account"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">53</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_newly_aquired">
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#State"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">newly aquired</tessi-core:hasName>
+    <tessi-ooa:isStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#StateMachine_Instance_states"/>
+    <tessi-ooa:isFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isFinal>
+    <tessi-ooa:isStart rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isStart>
+    <tessi-doc:hasId>104</tessi-doc:hasId>
+    <tessi-ooa:isTargetStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_buy_new_instance"/>
+    <tessi-ooa:isSourceStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_release_instance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_release_instance">
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Transition"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">release instance</tessi-core:hasName>
+    <tessi-ooa:hasSourceState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_newly_aquired"/>
+    <tessi-ooa:isTransitionOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#StateMachine_Instance_states"/>
+    <tessi-ooa:hasTargetState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_available"/>
+    <tessi-doc:hasId>112</tessi-doc:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Book">
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_publisher"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_publicationPlace"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_editor"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_isbn"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">39</tessi-doc:hasId>
+    <tessi-ooa:isSubClassOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Medium"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Book</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_specify_one_or_more_search_criteria">
+    <tessi-ooa:hasReceiver rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Search_Medium_Standardspecify_one_or_more_search_criteriaRelation"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">102</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Message"/>
+    <tessi-ooa:hasSender rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Actor_User"/>
+    <tessi-ooa:isReply rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isReply>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">specify one or more search criteria</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_borrow_reserved_instance">
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">borrow reserved instance</tessi-core:hasName>
+    <tessi-ooa:hasTargetState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_borrowed"/>
+    <tessi-ooa:isTransitionOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#StateMachine_Instance_states"/>
+    <tessi-ooa:hasSourceState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_available_and_reserved"/>
+    <tessi-doc:hasId>120</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Transition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_postalAddress">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_User_account"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">54</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">postalAddress</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_artistsList">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_CD"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">81</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">artistsList</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_start">
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#State"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">start</tessi-core:hasName>
+    <tessi-ooa:isStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#StateMachine_Instance_states"/>
+    <tessi-ooa:isFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isFinal>
+    <tessi-ooa:isStart rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</tessi-ooa:isStart>
+    <tessi-ooa:isSourceStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_buy_new_instance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_extend_rental_period">
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Transition"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">extend rental period</tessi-core:hasName>
+    <tessi-ooa:hasSourceState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_borrowed"/>
+    <tessi-ooa:isTransitionOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#StateMachine_Instance_states"/>
+    <tessi-ooa:hasTargetState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_borrowed"/>
+    <tessi-ooa:isAssociatedTo rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseExtend_rental_period"/>
+    <tessi-doc:hasId>116</tessi-doc:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_genre">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Video"/>
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_CD"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">79</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">genre</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_remove_instance_from_borrowing_list_of_the_user_account">
+    <tessi-ooa:hasSender rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Return_Instance_Standardremove_instance_from_borrowing_list_of_the_user_accountRelation"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">30</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Message"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">remove instance from borrowing list of the user account</tessi-core:hasName>
+    <tessi-ooa:isReply rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isReply>
+    <tessi-ooa:hasReceiver rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_User_administration"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_keywordsList">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Medium"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">66</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">keywordsList</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_change_status_of_instance">
+    <tessi-ooa:hasSender rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">27</tessi-doc:hasId>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Borrow instance defaultMessage_change_status_of_instanceRelation"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">change status of instance</tessi-core:hasName>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Reserve_Instance_Standardchange_status_of_instanceRelation"/>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Return_Instance_Standardchange_status_of_instanceRelation"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Message"/>
+    <tessi-ooa:isReply rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isReply>
+    <tessi-ooa:hasReceiver rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Return_Instance_Standardremove_instance_from_borrowing_list_of_the_user_accountRelation">
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_remove_instance_from_borrowing_list_of_the_user_account"/>
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</tessi-core:hasOrdinal>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Return_instance_default"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Extend_Rental_Period_Standardidentify_to_systemRelation">
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_identify_to_system"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Extend_rental_period_default"/>
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</tessi-core:hasOrdinal>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseManage_account">
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manage account</tessi-core:hasName>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#UseCase"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">47</tessi-doc:hasId>
+    <tessi-ooa:isAssociatedTo rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Actor_User"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_release_missing_instance">
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Transition"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">release missing instance</tessi-core:hasName>
+    <tessi-doc:hasId>122</tessi-doc:hasId>
+    <tessi-ooa:isTransitionOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#StateMachine_Instance_states"/>
+    <tessi-ooa:hasTargetState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_available"/>
+    <tessi-ooa:hasSourceState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_missing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_User_administration">
+    <tessi-ooa:isReceiverOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_remove_instance_from_borrowing_list_of_the_user_account"/>
+    <tessi-ooa:isReceiverOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_identify_to_system"/>
+    <tessi-ooa:hasCompositionPart rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_User_account"/>
+    <tessi-ooa:isReceiverOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_add_instance_to_borrowing_list_of_the_user_account"/>
+    <tessi-ooa:isSenderOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_remove_instance_from_borrowing_list_of_the_user_account"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16</tessi-doc:hasId>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User administration</tessi-core:hasName>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_register_instance_as_missing">
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Transition"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">register instance as missing</tessi-core:hasName>
+    <tessi-ooa:hasSourceState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_available"/>
+    <tessi-ooa:isTransitionOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#StateMachine_Instance_states"/>
+    <tessi-doc:hasId>114</tessi-doc:hasId>
+    <tessi-ooa:hasTargetState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_missing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_shelfmark">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediumInstance"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">67</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shelfmark</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Video">
+    <tessi-ooa:isSubClassOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Medium"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_genre"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Video</tessi-core:hasName>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">42</tessi-doc:hasId>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_actorsList"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_unlock_instance">
+    <tessi-ooa:hasSender rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+    <tessi-ooa:isReply rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isReply>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unlock instance</tessi-core:hasName>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Borrow instance defaultMessage_unlock_instanceRelation"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">35</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Message"/>
+    <tessi-ooa:hasReceiver rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Borrow instance defaultMessage_choose_instanceRelation">
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</tessi-core:hasOrdinal>
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_choose_instance"/>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Borrow_instance_default"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Magazine">
+    <tessi-ooa:isSubClassOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Medium"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_publisher"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_publicationYear"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_authorsList"/>
+    <tessi-ooa:hasAttribute rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_articlesList"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Magazine</tessi-core:hasName>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">40</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_enter_shelfmark_of_requested_medium">
+    <tessi-ooa:hasReceiver rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+    <tessi-ooa:isReply rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isReply>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Reserve_Instance_Standardenter_shelfmark_of_requested_mediumRelation"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">23</tessi-doc:hasId>
+    <tessi-ooa:hasSender rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Actor_User"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Message"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">enter shelfmark of requested medium</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_identificationCode">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Medium"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">63</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">identificationCode</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Search_Medium_Standardspecify_one_or_more_search_criteriaRelation">
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_specify_one_or_more_search_criteria"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Search_medium_default"/>
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</tessi-core:hasOrdinal>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_identify_to_system">
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Borrow instance defaultMessage_identify_to_systemRelation"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">26</tessi-doc:hasId>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Extend_Rental_Period_Standardidentify_to_systemRelation"/>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Reserve_Instance_Standardidentify_to_systemRelation"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">identify to system</tessi-core:hasName>
+    <tessi-ooa:isReply rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isReply>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Message"/>
+    <tessi-ooa:hasSender rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Actor_User"/>
+    <tessi-ooa:hasReceiver rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_User_administration"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_borrowed_and_reserved">
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#State"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">borrowed and reserved</tessi-core:hasName>
+    <tessi-ooa:isStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#StateMachine_Instance_states"/>
+    <tessi-ooa:isFinal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isFinal>
+    <tessi-ooa:isStart rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isStart>
+    <tessi-doc:hasId>109</tessi-doc:hasId>
+    <tessi-ooa:isTargetStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_reserve_borrowed_instance"/>
+    <tessi-ooa:isSourceStateOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_return_reserved_instance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Extend_Rental_Period_Standardreturn_list_of_instancesRelation">
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_return_list_of_instances"/>
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</tessi-core:hasOrdinal>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Extend_rental_period_default"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_return_list_of_instances">
+    <tessi-ooa:hasSender rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Search_Medium_Standardreturn_list_of_instancesRelation"/>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Extend_Rental_Period_Standardreturn_list_of_instancesRelation"/>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Reserve_Instance_Standardreturn_list_of_instancesRelation"/>
+    <tessi-ooa:isReply rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</tessi-ooa:isReply>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Message"/>
+    <tessi-ooa:hasReceiver rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Actor_User"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">24</tessi-doc:hasId>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">return list of instances</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_isLocked">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_User_account"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">58</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isLocked</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Extend_Rental_Period_Standardvalidate_new_rental_periodRelation">
+    <tessi-core:hasTarget rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_validate_new_rental_period"/>
+    <tessi-core:hasSource rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Sequence_Extend_rental_period_default"/>
+    <tessi-core:hasOrdinal rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</tessi-core:hasOrdinal>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-core#OrderedRelation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_return_reserved_instance">
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Transition"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">return reserved instance</tessi-core:hasName>
+    <tessi-ooa:hasSourceState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_borrowed_and_reserved"/>
+    <tessi-ooa:isTransitionOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#StateMachine_Instance_states"/>
+    <tessi-ooa:hasTargetState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_available_and_reserved"/>
+    <tessi-doc:hasId>119</tessi-doc:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_reserve_borrowed_instance">
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Transition"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reserve borrowed instance</tessi-core:hasName>
+    <tessi-ooa:hasSourceState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_borrowed"/>
+    <tessi-ooa:isTransitionOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#StateMachine_Instance_states"/>
+    <tessi-ooa:hasTargetState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_borrowed_and_reserved"/>
+    <tessi-doc:hasId>118</tessi-doc:hasId>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#UseCaseEdit_account">
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Edit account</tessi-core:hasName>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#UseCase"/>
+    <tessi-ooa:isAssociatedTo rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Actor_Librarian"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Attribute_additionalTitle">
+    <tessi-ooa:isAttributeOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_Medium"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">50</tessi-doc:hasId>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Attribute"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">additionalTitle</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Transition_remove_reservation">
+    <tessi-doc:hasId>121</tessi-doc:hasId>
+    <tessi-ooa:hasTargetState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_available"/>
+    <tessi-ooa:isTransitionOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#StateMachine_Instance_states"/>
+    <tessi-ooa:hasSourceState rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#State_available_and_reserved"/>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Transition"/>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">remove reservation</tessi-core:hasName>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Message_extend_rental_period_and_increase_total_rental_time">
+    <tessi-ooa:hasSender rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+    <tessi-ooa:isReply rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</tessi-ooa:isReply>
+    <tessi-core:isTargetOf rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-user#Extend_Rental_Period_Standardextend_rental_period_and_increase_total_rental_timeRelation"/>
+    <tessi-doc:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">32</tessi-doc:hasId>
+    <tessi-core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">extend rental period and increase total rental time</tessi-core:hasName>
+    <rdf:type rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Message"/>
+    <tessi-ooa:hasReceiver rdf:resource="http://www.tu-chemnitz.de/ontologies/tessi/tessi-ooa#Class_MediaAdministration"/>
+  </rdf:Description>
+</rdf:RDF>

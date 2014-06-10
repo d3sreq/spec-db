@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_y_AjgCggEd2mweZsIJyrlw" name="library">
+  <packagedElement xmi:type="uml:Class" xmi:id="_y_AjgSggEd2mweZsIJyrlw" name="User administration">
+    <ownedAttribute xmi:id="_y_AjgiggEd2mweZsIJyrlw" name="User account" type="_y_AjgyggEd2mweZsIJyrlw" aggregation="composite" association="_y_Aj1CggEd2mweZsIJyrlw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_y_AjgyggEd2mweZsIJyrlw" name="User account">
+    <ownedAttribute xmi:id="_y_AjhCggEd2mweZsIJyrlw" name="classification" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjhSggEd2mweZsIJyrlw" name="reservedInstances" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjhiggEd2mweZsIJyrlw" name="eMailAddress" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjhyggEd2mweZsIJyrlw" name="validUntil" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjiCggEd2mweZsIJyrlw" name="unpaidFees" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjiSggEd2mweZsIJyrlw" name="userNumber" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjiiggEd2mweZsIJyrlw" name="telephoneNumber" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjiyggEd2mweZsIJyrlw" name="isLocked" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjjCggEd2mweZsIJyrlw" name="name" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjjSggEd2mweZsIJyrlw" name="borrowedInstances" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjjiggEd2mweZsIJyrlw" name="postalAddress" visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_y_AjjyggEd2mweZsIJyrlw" name="Medium">
+    <ownedAttribute xmi:id="_y_AjkCggEd2mweZsIJyrlw" name="publicationYear" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjkSggEd2mweZsIJyrlw" name="identificationCode" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjkiggEd2mweZsIJyrlw" name="title" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjkyggEd2mweZsIJyrlw" name="keywordsList" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjlCggEd2mweZsIJyrlw" name="authorsList" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjlSggEd2mweZsIJyrlw" name="additionalTitle" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjliggEd2mweZsIJyrlw" name="partialShelfmark" visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_y_AjlyggEd2mweZsIJyrlw" name="MediumInstance">
+    <ownedAttribute xmi:id="_y_AjmCggEd2mweZsIJyrlw" name="reservedByList" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjmSggEd2mweZsIJyrlw" name="belongingToList" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjmiggEd2mweZsIJyrlw" name="comments" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjmyggEd2mweZsIJyrlw" name="shelfmark" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjnCggEd2mweZsIJyrlw" name="borrowedByList" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjnSggEd2mweZsIJyrlw" name="status" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjniggEd2mweZsIJyrlw" name="returnDate" visibility="private"/>
+    <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_y_AjnyggEd2mweZsIJyrlw" name="Instance states">
+      <region xmi:id="_y_AjoCggEd2mweZsIJyrlw" name="Region1">
+        <subvertex xmi:type="uml:Pseudostate" xmi:id="_y_AjoSggEd2mweZsIJyrlw" name="start"/>
+        <subvertex xmi:type="uml:State" xmi:id="_y_AjoiggEd2mweZsIJyrlw" name="available"/>
+        <subvertex xmi:type="uml:State" xmi:id="_y_AjoyggEd2mweZsIJyrlw" name="missing"/>
+        <subvertex xmi:type="uml:State" xmi:id="_y_AjpCggEd2mweZsIJyrlw" name="newly aquired"/>
+        <subvertex xmi:type="uml:FinalState" xmi:id="_y_AjpSggEd2mweZsIJyrlw" name="sorted out"/>
+        <subvertex xmi:type="uml:State" xmi:id="_y_AjpiggEd2mweZsIJyrlw" name="borrowed and reserved"/>
+        <subvertex xmi:type="uml:State" xmi:id="_y_AjpyggEd2mweZsIJyrlw" name="borrowed"/>
+        <subvertex xmi:type="uml:State" xmi:id="_y_AjqCggEd2mweZsIJyrlw" name="available and reserved"/>
+        <transition xmi:id="_y_AjqSggEd2mweZsIJyrlw" name="sort instance out" target="_y_AjpSggEd2mweZsIJyrlw" source="_y_AjoiggEd2mweZsIJyrlw"/>
+        <transition xmi:id="_y_AjqiggEd2mweZsIJyrlw" name="release missing instance" target="_y_AjoiggEd2mweZsIJyrlw" source="_y_AjoyggEd2mweZsIJyrlw"/>
+        <transition xmi:id="_y_AjqyggEd2mweZsIJyrlw" name="borrow instance" target="_y_AjpyggEd2mweZsIJyrlw" source="_y_AjoiggEd2mweZsIJyrlw">
+          <trigger xmi:id="_y_AjrCggEd2mweZsIJyrlw" name="borrow instance" event="_y_AkcyggEd2mweZsIJyrlw"/>
+        </transition>
+        <transition xmi:id="_y_AjrSggEd2mweZsIJyrlw" name="reserve borrowed instance" target="_y_AjpiggEd2mweZsIJyrlw" source="_y_AjpyggEd2mweZsIJyrlw"/>
+        <transition xmi:id="_y_AjriggEd2mweZsIJyrlw" name="return instance" target="_y_AjoiggEd2mweZsIJyrlw" source="_y_AjpyggEd2mweZsIJyrlw">
+          <trigger xmi:id="_y_AjryggEd2mweZsIJyrlw" name="return instance" event="_y_AkdCggEd2mweZsIJyrlw"/>
+        </transition>
+        <transition xmi:id="_y_AjsCggEd2mweZsIJyrlw" name="remove reservation" target="_y_AjoiggEd2mweZsIJyrlw" source="_y_AjqCggEd2mweZsIJyrlw"/>
+        <transition xmi:id="_y_AjsSggEd2mweZsIJyrlw" name="return reserved instance" target="_y_AjqCggEd2mweZsIJyrlw" source="_y_AjpiggEd2mweZsIJyrlw"/>
+        <transition xmi:id="_y_AjsiggEd2mweZsIJyrlw" name="borrow reserved instance" target="_y_AjpyggEd2mweZsIJyrlw" source="_y_AjqCggEd2mweZsIJyrlw"/>
+        <transition xmi:id="_y_AjsyggEd2mweZsIJyrlw" name="buy new instance" target="_y_AjpCggEd2mweZsIJyrlw" source="_y_AjoSggEd2mweZsIJyrlw"/>
+        <transition xmi:id="_y_AjtCggEd2mweZsIJyrlw" name="release instance" target="_y_AjoiggEd2mweZsIJyrlw" source="_y_AjpCggEd2mweZsIJyrlw"/>
+        <transition xmi:id="_y_AjtSggEd2mweZsIJyrlw" name="register instance as missing" target="_y_AjoyggEd2mweZsIJyrlw" source="_y_AjoiggEd2mweZsIJyrlw"/>
+        <transition xmi:id="_y_AjtiggEd2mweZsIJyrlw" name="extend rental period" target="_y_AjpyggEd2mweZsIJyrlw" source="_y_AjpyggEd2mweZsIJyrlw">
+          <trigger xmi:id="_y_AjtyggEd2mweZsIJyrlw" name="Extend rental period" event="_y_AkdSggEd2mweZsIJyrlw"/>
+        </transition>
+      </region>
+    </ownedBehavior>
+    <ownedOperation xmi:id="_y_AjuCggEd2mweZsIJyrlw" name="borrow_instance"/>
+    <ownedOperation xmi:id="_y_AjuSggEd2mweZsIJyrlw" name="return_instance"/>
+    <ownedOperation xmi:id="_y_AjuiggEd2mweZsIJyrlw" name="extend_rental_period"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_y_AjuyggEd2mweZsIJyrlw" name="MediaAdministration">
+    <ownedAttribute xmi:id="_y_AjvCggEd2mweZsIJyrlw" name="MediumInstance" type="_y_AjlyggEd2mweZsIJyrlw" aggregation="composite" association="_y_Aj1iggEd2mweZsIJyrlw"/>
+    <ownedAttribute xmi:id="_y_AjvSggEd2mweZsIJyrlw" name="Medium" type="_y_AjjyggEd2mweZsIJyrlw" aggregation="composite" association="_y_Aj2CggEd2mweZsIJyrlw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_y_AjviggEd2mweZsIJyrlw" name="CD">
+    <generalization xmi:id="_y_AjvyggEd2mweZsIJyrlw" general="_y_AjjyggEd2mweZsIJyrlw"/>
+    <ownedAttribute xmi:id="_y_AjwCggEd2mweZsIJyrlw" name="titleList" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjwSggEd2mweZsIJyrlw" name="genre" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjwiggEd2mweZsIJyrlw" name="artistsList" visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_y_AjwyggEd2mweZsIJyrlw" name="Book">
+    <generalization xmi:id="_y_AjxCggEd2mweZsIJyrlw" general="_y_AjjyggEd2mweZsIJyrlw"/>
+    <ownedAttribute xmi:id="_y_AjxSggEd2mweZsIJyrlw" name="publisher" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjxiggEd2mweZsIJyrlw" name="publicationPlace" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjxyggEd2mweZsIJyrlw" name="editor" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjyCggEd2mweZsIJyrlw" name="isbn" visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_y_AjySggEd2mweZsIJyrlw" name="Library"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_y_AjyiggEd2mweZsIJyrlw" name="Video">
+    <generalization xmi:id="_y_AjyyggEd2mweZsIJyrlw" general="_y_AjjyggEd2mweZsIJyrlw"/>
+    <ownedAttribute xmi:id="_y_AjzCggEd2mweZsIJyrlw" name="genre" visibility="private"/>
+    <ownedAttribute xmi:id="_y_AjzSggEd2mweZsIJyrlw" name="actorsList" visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_y_AjziggEd2mweZsIJyrlw" name="Magazine">
+    <generalization xmi:id="_y_AjzyggEd2mweZsIJyrlw" general="_y_AjjyggEd2mweZsIJyrlw"/>
+    <ownedAttribute xmi:id="_y_Aj0CggEd2mweZsIJyrlw" name="publisher" visibility="private"/>
+    <ownedAttribute xmi:id="_y_Aj0SggEd2mweZsIJyrlw" name="publicationYear" visibility="private"/>
+    <ownedAttribute xmi:id="_y_Aj0iggEd2mweZsIJyrlw" name="authorsList" visibility="private"/>
+    <ownedAttribute xmi:id="_y_Aj0yggEd2mweZsIJyrlw" name="articlesList" visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_y_Aj1CggEd2mweZsIJyrlw" memberEnd="_y_Aj1SggEd2mweZsIJyrlw _y_AjgiggEd2mweZsIJyrlw">
+    <ownedEnd xmi:id="_y_Aj1SggEd2mweZsIJyrlw" name="User administration" type="_y_AjgSggEd2mweZsIJyrlw" association="_y_Aj1CggEd2mweZsIJyrlw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_y_Aj1iggEd2mweZsIJyrlw" memberEnd="_y_Aj1yggEd2mweZsIJyrlw _y_AjvCggEd2mweZsIJyrlw">
+    <ownedEnd xmi:id="_y_Aj1yggEd2mweZsIJyrlw" name="MediaAdministration" type="_y_AjuyggEd2mweZsIJyrlw" association="_y_Aj1iggEd2mweZsIJyrlw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_y_Aj2CggEd2mweZsIJyrlw" memberEnd="_y_Aj2SggEd2mweZsIJyrlw _y_AjvSggEd2mweZsIJyrlw">
+    <ownedEnd xmi:id="_y_Aj2SggEd2mweZsIJyrlw" name="MediaAdministration" type="_y_AjuyggEd2mweZsIJyrlw" association="_y_Aj2CggEd2mweZsIJyrlw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_y_Aj2iggEd2mweZsIJyrlw" name="Reserve instance">
+    <ownedBehavior xmi:type="uml:Interaction" xmi:id="_y_Aj2yggEd2mweZsIJyrlw" name="Reserve instance default">
+      <ownedAttribute xmi:id="_y_Aj3CggEd2mweZsIJyrlw" name="" type="_y_Aj8SggEd2mweZsIJyrlw"/>
+      <ownedAttribute xmi:id="_y_Aj3SggEd2mweZsIJyrlw" name="" type="_y_AjuyggEd2mweZsIJyrlw"/>
+      <ownedAttribute xmi:id="_y_Aj3iggEd2mweZsIJyrlw" name="" type="_y_AjgSggEd2mweZsIJyrlw"/>
+      <lifeline xmi:id="_y_Aj3yggEd2mweZsIJyrlw" name="User" represents="_y_Aj3CggEd2mweZsIJyrlw" coveredBy="_y_Aj4iggEd2mweZsIJyrlw _y_Aj5SggEd2mweZsIJyrlw _y_Aj5iggEd2mweZsIJyrlw _y_Aj6CggEd2mweZsIJyrlw"/>
+      <lifeline xmi:id="_y_Aj4CggEd2mweZsIJyrlw" name="MediaAdministration" represents="_y_Aj3SggEd2mweZsIJyrlw" coveredBy="_y_Aj4yggEd2mweZsIJyrlw _y_Aj5CggEd2mweZsIJyrlw _y_Aj5yggEd2mweZsIJyrlw _y_Aj6iggEd2mweZsIJyrlw _y_Aj6yggEd2mweZsIJyrlw"/>
+      <lifeline xmi:id="_y_Aj4SggEd2mweZsIJyrlw" name="User administration" represents="_y_Aj3iggEd2mweZsIJyrlw" coveredBy="_y_Aj6SggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_Aj4iggEd2mweZsIJyrlw" name="mos0" covered="_y_Aj3yggEd2mweZsIJyrlw" message="_y_Aj7CggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_Aj4yggEd2mweZsIJyrlw" name="mos1" covered="_y_Aj4CggEd2mweZsIJyrlw" message="_y_Aj7CggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_Aj5CggEd2mweZsIJyrlw" name="mos2" covered="_y_Aj4CggEd2mweZsIJyrlw" message="_y_Aj7SggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_Aj5SggEd2mweZsIJyrlw" name="mos3" covered="_y_Aj3yggEd2mweZsIJyrlw" message="_y_Aj7SggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_Aj5iggEd2mweZsIJyrlw" name="mos4" covered="_y_Aj3yggEd2mweZsIJyrlw" message="_y_Aj7iggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_Aj5yggEd2mweZsIJyrlw" name="mos5" covered="_y_Aj4CggEd2mweZsIJyrlw" message="_y_Aj7iggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_Aj6CggEd2mweZsIJyrlw" name="mos6" covered="_y_Aj3yggEd2mweZsIJyrlw" message="_y_Aj7yggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_Aj6SggEd2mweZsIJyrlw" name="mos7" covered="_y_Aj4SggEd2mweZsIJyrlw" message="_y_Aj7yggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_Aj6iggEd2mweZsIJyrlw" name="mos8" covered="_y_Aj4CggEd2mweZsIJyrlw" message="_y_Aj8CggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_Aj6yggEd2mweZsIJyrlw" name="mos9" covered="_y_Aj4CggEd2mweZsIJyrlw" message="_y_Aj8CggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_Aj7CggEd2mweZsIJyrlw" name="enter shelfmark of requested medium" receiveEvent="_y_Aj4yggEd2mweZsIJyrlw" sendEvent="_y_Aj4iggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_Aj7SggEd2mweZsIJyrlw" name="return list of instances" messageSort="reply" receiveEvent="_y_Aj5SggEd2mweZsIJyrlw" sendEvent="_y_Aj5CggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_Aj7iggEd2mweZsIJyrlw" name="choose instance" receiveEvent="_y_Aj5yggEd2mweZsIJyrlw" sendEvent="_y_Aj5iggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_Aj7yggEd2mweZsIJyrlw" name="identify to system" receiveEvent="_y_Aj6SggEd2mweZsIJyrlw" sendEvent="_y_Aj6CggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_Aj8CggEd2mweZsIJyrlw" name="change status of instance" receiveEvent="_y_Aj6yggEd2mweZsIJyrlw" sendEvent="_y_Aj6iggEd2mweZsIJyrlw"/>
+    </ownedBehavior>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_y_Aj8SggEd2mweZsIJyrlw" name="User"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_y_Aj8iggEd2mweZsIJyrlw" memberEnd="_y_Aj8yggEd2mweZsIJyrlw _y_Aj9CggEd2mweZsIJyrlw">
+    <ownedEnd xmi:id="_y_Aj8yggEd2mweZsIJyrlw" name="User" type="_y_Aj8SggEd2mweZsIJyrlw" association="_y_Aj8iggEd2mweZsIJyrlw"/>
+    <ownedEnd xmi:id="_y_Aj9CggEd2mweZsIJyrlw" name="Reserve instance" type="_y_Aj2iggEd2mweZsIJyrlw" association="_y_Aj8iggEd2mweZsIJyrlw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_y_Aj9SggEd2mweZsIJyrlw" name="Edit account"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_y_Aj9iggEd2mweZsIJyrlw" name="Librarian"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_y_Aj9yggEd2mweZsIJyrlw" memberEnd="_y_Aj-CggEd2mweZsIJyrlw _y_Aj-SggEd2mweZsIJyrlw">
+    <ownedEnd xmi:id="_y_Aj-CggEd2mweZsIJyrlw" name="Librarian" type="_y_Aj9iggEd2mweZsIJyrlw" association="_y_Aj9yggEd2mweZsIJyrlw"/>
+    <ownedEnd xmi:id="_y_Aj-SggEd2mweZsIJyrlw" name="Edit account" type="_y_Aj9SggEd2mweZsIJyrlw" association="_y_Aj9yggEd2mweZsIJyrlw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_y_Aj-iggEd2mweZsIJyrlw" name="borrow instance">
+    <ownedBehavior xmi:type="uml:Interaction" xmi:id="_y_Aj-yggEd2mweZsIJyrlw" name="Borrow instance default">
+      <ownedAttribute xmi:id="_y_Aj_CggEd2mweZsIJyrlw" name="" type="_y_Aj8SggEd2mweZsIJyrlw"/>
+      <ownedAttribute xmi:id="_y_Aj_SggEd2mweZsIJyrlw" name="" type="_y_AjgSggEd2mweZsIJyrlw"/>
+      <ownedAttribute xmi:id="_y_Aj_iggEd2mweZsIJyrlw" name="" type="_y_AjuyggEd2mweZsIJyrlw"/>
+      <lifeline xmi:id="_y_Aj_yggEd2mweZsIJyrlw" name="User" represents="_y_Aj_CggEd2mweZsIJyrlw" coveredBy="_y_AkAiggEd2mweZsIJyrlw _y_AkBCggEd2mweZsIJyrlw _y_AkDyggEd2mweZsIJyrlw"/>
+      <lifeline xmi:id="_y_AkACggEd2mweZsIJyrlw" name="User administration" represents="_y_Aj_SggEd2mweZsIJyrlw" coveredBy="_y_AkAyggEd2mweZsIJyrlw _y_AkByggEd2mweZsIJyrlw"/>
+      <lifeline xmi:id="_y_AkASggEd2mweZsIJyrlw" name="MediaAdministration" represents="_y_Aj_iggEd2mweZsIJyrlw" coveredBy="_y_AkBSggEd2mweZsIJyrlw _y_AkBiggEd2mweZsIJyrlw _y_AkCCggEd2mweZsIJyrlw _y_AkCSggEd2mweZsIJyrlw _y_AkCiggEd2mweZsIJyrlw _y_AkCyggEd2mweZsIJyrlw _y_AkDCggEd2mweZsIJyrlw _y_AkDSggEd2mweZsIJyrlw _y_AkDiggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkAiggEd2mweZsIJyrlw" name="mos0" covered="_y_Aj_yggEd2mweZsIJyrlw" message="_y_AkECggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkAyggEd2mweZsIJyrlw" name="mos1" covered="_y_AkACggEd2mweZsIJyrlw" message="_y_AkECggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkBCggEd2mweZsIJyrlw" name="mos2" covered="_y_Aj_yggEd2mweZsIJyrlw" message="_y_AkESggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkBSggEd2mweZsIJyrlw" name="mos3" covered="_y_AkASggEd2mweZsIJyrlw" message="_y_AkESggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkBiggEd2mweZsIJyrlw" name="mos4" covered="_y_AkASggEd2mweZsIJyrlw" message="_y_AkEiggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkByggEd2mweZsIJyrlw" name="mos5" covered="_y_AkACggEd2mweZsIJyrlw" message="_y_AkEiggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkCCggEd2mweZsIJyrlw" name="mos6" covered="_y_AkASggEd2mweZsIJyrlw" message="_y_AkEyggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkCSggEd2mweZsIJyrlw" name="mos7" covered="_y_AkASggEd2mweZsIJyrlw" message="_y_AkEyggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkCiggEd2mweZsIJyrlw" name="mos8" covered="_y_AkASggEd2mweZsIJyrlw" message="_y_AkFCggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkCyggEd2mweZsIJyrlw" name="mos9" covered="_y_AkASggEd2mweZsIJyrlw" message="_y_AkFCggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkDCggEd2mweZsIJyrlw" name="mos10" covered="_y_AkASggEd2mweZsIJyrlw" message="_y_AkFSggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkDSggEd2mweZsIJyrlw" name="mos11" covered="_y_AkASggEd2mweZsIJyrlw" message="_y_AkFSggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkDiggEd2mweZsIJyrlw" name="mos12" covered="_y_AkASggEd2mweZsIJyrlw" message="_y_AkFiggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkDyggEd2mweZsIJyrlw" name="mos13" covered="_y_Aj_yggEd2mweZsIJyrlw" message="_y_AkFiggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_AkECggEd2mweZsIJyrlw" name="identify to system" receiveEvent="_y_AkAyggEd2mweZsIJyrlw" sendEvent="_y_AkAiggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_AkESggEd2mweZsIJyrlw" name="choose instance" receiveEvent="_y_AkBSggEd2mweZsIJyrlw" sendEvent="_y_AkBCggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_AkEiggEd2mweZsIJyrlw" name="add instance to borrowing list of the user account" receiveEvent="_y_AkByggEd2mweZsIJyrlw" sendEvent="_y_AkBiggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_AkEyggEd2mweZsIJyrlw" name="add user to list of users who have or had borrowed the instance" receiveEvent="_y_AkCSggEd2mweZsIJyrlw" sendEvent="_y_AkCCggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_AkFCggEd2mweZsIJyrlw" name="change status of instance" receiveEvent="_y_AkCyggEd2mweZsIJyrlw" sendEvent="_y_AkCiggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_AkFSggEd2mweZsIJyrlw" name="unlock instance" receiveEvent="_y_AkDSggEd2mweZsIJyrlw" sendEvent="_y_AkDCggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_AkFiggEd2mweZsIJyrlw" name="receive receipt for newly borrowed instance" messageSort="reply" receiveEvent="_y_AkDyggEd2mweZsIJyrlw" sendEvent="_y_AkDiggEd2mweZsIJyrlw"/>
+    </ownedBehavior>
+    <ownedTrigger xmi:id="_y_AkFyggEd2mweZsIJyrlw" name="borrow instance" event="_y_AkcyggEd2mweZsIJyrlw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_y_AkGCggEd2mweZsIJyrlw" memberEnd="_y_AkGSggEd2mweZsIJyrlw _y_AkGiggEd2mweZsIJyrlw">
+    <ownedEnd xmi:id="_y_AkGSggEd2mweZsIJyrlw" name="User" type="_y_Aj8SggEd2mweZsIJyrlw" association="_y_AkGCggEd2mweZsIJyrlw"/>
+    <ownedEnd xmi:id="_y_AkGiggEd2mweZsIJyrlw" name="borrow instance" type="_y_Aj-iggEd2mweZsIJyrlw" association="_y_AkGCggEd2mweZsIJyrlw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_y_AkGyggEd2mweZsIJyrlw" name="Manage medium"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_y_AkHCggEd2mweZsIJyrlw" memberEnd="_y_AkHSggEd2mweZsIJyrlw _y_AkHiggEd2mweZsIJyrlw">
+    <ownedEnd xmi:id="_y_AkHSggEd2mweZsIJyrlw" name="Librarian" type="_y_Aj9iggEd2mweZsIJyrlw" association="_y_AkHCggEd2mweZsIJyrlw"/>
+    <ownedEnd xmi:id="_y_AkHiggEd2mweZsIJyrlw" name="Manage medium" type="_y_AkGyggEd2mweZsIJyrlw" association="_y_AkHCggEd2mweZsIJyrlw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_y_AkHyggEd2mweZsIJyrlw" name="Manage account"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_y_AkICggEd2mweZsIJyrlw" memberEnd="_y_AkISggEd2mweZsIJyrlw _y_AkIiggEd2mweZsIJyrlw">
+    <ownedEnd xmi:id="_y_AkISggEd2mweZsIJyrlw" name="User" type="_y_Aj8SggEd2mweZsIJyrlw" association="_y_AkICggEd2mweZsIJyrlw"/>
+    <ownedEnd xmi:id="_y_AkIiggEd2mweZsIJyrlw" name="Manage account" type="_y_AkHyggEd2mweZsIJyrlw" association="_y_AkICggEd2mweZsIJyrlw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_y_AkIyggEd2mweZsIJyrlw" name="Create account"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_y_AkJCggEd2mweZsIJyrlw" memberEnd="_y_AkJSggEd2mweZsIJyrlw _y_AkJiggEd2mweZsIJyrlw">
+    <ownedEnd xmi:id="_y_AkJSggEd2mweZsIJyrlw" name="Librarian" type="_y_Aj9iggEd2mweZsIJyrlw" association="_y_AkJCggEd2mweZsIJyrlw"/>
+    <ownedEnd xmi:id="_y_AkJiggEd2mweZsIJyrlw" name="Create account" type="_y_AkIyggEd2mweZsIJyrlw" association="_y_AkJCggEd2mweZsIJyrlw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_y_AkJyggEd2mweZsIJyrlw" name="Delete account"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_y_AkKCggEd2mweZsIJyrlw" memberEnd="_y_AkKSggEd2mweZsIJyrlw _y_AkKiggEd2mweZsIJyrlw">
+    <ownedEnd xmi:id="_y_AkKSggEd2mweZsIJyrlw" name="Librarian" type="_y_Aj9iggEd2mweZsIJyrlw" association="_y_AkKCggEd2mweZsIJyrlw"/>
+    <ownedEnd xmi:id="_y_AkKiggEd2mweZsIJyrlw" name="Delete account" type="_y_AkJyggEd2mweZsIJyrlw" association="_y_AkKCggEd2mweZsIJyrlw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_y_AkKyggEd2mweZsIJyrlw" name="Extend rental period">
+    <ownedBehavior xmi:type="uml:Interaction" xmi:id="_y_AkLCggEd2mweZsIJyrlw" name="Extend rental period default">
+      <ownedAttribute xmi:id="_y_AkLSggEd2mweZsIJyrlw" name="" type="_y_Aj8SggEd2mweZsIJyrlw"/>
+      <ownedAttribute xmi:id="_y_AkLiggEd2mweZsIJyrlw" name="" type="_y_AjgSggEd2mweZsIJyrlw"/>
+      <ownedAttribute xmi:id="_y_AkLyggEd2mweZsIJyrlw" name="" type="_y_AjuyggEd2mweZsIJyrlw"/>
+      <lifeline xmi:id="_y_AkMCggEd2mweZsIJyrlw" name="User" represents="_y_AkLSggEd2mweZsIJyrlw" coveredBy="_y_AkMyggEd2mweZsIJyrlw _y_AkNiggEd2mweZsIJyrlw _y_AkNyggEd2mweZsIJyrlw"/>
+      <lifeline xmi:id="_y_AkMSggEd2mweZsIJyrlw" name="User administration" represents="_y_AkLiggEd2mweZsIJyrlw" coveredBy="_y_AkNCggEd2mweZsIJyrlw"/>
+      <lifeline xmi:id="_y_AkMiggEd2mweZsIJyrlw" name="MediaAdministration" represents="_y_AkLyggEd2mweZsIJyrlw" coveredBy="_y_AkNSggEd2mweZsIJyrlw _y_AkOCggEd2mweZsIJyrlw _y_AkOSggEd2mweZsIJyrlw _y_AkOiggEd2mweZsIJyrlw _y_AkOyggEd2mweZsIJyrlw _y_AkPCggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkMyggEd2mweZsIJyrlw" name="mos0" covered="_y_AkMCggEd2mweZsIJyrlw" message="_y_AkPSggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkNCggEd2mweZsIJyrlw" name="mos1" covered="_y_AkMSggEd2mweZsIJyrlw" message="_y_AkPSggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkNSggEd2mweZsIJyrlw" name="mos2" covered="_y_AkMiggEd2mweZsIJyrlw" message="_y_AkPiggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkNiggEd2mweZsIJyrlw" name="mos3" covered="_y_AkMCggEd2mweZsIJyrlw" message="_y_AkPiggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkNyggEd2mweZsIJyrlw" name="mos4" covered="_y_AkMCggEd2mweZsIJyrlw" message="_y_AkPyggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkOCggEd2mweZsIJyrlw" name="mos5" covered="_y_AkMiggEd2mweZsIJyrlw" message="_y_AkPyggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkOSggEd2mweZsIJyrlw" name="mos6" covered="_y_AkMiggEd2mweZsIJyrlw" message="_y_AkQCggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkOiggEd2mweZsIJyrlw" name="mos7" covered="_y_AkMiggEd2mweZsIJyrlw" message="_y_AkQCggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkOyggEd2mweZsIJyrlw" name="mos8" covered="_y_AkMiggEd2mweZsIJyrlw" message="_y_AkQSggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkPCggEd2mweZsIJyrlw" name="mos9" covered="_y_AkMiggEd2mweZsIJyrlw" message="_y_AkQSggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_AkPSggEd2mweZsIJyrlw" name="identify to system" receiveEvent="_y_AkNCggEd2mweZsIJyrlw" sendEvent="_y_AkMyggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_AkPiggEd2mweZsIJyrlw" name="return list of instances" messageSort="reply" receiveEvent="_y_AkNiggEd2mweZsIJyrlw" sendEvent="_y_AkNSggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_AkPyggEd2mweZsIJyrlw" name="choose instance" receiveEvent="_y_AkOCggEd2mweZsIJyrlw" sendEvent="_y_AkNyggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_AkQCggEd2mweZsIJyrlw" name="validate new rental period" receiveEvent="_y_AkOiggEd2mweZsIJyrlw" sendEvent="_y_AkOSggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_AkQSggEd2mweZsIJyrlw" name="extend rental period and increase total rental time" receiveEvent="_y_AkPCggEd2mweZsIJyrlw" sendEvent="_y_AkOyggEd2mweZsIJyrlw"/>
+    </ownedBehavior>
+    <ownedTrigger xmi:id="_y_AkQiggEd2mweZsIJyrlw" name="Extend rental period" event="_y_AkdSggEd2mweZsIJyrlw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_y_AkQyggEd2mweZsIJyrlw" memberEnd="_y_AkRCggEd2mweZsIJyrlw _y_AkRSggEd2mweZsIJyrlw">
+    <ownedEnd xmi:id="_y_AkRCggEd2mweZsIJyrlw" name="User" type="_y_Aj8SggEd2mweZsIJyrlw" association="_y_AkQyggEd2mweZsIJyrlw"/>
+    <ownedEnd xmi:id="_y_AkRSggEd2mweZsIJyrlw" name="Extend rental period" type="_y_AkKyggEd2mweZsIJyrlw" association="_y_AkQyggEd2mweZsIJyrlw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_y_AkRiggEd2mweZsIJyrlw" name="return instance">
+    <ownedBehavior xmi:type="uml:Interaction" xmi:id="_y_AkRyggEd2mweZsIJyrlw" name="Return instance default">
+      <ownedAttribute xmi:id="_y_AkSCggEd2mweZsIJyrlw" name="" type="_y_Aj8SggEd2mweZsIJyrlw"/>
+      <ownedAttribute xmi:id="_y_AkSSggEd2mweZsIJyrlw" name="" type="_y_AjuyggEd2mweZsIJyrlw"/>
+      <ownedAttribute xmi:id="_y_AkSiggEd2mweZsIJyrlw" name="" type="_y_AjgSggEd2mweZsIJyrlw"/>
+      <lifeline xmi:id="_y_AkSyggEd2mweZsIJyrlw" name="User" represents="_y_AkSCggEd2mweZsIJyrlw" coveredBy="_y_AkTiggEd2mweZsIJyrlw"/>
+      <lifeline xmi:id="_y_AkTCggEd2mweZsIJyrlw" name="MediaAdministration" represents="_y_AkSSggEd2mweZsIJyrlw" coveredBy="_y_AkTyggEd2mweZsIJyrlw _y_AkUCggEd2mweZsIJyrlw _y_AkUSggEd2mweZsIJyrlw _y_AkUiggEd2mweZsIJyrlw _y_AkUyggEd2mweZsIJyrlw _y_AkVCggEd2mweZsIJyrlw _y_AkViggEd2mweZsIJyrlw _y_AkVyggEd2mweZsIJyrlw"/>
+      <lifeline xmi:id="_y_AkTSggEd2mweZsIJyrlw" name="User administration" represents="_y_AkSiggEd2mweZsIJyrlw" coveredBy="_y_AkVSggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkTiggEd2mweZsIJyrlw" name="mos0" covered="_y_AkSyggEd2mweZsIJyrlw" message="_y_AkWCggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkTyggEd2mweZsIJyrlw" name="mos1" covered="_y_AkTCggEd2mweZsIJyrlw" message="_y_AkWCggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkUCggEd2mweZsIJyrlw" name="mos2" covered="_y_AkTCggEd2mweZsIJyrlw" message="_y_AkWSggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkUSggEd2mweZsIJyrlw" name="mos3" covered="_y_AkTCggEd2mweZsIJyrlw" message="_y_AkWSggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkUiggEd2mweZsIJyrlw" name="mos4" covered="_y_AkTCggEd2mweZsIJyrlw" message="_y_AkWiggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkUyggEd2mweZsIJyrlw" name="mos5" covered="_y_AkTCggEd2mweZsIJyrlw" message="_y_AkWiggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkVCggEd2mweZsIJyrlw" name="mos6" covered="_y_AkTCggEd2mweZsIJyrlw" message="_y_AkWyggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkVSggEd2mweZsIJyrlw" name="mos7" covered="_y_AkTSggEd2mweZsIJyrlw" message="_y_AkWyggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkViggEd2mweZsIJyrlw" name="mos8" covered="_y_AkTCggEd2mweZsIJyrlw" message="_y_AkXCggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkVyggEd2mweZsIJyrlw" name="mos9" covered="_y_AkTCggEd2mweZsIJyrlw" message="_y_AkXCggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_AkWCggEd2mweZsIJyrlw" name="choose instance" receiveEvent="_y_AkTyggEd2mweZsIJyrlw" sendEvent="_y_AkTiggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_AkWSggEd2mweZsIJyrlw" name="lock instance" receiveEvent="_y_AkUSggEd2mweZsIJyrlw" sendEvent="_y_AkUCggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_AkWiggEd2mweZsIJyrlw" name="add return date to list of users who have or had borrowed the instance" receiveEvent="_y_AkUyggEd2mweZsIJyrlw" sendEvent="_y_AkUiggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_AkWyggEd2mweZsIJyrlw" name="remove instance from borrowing list of the user account" receiveEvent="_y_AkVSggEd2mweZsIJyrlw" sendEvent="_y_AkVCggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_AkXCggEd2mweZsIJyrlw" name="change status of instance" receiveEvent="_y_AkVyggEd2mweZsIJyrlw" sendEvent="_y_AkViggEd2mweZsIJyrlw"/>
+    </ownedBehavior>
+    <ownedTrigger xmi:id="_y_AkXSggEd2mweZsIJyrlw" name="return instance" event="_y_AkdCggEd2mweZsIJyrlw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_y_AkXiggEd2mweZsIJyrlw" memberEnd="_y_AkXyggEd2mweZsIJyrlw _y_AkYCggEd2mweZsIJyrlw">
+    <ownedEnd xmi:id="_y_AkXyggEd2mweZsIJyrlw" name="User" type="_y_Aj8SggEd2mweZsIJyrlw" association="_y_AkXiggEd2mweZsIJyrlw"/>
+    <ownedEnd xmi:id="_y_AkYCggEd2mweZsIJyrlw" name="return instance" type="_y_AkRiggEd2mweZsIJyrlw" association="_y_AkXiggEd2mweZsIJyrlw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_y_AkYSggEd2mweZsIJyrlw" name="Search medium">
+    <ownedBehavior xmi:type="uml:Interaction" xmi:id="_y_AkYiggEd2mweZsIJyrlw" name="Search medium default">
+      <ownedAttribute xmi:id="_y_AkYyggEd2mweZsIJyrlw" name="" type="_y_Aj8SggEd2mweZsIJyrlw"/>
+      <ownedAttribute xmi:id="_y_AkZCggEd2mweZsIJyrlw" name="" type="_y_AjuyggEd2mweZsIJyrlw"/>
+      <lifeline xmi:id="_y_AkZSggEd2mweZsIJyrlw" name="User" represents="_y_AkYyggEd2mweZsIJyrlw" coveredBy="_y_AkZyggEd2mweZsIJyrlw _y_AkbCggEd2mweZsIJyrlw"/>
+      <lifeline xmi:id="_y_AkZiggEd2mweZsIJyrlw" name="MediaAdministration" represents="_y_AkZCggEd2mweZsIJyrlw" coveredBy="_y_AkaCggEd2mweZsIJyrlw _y_AkaSggEd2mweZsIJyrlw _y_AkaiggEd2mweZsIJyrlw _y_AkayggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkZyggEd2mweZsIJyrlw" name="mos0" covered="_y_AkZSggEd2mweZsIJyrlw" message="_y_AkbSggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkaCggEd2mweZsIJyrlw" name="mos1" covered="_y_AkZiggEd2mweZsIJyrlw" message="_y_AkbSggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkaSggEd2mweZsIJyrlw" name="mos2" covered="_y_AkZiggEd2mweZsIJyrlw" message="_y_AkbiggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkaiggEd2mweZsIJyrlw" name="mos3" covered="_y_AkZiggEd2mweZsIJyrlw" message="_y_AkbiggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkayggEd2mweZsIJyrlw" name="mos4" covered="_y_AkZiggEd2mweZsIJyrlw" message="_y_AkbyggEd2mweZsIJyrlw"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_y_AkbCggEd2mweZsIJyrlw" name="mos5" covered="_y_AkZSggEd2mweZsIJyrlw" message="_y_AkbyggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_AkbSggEd2mweZsIJyrlw" name="specify one or more search criteria" receiveEvent="_y_AkaCggEd2mweZsIJyrlw" sendEvent="_y_AkZyggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_AkbiggEd2mweZsIJyrlw" name="search for matching media" receiveEvent="_y_AkaiggEd2mweZsIJyrlw" sendEvent="_y_AkaSggEd2mweZsIJyrlw"/>
+      <message xmi:id="_y_AkbyggEd2mweZsIJyrlw" name="return list of instances" messageSort="reply" receiveEvent="_y_AkbCggEd2mweZsIJyrlw" sendEvent="_y_AkayggEd2mweZsIJyrlw"/>
+    </ownedBehavior>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_y_AkcCggEd2mweZsIJyrlw" memberEnd="_y_AkcSggEd2mweZsIJyrlw _y_AkciggEd2mweZsIJyrlw">
+    <ownedEnd xmi:id="_y_AkcSggEd2mweZsIJyrlw" name="User" type="_y_Aj8SggEd2mweZsIJyrlw" association="_y_AkcCggEd2mweZsIJyrlw"/>
+    <ownedEnd xmi:id="_y_AkciggEd2mweZsIJyrlw" name="Search medium" type="_y_AkYSggEd2mweZsIJyrlw" association="_y_AkcCggEd2mweZsIJyrlw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:CallEvent" xmi:id="_y_AkcyggEd2mweZsIJyrlw" name="borrow instanceCallEvent" operation="_y_AjuCggEd2mweZsIJyrlw"/>
+  <packagedElement xmi:type="uml:CallEvent" xmi:id="_y_AkdCggEd2mweZsIJyrlw" name="return instanceCallEvent" operation="_y_AjuSggEd2mweZsIJyrlw"/>
+  <packagedElement xmi:type="uml:CallEvent" xmi:id="_y_AkdSggEd2mweZsIJyrlw" name="Extend rental periodCallEvent" operation="_y_AjuiggEd2mweZsIJyrlw"/>
+</uml:Model>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Description of model library</title>
+</head>
+<body>
+<h1>Description of model library</h1>
+<p>
+<h2>1. Operators</h2>The library can be operated by a user and a librarian.</p>
+<p>
+<h2>2. Product Functions</h2>
+<p>
+<p>The user can use the following functionality:<ul>
+<li>Reserve instance</li>
+<li>borrow instance</li>
+<li>Manage account</li>
+<li>Extend rental period</li>
+<li>return instance</li>
+<li>Search medium</li>
+</ul>
+</p>
+<p>The librarian can use the following functionality:<ul>
+<li>Edit account</li>
+<li>Manage medium</li>
+<li>Create account</li>
+<li>Delete account</li>
+</ul>
+</p>
+</p>
+<p>
+<h3>2.1. Reserve instance</h3>
+<p>This function can be done by a user.</p>
+<p>
+<h4>Procedure</h4>
+<ol>
+<li>The user enters the shelfmark of the medium requested. </li>
+<li>The component (MediaAdministration)'s return list of the instances. </li>
+<li>The user chooses the instance. </li>
+<li>The user identifies to the system. </li>
+<li>A component (MediaAdministration) changes the status of the instance. </li>
+</ol>
+</p>
+</p>
+<p>
+<h3>2.2. Edit account</h3>
+<p>This function can be done by a librarian.</p>
+</p>
+<p>
+<h3>2.3. borrow instance</h3>
+<p>This function can be done by a user.</p>
+<p>
+<h4>Preconditions and Effects</h4>
+<p>If the MediumInstance is signed as available the user can borrow the instance. MediumInstance will afterwards be signed as borrowed. </p>
+</p>
+<p>
+<h4>Procedure</h4>
+<ol>
+<li>The user identifies to the system. </li>
+<li>The user chooses the instance. </li>
+<li>A component (MediaAdministration) adds the instance to the borrowing list of the user account. </li>
+<li>A component (MediaAdministration) adds the user to the list of the users. </li>
+<li>A component (MediaAdministration) changes the status of the instance. </li>
+<li>A component (MediaAdministration) unlocks the instance. </li>
+<li>A component (MediaAdministration) receives the receipt for the instance newly borrowed. </li>
+</ol>
+</p>
+</p>
+<p>
+<h3>2.4. Manage medium</h3>
+<p>This function can be done by a librarian.</p>
+</p>
+<p>
+<h3>2.5. Manage account</h3>
+<p>This function can be done by a user.</p>
+</p>
+<p>
+<h3>2.6. Create account</h3>
+<p>This function can be done by a librarian.</p>
+</p>
+<p>
+<h3>2.7. Delete account</h3>
+<p>This function can be done by a librarian.</p>
+</p>
+<p>
+<h3>2.8. Extend rental period</h3>
+<p>This function can be done by a user.</p>
+<p>
+<h4>Preconditions and Effects</h4>
+<p>If the MediumInstance is signed as borrowed the user's Extend rental period can. MediumInstance will afterwards still be signed as borrowed. </p>
+</p>
+<p>
+<h4>Procedure</h4>
+<ol>
+<li>The user identifies to the system. </li>
+<li>The component (MediaAdministration)'s return list of the instances. </li>
+<li>The user chooses the instance. </li>
+<li>A component (MediaAdministration) validates the new rental period. </li>
+<li>A component (MediaAdministration) extends the rental period and increases the total rental time. </li>
+</ol>
+</p>
+</p>
+<p>
+<h3>2.9. return instance</h3>
+<p>This function can be done by a user.</p>
+<p>
+<h4>Preconditions and Effects</h4>
+<p>If the MediumInstance is signed as borrowed the user can return the instance. MediumInstance will afterwards be signed as available. </p>
+</p>
+<p>
+<h4>Procedure</h4>
+<ol>
+<li>The user chooses the instance. </li>
+<li>A component (MediaAdministration) locks the instance. </li>
+<li>A component (MediaAdministration) adds the return date to the list of the users. </li>
+<li>A component (MediaAdministration) removes the instance from the borrowing list of the user account. </li>
+<li>A component (MediaAdministration) changes the status of the instance. </li>
+</ol>
+</p>
+</p>
+<p>
+<h3>2.10. Search medium</h3>
+<p>This function can be done by a user.</p>
+<p>
+<h4>Procedure</h4>
+<ol>
+<li>The user specifies the one search criteria. </li>
+<li>The component (MediaAdministration)'s search for the matching media. </li>
+<li>The component (MediaAdministration)'s return list of the instances. </li>
+</ol>
+</p>
+</p>
+</p>
+<p>
+<h2>3. System Behaviour</h2>
+<p>
+<h3>3.1. Instance states</h3>
+<p>A MediumInstance can be in one of the following states: <ul>
+<li>newly aquired</li>
+<li>available</li>
+<li>sorted out</li>
+<li>borrowed</li>
+<li>missing</li>
+<li>borrowed and reserved</li>
+<li>available and reserved</li>
+</ul>
+</p>
+<p>
+<p/>
+<p>If the MediumInstance is signed as available the user can borrow the instance. MediumInstance will afterwards be signed as borrowed. </p>
+<p/>
+<p>If the MediumInstance is signed as borrowed the user can return the instance. MediumInstance will afterwards be signed as available. Alternatively, the user's Extend rental period can. MediumInstance will afterwards still be signed as borrowed. </p>
+<p/>
+<p/>
+<p/>
+</p>
+</p>
+</p>
+</body>
+</html>
