@@ -27,3 +27,9 @@ Future work
 ===========
 * "build system" based on gradle or just a simple makefile
 * more specifications (More POWER, Igor!)
+
+
+Related Work
+============
+
+* https://github.com/rasbt/pattern_classification/
