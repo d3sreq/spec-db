@@ -1,6 +1,6 @@
 UC1 Process Sale
 
-Preceding: UC101 Setup Checkout Mode
+Preceding: UC2 Setup mode
 
 1 The Customer arrives at the Cash Desk with goods to purchase. [arr1]
 2 The Cashier starts a new sale by pressing the button Start New Sale at the Cash Box. [t12-1]
