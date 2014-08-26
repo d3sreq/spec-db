@@ -1,0 +1,6 @@
+UC101 Setup checkout mode
+
+1 Change to normal mode. #(create:mode_selected)
+
+Variation: 1a Conditions for express mode satisfied
+1a1 Change to express mode. #(create:mode_selected) #(mark:express_mode) #(exclude:card_in_express_mode)

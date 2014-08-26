@@ -1,0 +1,11 @@
+UC4 Receive Ordered Products
+
+Preceding: UC3 Order Products
+
+1 Ordered products arrive at the stock attached by an order identifier which has been assigned during the ordering process. [n4-1]
+2 The Stock Manager checks the delivery for completeness and correctness. [p4-1, t42-1]
+3 In the case of correctness, the Stock Manager enters the order identifier and presses the button Roll in received order. [t43-1]
+4 The Trading System updates the Inventory. [t44-1]
+
+Extension: 2a Delivery not complete or not correct. [p4-2]
+2a1 The products are sent back to the supplier and the Stock Manager has to wait until a correct and complete delivery has arrived. This action does not recognized by the System.

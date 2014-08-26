@@ -1,0 +1,6 @@
+UC7 Change Price
+
+1 The System presents an overview over all available products in the store. [t71-1]
+2 The Store Manager selects a product item [t72-1] and changes its sales price. [t72-2]
+3 The Store Manager commits the change by pressing ENTER. [t73-1]
+

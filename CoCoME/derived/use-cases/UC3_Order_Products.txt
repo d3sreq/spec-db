@@ -1,0 +1,7 @@
+UC3 Order Products
+
+1 A list with all products [n3-1] and a list with products running out of stock are shown. [n3-2, p3-1, t31-1]
+2 The Store Manager chooses the product items to order and enters the cor- responding amount. [t32-1]
+3 The Store Manager presses the button Order at the Store Client’s GUI. [t33-1]
+4 The appropriate suppliers are chosen and orders for each supplier are placed. An order identifier is generated for each order and is shown to the Store Manager. [t34-1, t34-2, t34-3]
+

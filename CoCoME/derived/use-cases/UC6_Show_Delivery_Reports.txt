@@ -1,0 +1,5 @@
+UC6 Show Delivery Reports
+
+1 The Enterprise Manager enters the enterprise identifier and presses the but- ton Create Report. [t61-1]
+2 A report which informs about the mean times is generated. [t62-1]
+

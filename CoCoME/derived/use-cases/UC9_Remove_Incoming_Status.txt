@@ -1,0 +1,13 @@
+UC9 Extension on use case 8 - Remove Incoming Status
+
+Preceding: UC8
+
+1 The products arrive at the stock of the Store.
+2 For all arriving products the Stock Manager counts the incoming amount.
+3 For every arriving product the Stock Manager enters the identifier and its amount into the Store Client.
+4 The system updates the Inventory
+
+Extension: 3a the entered amount of an incoming product is larger than the amount accounted in the Inventory
+3a1 The input is rejected.
+3a2 The incoming amount has to be re-entered. #(goto:3)
+

@@ -1,0 +1,19 @@
+UC8 Product Exchange (on low stock) Among Stores
+
+1 A certain product of the Store runs out.
+2 The Store Server recognizes low stock of the product. [t82-1]
+3 The Store Server sends a request to the Enterprise Server (including an identification of the shortage products, and a Store id) [t83-1]
+4 The Enterprise Server triggers all Stores that are “near by” (e. g. ¡300 km) the requiring store, to flush their local write caches. So the Enterprise Server database gets updated by the Store Server. [t84-1, t84-1]
+5 The Enterprise Server does a database look-up for the required products to get a list of products (including amounts) that are available at providing Stores. [t85-1]
+6 The Enterprise Server applies the “optimization criterion” (specified above) to decide, whether it is meaningful to transport the shortage product from one store to another (heuristics might be applied to minimize the total costs of transportation). This results in a list of products (including amounts) per providing store that have to be delivered to the requiring Store. [t86-1]
+7 The Store Server, initially sending the recognition of the shortage product, is provided with the decision of the Enterprise Server. [t87-1] The required product is marked as incoming. [t87-2]
+8 The Store Server of a near by Store is provided with information that it has to deliver the product. [t88-1] The required product is marked as unavailable in the Store. [t88-2]
+
+Extension: 3a The Enterprise Server is not available
+3a1 The request is queued until the Enterprise Server is available and then is send again.
+
+Extension: 4a One ormore Store Servers are not available:
+4a1 The Enterprise Server queues the requests for the Store Servers until they are available and then resend them.
+
+Extension: 4a1a Store Server is not available for more than 15 minutes
+4a1a1 Request for this Server is canceled. It is assumed, that finally unavailable Store Servers do not have the required product.

@@ -1,0 +1,5 @@
+UC5 Show Stock Reports
+
+1 The Store Manager enters the store identifier and presses the button Create Report. [t51-1]
+2 A report including all available stock items in the store is displayed. [t52-1]
+
