@@ -1,7 +1,7 @@
 defaultTasks 'clean', 'downloadJar', 'run'
 
 def FOAM_JAR = "foam-minimal.jar"
-def FOAM_DOWNLOAD_ADDRESS = "http://india.ms.mff.cuni.cz/hudson/view/foam-tool/job/foam-tool/lastSuccessfulBuild/artifact/release/distribution/$FOAM_JAR"
+def FOAM_DOWNLOAD_ADDRESS = "http://india.ms.mff.cuni.cz/hudson/view/foam-tool/job/foam-tool/30/artifact/release/distribution/$FOAM_JAR"
 
 task createWrapper(type: Wrapper) {
 	gradleVersion = '2.3'
