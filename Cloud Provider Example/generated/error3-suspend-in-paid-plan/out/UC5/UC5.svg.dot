@@ -1,0 +1,41 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC5_ {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC51" [xlabel="1", label="{<JMP>&bull;}", tooltip="User selects application to hibernate.", width="0.5"]
+		"UC52" [xlabel="2", label="{<JMP>&bull;}", tooltip="System checks that application can be hibernated.", width="0.5"]
+		"UC53" [xlabel="3", label="{<JMP>&bull;}", tooltip="System prompts user to confirm hibernation.", width="0.5"]
+		"UC54" [xlabel="4", label="{<JMP>&bull;}", tooltip="User confirms the hibernation.", width="0.5"]
+		"UC55" [xlabel="5", label="{<JMP>&bull;|<EXT>}", tooltip="System initiates application hibernation. #(include:UC21)", width="1.0"]
+		"UC56" [xlabel="6", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="Use case finishes. #(close:app_hibernated)", width="0.5"]
+	}
+	"UC21" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC21 Hibernate application subfunction", URL="../UC21/UC21.html", target="_top"]
+	"UC55":"JMP" -> "UC21" [URL="#UC5_5"]
+	"UC21" -> "UC55":"EXT" 
+	"UC51":"JMP" -> "UC52":"JMP" [URL="#UC5_1"]
+	"UC52":"JMP" -> "UC53":"JMP" [URL="#UC5_2"]
+	"UC53":"JMP" -> "UC54":"JMP" [URL="#UC5_3"]
+	"UC54":"JMP" -> "UC55":"JMP" [URL="#UC5_4"]
+	"UC55":"EXT" -> "UC56":"JMP" [URL="#UC5_5"]
+}

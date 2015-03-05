@@ -1,0 +1,97 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC18_ {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC181" [xlabel="1", label="{<JMP>&bull;|<EXT>}", tooltip="User creates an application. #(include:UC1)", width="1.0"]
+		"UC182" [xlabel="2", label="{<JMP>&bull;}", tooltip="User evaluates the service. (this step is just target for gotos)", width="0.5"]
+		"UC183" [xlabel="3", label="{<VAR>|<JMP>&bull;|<EXT>|<OUT>}", tooltip="User modifies the application using Git. #(include:UC15)", width="2.0"]
+		"UC184" [xlabel="4", fillcolor="#ccebc5", label="{<VAR>|<JMP>&bull;|<EXT>}", tooltip="User deletes the application. #(include:UC2)", width="1.5"]
+	}
+	subgraph cluster_UC18_3a {
+		label="Variation: 3a.\l User decides to start the appl... "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC183a1" [xlabel="3a1", label="{<JMP>&bull;|<EXT>}", tooltip="User starts the application. #(include:UC3)", width="1.0"]
+	}
+	subgraph cluster_UC18_3b {
+		label="Variation: 3b.\l User decides to stop the appli... "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC183b1" [xlabel="3b1", label="{<JMP>&bull;|<EXT>}", tooltip="User stops the application. #(include:UC4)", width="1.0"]
+	}
+	subgraph cluster_UC18_3c {
+		label="Variation: 3c.\l User decides to hibernate appl... "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC183c1" [xlabel="3c1", label="{<JMP>&bull;|<EXT>}", tooltip="User hibernates the application. #(include:UC5)", width="1.0"]
+	}
+	subgraph cluster_UC18_3d {
+		label="Variation: 3d.\l User does not want to perform ... "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC183d1" [xlabel="3d1", label="{<JMP>&bull;}", tooltip="Flow of the use case continues with next step.", width="0.5"]
+	}
+	subgraph cluster_UC18_4a {
+		label="Variation: 4a.\l User intends to perform additi... "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC184a1" [xlabel="4a1", label="{<JMP>&bull;}", tooltip="User performs additional action. #(goto:2)", width="0.5"]
+	}
+	"UC1" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC1 Create application", URL="../UC1/UC1.html", target="_top"]
+	"UC15" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC15 Modify application data using Git", URL="../UC15/UC15.html", target="_top"]
+	"UC2" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC2 Delete application", URL="../UC2/UC2.html", target="_top"]
+	"UC3" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC3 Start application", URL="../UC3/UC3.html", target="_top"]
+	"UC4" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC4 Stop application", URL="../UC4/UC4.html", target="_top"]
+	"UC5" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC5 Hibernate application", URL="../UC5/UC5.html", target="_top"]
+	"UC181":"JMP" -> "UC1" [URL="#UC18_1"]
+	"UC1" -> "UC181":"EXT" 
+	"UC183":"JMP" -> "UC15" [URL="#UC18_3"]
+	"UC15" -> "UC183":"EXT" 
+	"UC184":"JMP" -> "UC2" [URL="#UC18_4"]
+	"UC2" -> "UC184":"EXT" 
+	"UC183a1":"JMP" -> "UC3" [URL="#UC18_3a1"]
+	"UC3" -> "UC183a1":"EXT" 
+	"UC183b1":"JMP" -> "UC4" [URL="#UC18_3b1"]
+	"UC4" -> "UC183b1":"EXT" 
+	"UC183c1":"JMP" -> "UC5" [URL="#UC18_3c1"]
+	"UC5" -> "UC183c1":"EXT" 
+	"UC181":"EXT" -> "UC182":"JMP" [URL="#UC18_1"]
+	"UC182":"JMP" -> "UC183":"VAR" [URL="#UC18_2"]
+	"UC183":"OUT" -> "UC184":"VAR" [URL="#UC18_3"]
+	"UC183":"VAR" -> "UC183a1":"JMP" [URL="#UC18_3"]
+	"UC183a1":"EXT" -> "UC183":"OUT" [URL="#UC18_3a1"]
+	"UC183":"VAR" -> "UC183b1":"JMP" [URL="#UC18_3"]
+	"UC183b1":"EXT" -> "UC183":"OUT" [URL="#UC18_3b1"]
+	"UC183":"VAR" -> "UC183c1":"JMP" [URL="#UC18_3"]
+	"UC183c1":"EXT" -> "UC183":"OUT" [URL="#UC18_3c1"]
+	"UC183":"VAR" -> "UC183d1":"JMP" [URL="#UC18_3"]
+	"UC183d1":"JMP" -> "UC183":"OUT" [URL="#UC18_3d1"]
+	"UC184":"VAR" -> "UC184a1":"JMP" [URL="#UC18_4"]
+	"UC184a1":"JMP" -> "UC182":"JMP" [URL="#UC18_4a1"]
+}

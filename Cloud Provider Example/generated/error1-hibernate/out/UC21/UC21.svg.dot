@@ -1,0 +1,51 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC21_ {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC211" [xlabel="1", label="{<JMP>&bull;}", tooltip="System changes state of the git repository to hibernated.", width="0.5"]
+		"UC212" [xlabel="2", label="{<JMP>&bull;}", tooltip="System compresses the disk image used by application.", width="0.5"]
+		"UC213" [xlabel="3", label="{<JMP>&bull;|<EXT>}", tooltip="System saves the disk image used by application.", width="1.0"]
+		"UC214" [xlabel="4", label="{<JMP>&bull;}", tooltip="System frees the disk space used by application.", width="0.5"]
+		"UC215" [xlabel="5", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="System sets application state to hibernated. 
+		  #(open:app_hibernated) #(mark:app_hibernated)", width="0.5"]
+	}
+	subgraph cluster_UC21_3a {
+		label="Extension: 3a.\l Storage for hibernated disk no... "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC213a1" [xlabel="3a1", label="{<JMP>&bull;}", tooltip="System changes state of the git repository to running.", width="0.5"]
+		"UC213a2" [xlabel="3a2", label="{<JMP>&bull;}", tooltip="System finished (unsuccessfully) the hibernation.", width="0.5"]
+		"UC213a3" [xlabel="3a3", fillcolor="#fbb4ae", label="{<JMP>&bull;}", tooltip="System notifies user about insufficient storage and 
+		    proposes to hibernate application later #(abort) 
+		    #(mark:hibernation_aborted)", width="0.5"]
+	}
+	"UC211":"JMP" -> "UC212":"JMP" [URL="#UC21_1"]
+	"UC212":"JMP" -> "UC213":"JMP" [URL="#UC21_2"]
+	"UC213":"EXT" -> "UC214":"JMP" [URL="#UC21_3"]
+	"UC214":"JMP" -> "UC215":"JMP" [URL="#UC21_4"]
+	"UC213":"EXT" -> "UC213a1":"JMP" [URL="#UC21_3"]
+	"UC213a1":"JMP" -> "UC213a2":"JMP" [URL="#UC21_3a1"]
+	"UC213a2":"JMP" -> "UC213a3":"JMP" [URL="#UC21_3a2"]
+}

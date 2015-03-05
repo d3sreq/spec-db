@@ -1,0 +1,50 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC12_ {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC121" [xlabel="1", label="{<JMP>&bull;}", tooltip="System asks user to provide billing information.", width="0.5"]
+		"UC122" [xlabel="2", label="{<VAR>|<JMP>&bull;}", tooltip="User provides the billing information.", width="1.0"]
+		"UC123" [xlabel="3", label="{<JMP>&bull;|<EXT>}", tooltip="System validates the entered data.", width="1.0"]
+		"UC124" [xlabel="4", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="System saves the billing and account information.", width="0.5"]
+	}
+	subgraph cluster_UC12_3a {
+		label="Extension: 3a.\l Entered values not valid. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC123a1" [xlabel="3a1", fillcolor="#fbb4ae", label="{<JMP>&bull;}", tooltip="System notifies user that entered values are not valid. #(abort)", width="0.5"]
+	}
+	subgraph cluster_UC12_2a {
+		label="Variation: 2a.\l User cancels the billing infor... "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC122a1" [xlabel="2a1", fillcolor="#fbb4ae", label="{<JMP>&bull;}", tooltip="Use case aborts. #(abort)", width="0.5"]
+	}
+	"UC121":"JMP" -> "UC122":"VAR" [URL="#UC12_1"]
+	"UC122":"JMP" -> "UC123":"JMP" [URL="#UC12_2"]
+	"UC123":"EXT" -> "UC124":"JMP" [URL="#UC12_3"]
+	"UC123":"EXT" -> "UC123a1":"JMP" [URL="#UC12_3"]
+	"UC122":"VAR" -> "UC122a1":"JMP" [URL="#UC12_2"]
+}

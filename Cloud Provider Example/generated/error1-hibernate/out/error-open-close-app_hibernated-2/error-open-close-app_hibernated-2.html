@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>FOAM tool</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		
+		<!-- Le styles -->
+		<link href="../assets/css/bootstrap.css" rel="stylesheet">
+		<style type="text/css">
+			body {
+				padding-top: 60px;
+				padding-bottom: 40px;
+			}
+			.sidebar-nav {
+				padding: 9px 0;
+			}
+			
+			@media (max-width: 980px) {
+				/* Enable use of floated navbar text */
+				.navbar-text.pull-right {
+					float: none;
+					padding-left: 5px;
+					padding-right: 5px;
+				}
+			}					
+			.scenario { counter-reset: list1 0; list-style-type: none; margin-left: 0px }
+			.scenario li { counter-increment: list1 }
+			.scenario li:before { margin-right: 10px }
+			.main li:before { content: counter(list1) '.' }
+			.annot { font-weight: bold; color: blue }
+			.loop { font-weight: bold; color: green }
+			.usecase-header-block { margin-bottom: 14px }
+			.tracecell { padding-left: 10px }
+			h2 { font-size: 24.5px }
+		</style>
+		<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+		
+	    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	    <!--[if lt IE 9]>
+			<script src="../assets/js/html5shiv.js"></script>
+		<![endif]-->
+		
+		<!-- Fav and touch icons -->
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+		<link rel="shortcut icon" href="../assets/ico/favicon.png">
+	</head>
+	
+	<body>
+	
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<a class="brand" href="#">FOAM tool report</a>
+				<div class="nav-collapse collapse">
+					<p class="navbar-text pull-right">
+						<!-- Logged in as <a href="#" class="navbar-link">Username</a> -->
+					</p>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>
+	</div>
+	
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span3">
+				<div class="well sidebar-nav">
+					<ul class="nav nav-list">
+						<!--<li class="nav-header">Sidebar</li>-->
+						<li><a href="../overview/overview.html">Overview</a></li>
+						<li class="nav-header">Primary use cases</li>
+						<li><a href="../UC1/UC1.html">UC1 Create application</a></li>
+						<li><a href="../UC2/UC2.html">UC2 Delete application</a></li>
+						<li><a href="../UC3/UC3.html">UC3 Start application</a></li>
+						<li><a href="../UC4/UC4.html">UC4 Stop application</a></li>
+						<li><a href="../UC5/UC5.html">UC5 Hibernate application</a></li>
+						<li><a href="../UC6/UC6.html">UC6 Create account</a></li>
+						<li><a href="../UC7/UC7.html">UC7 Login</a></li>
+						<li><a href="../UC9/UC9.html">UC9 Change plan</a></li>
+						<li><a href="../UC10/UC10.html">UC10 Delete account</a></li>
+						<li><a href="../UC12/UC12.html">UC12 Change billing information</a></li>
+						<li><a href="../UC13/UC13.html">UC13 Change credit card</a></li>
+						<li><a href="../UC15/UC15.html">UC15 Modify application data using Git</a></li>
+						<li><a href="../UC16/UC16.html">UC16 Subtract monthly fee</a></li>
+						<li><a href="../UC17/UC17.html">UC17 Administer account</a></li>
+						<li><a href="../UC18/UC18.html">UC18 Administer application</a></li>
+						<li><a href="../UC19/UC19.html">UC19 Process request</a></li>
+						<li class="nav-header">Non-primary use cases</li>
+						<li><a href="../UC21/UC21.html">UC21 Hibernate application subfunction</a></li>
+						<li class="nav-header">TADL definitions</li>
+						<li><a href="../create-use/create-use.html">create-use</a></li>
+						<li><a href="../emit-delete-consume/emit-delete-consume.html">emit-delete-consume</a></li>
+						<li><a href="../exclude/exclude.html">exclude</a></li>
+						<li><a href="../open-close/open-close.html">open-close</a></li>
+						<li class="nav-header">Errors</li>
+						<li><a href="../error-open-close-app_hibernated-1/error-open-close-app_hibernated-1.html">open-close app_hibernated 1</a></li>
+						<li class="active"><a href="../error-open-close-app_hibernated-2/error-open-close-app_hibernated-2.html">open-close app_hibernated 2</a></li>
+						<li><a href="../error-open-close-app_hibernated-3/error-open-close-app_hibernated-3.html">open-close app_hibernated 3</a></li>
+					</ul>
+				</div><!--/.well -->
+			</div><!--/span-->
+			<div class="span9">
+				<div>
+					<h1>Error: open-close app_hibernated 2
+					</h1>
+					<p>
+					after "open" there must be "close":
+					<pre>CTL AG (open -> AF close)</pre>
+					</p>
+				</div>
+				<div>	
+					<h2>Trace:</h2>
+					<table class="trace">
+					<tr>
+						<td><a href="../UC6/UC6.html">UC6</a></td>
+						<td class="tracecell">1</td>
+						<td class="tracecell">User provides email, password, password confirmation 
+						  and captcha.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC6/UC6.html">UC6</a></td>
+						<td class="tracecell">2</td>
+						<td class="tracecell">System validates the provided data.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC6/UC6.html">UC6</a></td>
+						<td class="tracecell">3</td>
+						<td class="tracecell">System sends email to given email address to verify 
+						  that user has access to the given mailbox.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC6/UC6.html">UC6</a></td>
+						<td class="tracecell">4</td>
+						<td class="tracecell">System notifies the user to proceed by following 
+						  instructions in the sent email.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC6/UC6.html">UC6</a></td>
+						<td class="tracecell">5</td>
+						<td class="tracecell">User opens the email and follows the link (the link 
+						  points to the page that continues in user's registration).
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC6/UC6.html">UC6</a></td>
+						<td class="tracecell">6</td>
+						<td class="tracecell">System presents legal terms.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC6/UC6.html">UC6</a></td>
+						<td class="tracecell">7</td>
+						<td class="tracecell">User accepts the terms.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC6/UC6.html">UC6</a></td>
+						<td class="tracecell">8</td>
+						<td class="tracecell">System creates new user account with given email and 
+						  password. #(emit:email)
+						 <span class="annot">#emit:email</span>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC6/UC6.html">UC6</a></td>
+						<td class="tracecell">9</td>
+						<td class="tracecell">System assigns user free plan. #(mark:free_plan) 
+						  #(emit:free_plan)
+						 <span class="annot">#emit:free_plan</span>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC6/UC6.html">UC6</a></td>
+						<td class="tracecell">10</td>
+						<td class="tracecell">Use case finishes. #(mark:account_created)
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC7/UC7.html">UC7</a></td>
+						<td class="tracecell">1</td>
+						<td class="tracecell">User enters login and password.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC7/UC7.html">UC7</a></td>
+						<td class="tracecell">2</td>
+						<td class="tracecell">System verifies login and password. #(consume:email)
+						 <span class="annot">#consume:email</span>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC1/UC1.html">UC1</a></td>
+						<td class="tracecell">1</td>
+						<td class="tracecell">User enters application's name and selects the web cartridge.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC1/UC1.html">UC1</a></td>
+						<td class="tracecell">2</td>
+						<td class="tracecell">System validates the inputs.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC1/UC1.html">UC1</a></td>
+						<td class="tracecell">3</td>
+						<td class="tracecell">System creates new application with given web cartridge.
+						  TODO: user can add additional cartridges.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC1/UC1.html">UC1</a></td>
+						<td class="tracecell">4</td>
+						<td class="tracecell">System sets the application state to stopped.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC1/UC1.html">UC1</a></td>
+						<td class="tracecell">5</td>
+						<td class="tracecell">System creates application's git repository.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC1/UC1.html">UC1</a></td>
+						<td class="tracecell">6</td>
+						<td class="tracecell">System creates application's URL.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC1/UC1.html">UC1</a></td>
+						<td class="tracecell">7</td>
+						<td class="tracecell">System presents URL and address of the git repository to the user.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC2/UC2.html">UC2</a></td>
+						<td class="tracecell">1</td>
+						<td class="tracecell">User selects application to delete.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC2/UC2.html">UC2</a></td>
+						<td class="tracecell">2</td>
+						<td class="tracecell">System shows warning message and asks for user confirmation.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC2/UC2.html">UC2</a></td>
+						<td class="tracecell">3</td>
+						<td class="tracecell">User confirms the delete.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC2/UC2.html">UC2</a></td>
+						<td class="tracecell">4</td>
+						<td class="tracecell">System checks state of the application.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC2/UC2.html">UC2</a></td>
+						<td class="tracecell">4a1</td>
+						<td class="tracecell">System stops application. #(include:UC4)
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC4/UC4.html">UC4</a></td>
+						<td class="tracecell">1</td>
+						<td class="tracecell">User selects application to stop or the application
+						  to be stopped is given by the calling use case.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC4/UC4.html">UC4</a></td>
+						<td class="tracecell">2</td>
+						<td class="tracecell">System stops the application and changes its state to stopped.
+						  TODO: make url unavailable ?
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC3/UC3.html">UC3</a></td>
+						<td class="tracecell">1</td>
+						<td class="tracecell">User selects application to start or the application
+						  to be started is given by the calling use case.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC3/UC3.html">UC3</a></td>
+						<td class="tracecell">2</td>
+						<td class="tracecell">System checks state of the application.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC3/UC3.html">UC3</a></td>
+						<td class="tracecell">3</td>
+						<td class="tracecell">System checks that application can be started -
+						  maximum number of running applications is not exceeded
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC3/UC3.html">UC3</a></td>
+						<td class="tracecell">4</td>
+						<td class="tracecell">System pulls changes from the application's repository
+						  to the location where application is being run.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC3/UC3.html">UC3</a></td>
+						<td class="tracecell">5</td>
+						<td class="tracecell">System starts the application and makes it available
+						  on the given url.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC3/UC3.html">UC3</a></td>
+						<td class="tracecell">6</td>
+						<td class="tracecell">System changes state of the application to running.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC15/UC15.html">UC15</a></td>
+						<td class="tracecell">1</td>
+						<td class="tracecell">User pushes changes to the application's remote git repository.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC15/UC15.html">UC15</a></td>
+						<td class="tracecell">2</td>
+						<td class="tracecell">System detects changes in the application's remote repository.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC15/UC15.html">UC15</a></td>
+						<td class="tracecell">2a1</td>
+						<td class="tracecell">Use case finishes. #(goto:6)
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC15/UC15.html">UC15</a></td>
+						<td class="tracecell">6</td>
+						<td class="tracecell">Use case finishes.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC18/UC18.html">UC18</a></td>
+						<td class="tracecell">1</td>
+						<td class="tracecell">User creates an application. #(include:UC1)
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC1/UC1.html">UC1</a></td>
+						<td class="tracecell">1</td>
+						<td class="tracecell">User enters application's name and selects the web cartridge.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC1/UC1.html">UC1</a></td>
+						<td class="tracecell">2</td>
+						<td class="tracecell">System validates the inputs.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC1/UC1.html">UC1</a></td>
+						<td class="tracecell">2a1</td>
+						<td class="tracecell">System shows message refering to given problem. #(abort)
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC18/UC18.html">UC18</a></td>
+						<td class="tracecell">2</td>
+						<td class="tracecell">User evaluates the service. (this step is just target for gotos)
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC18/UC18.html">UC18</a></td>
+						<td class="tracecell">3c1</td>
+						<td class="tracecell">User hibernates the application. #(include:UC5)
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC5/UC5.html">UC5</a></td>
+						<td class="tracecell">1</td>
+						<td class="tracecell">User selects application to hibernate.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC5/UC5.html">UC5</a></td>
+						<td class="tracecell">2</td>
+						<td class="tracecell">System checks that application can be hibernated.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC5/UC5.html">UC5</a></td>
+						<td class="tracecell">3</td>
+						<td class="tracecell">System prompts user to confirm hibernation.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC5/UC5.html">UC5</a></td>
+						<td class="tracecell">4</td>
+						<td class="tracecell">User confirms the hibernation.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC5/UC5.html">UC5</a></td>
+						<td class="tracecell">5</td>
+						<td class="tracecell">System initiates application hibernation. #(include:UC21)
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC21/UC21.html">UC21</a></td>
+						<td class="tracecell">1</td>
+						<td class="tracecell">System changes state of the git repository to hibernated.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC21/UC21.html">UC21</a></td>
+						<td class="tracecell">2</td>
+						<td class="tracecell">System compresses the disk image used by application.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC21/UC21.html">UC21</a></td>
+						<td class="tracecell">3</td>
+						<td class="tracecell">System saves the disk image used by application.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC21/UC21.html">UC21</a></td>
+						<td class="tracecell">3a1</td>
+						<td class="tracecell">System changes state of the git repository to running.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC21/UC21.html">UC21</a></td>
+						<td class="tracecell">3a2</td>
+						<td class="tracecell">System finished (unsuccessfully) the hibernation.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC21/UC21.html">UC21</a></td>
+						<td class="tracecell">3a3</td>
+						<td class="tracecell">System notifies user about insufficient storage and 
+						    proposes to hibernate application later #(abort) 
+						    #(mark:hibernation_aborted)
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC5/UC5.html">UC5</a></td>
+						<td class="tracecell">5a1</td>
+						<td class="tracecell">Use case aborts. #(abort) #(guard:hibernation_aborted)
+						<span class="loop">&larr; loop starts here</span>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC18/UC18.html">UC18</a></td>
+						<td class="tracecell">4a1</td>
+						<td class="tracecell">User performs additional action. #(goto:2)
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC18/UC18.html">UC18</a></td>
+						<td class="tracecell">2</td>
+						<td class="tracecell">User evaluates the service. (this step is just target for gotos)
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC18/UC18.html">UC18</a></td>
+						<td class="tracecell">3c1</td>
+						<td class="tracecell">User hibernates the application. #(include:UC5)
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC5/UC5.html">UC5</a></td>
+						<td class="tracecell">1</td>
+						<td class="tracecell">User selects application to hibernate.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC5/UC5.html">UC5</a></td>
+						<td class="tracecell">2</td>
+						<td class="tracecell">System checks that application can be hibernated.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC5/UC5.html">UC5</a></td>
+						<td class="tracecell">3</td>
+						<td class="tracecell">System prompts user to confirm hibernation.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC5/UC5.html">UC5</a></td>
+						<td class="tracecell">4</td>
+						<td class="tracecell">User confirms the hibernation.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC5/UC5.html">UC5</a></td>
+						<td class="tracecell">5</td>
+						<td class="tracecell">System initiates application hibernation. #(include:UC21)
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC21/UC21.html">UC21</a></td>
+						<td class="tracecell">1</td>
+						<td class="tracecell">System changes state of the git repository to hibernated.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC21/UC21.html">UC21</a></td>
+						<td class="tracecell">2</td>
+						<td class="tracecell">System compresses the disk image used by application.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC21/UC21.html">UC21</a></td>
+						<td class="tracecell">3</td>
+						<td class="tracecell">System saves the disk image used by application.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC21/UC21.html">UC21</a></td>
+						<td class="tracecell">4</td>
+						<td class="tracecell">System frees the disk space used by application.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC21/UC21.html">UC21</a></td>
+						<td class="tracecell">5</td>
+						<td class="tracecell">System sets application state to hibernated. 
+						  #(open:app_hibernated) #(mark:app_hibernated)
+						 <span class="annot">#open:app_hibernated</span>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC5/UC5.html">UC5</a></td>
+						<td class="tracecell">5a1</td>
+						<td class="tracecell">Use case aborts. #(abort) #(guard:hibernation_aborted)
+						<span class="loop">&larr; loop starts here</span>
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC18/UC18.html">UC18</a></td>
+						<td class="tracecell">4a1</td>
+						<td class="tracecell">User performs additional action. #(goto:2)
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC18/UC18.html">UC18</a></td>
+						<td class="tracecell">2</td>
+						<td class="tracecell">User evaluates the service. (this step is just target for gotos)
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC18/UC18.html">UC18</a></td>
+						<td class="tracecell">3c1</td>
+						<td class="tracecell">User hibernates the application. #(include:UC5)
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC5/UC5.html">UC5</a></td>
+						<td class="tracecell">1</td>
+						<td class="tracecell">User selects application to hibernate.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC5/UC5.html">UC5</a></td>
+						<td class="tracecell">2</td>
+						<td class="tracecell">System checks that application can be hibernated.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC5/UC5.html">UC5</a></td>
+						<td class="tracecell">3</td>
+						<td class="tracecell">System prompts user to confirm hibernation.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC5/UC5.html">UC5</a></td>
+						<td class="tracecell">4</td>
+						<td class="tracecell">User confirms the hibernation.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC5/UC5.html">UC5</a></td>
+						<td class="tracecell">5</td>
+						<td class="tracecell">System initiates application hibernation. #(include:UC21)
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC21/UC21.html">UC21</a></td>
+						<td class="tracecell">1</td>
+						<td class="tracecell">System changes state of the git repository to hibernated.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC21/UC21.html">UC21</a></td>
+						<td class="tracecell">2</td>
+						<td class="tracecell">System compresses the disk image used by application.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC21/UC21.html">UC21</a></td>
+						<td class="tracecell">3</td>
+						<td class="tracecell">System saves the disk image used by application.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC21/UC21.html">UC21</a></td>
+						<td class="tracecell">4</td>
+						<td class="tracecell">System frees the disk space used by application.
+						</td>
+					</tr>
+					<tr>
+						<td><a href="../UC21/UC21.html">UC21</a></td>
+						<td class="tracecell">5</td>
+						<td class="tracecell">System sets application state to hibernated. 
+						  #(open:app_hibernated) #(mark:app_hibernated)
+						 <span class="annot">#open:app_hibernated</span>
+						</td>
+					</tr>
+					</table>
+				</div>
+					<div class="uc-image">
+					</div>
+			</div><!--/span-->
+		</div><!--/row-->  
+		
+		<hr>
+		
+		</div><!--/.fluid-container-->
+		
+		<!-- Le javascript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="../assets/js/jquery.js"></script>
+		<script src="../assets/js/bootstrap.min.js"></script>
+		<!--
+		<script src="../assets/js/bootstrap-transition.js"></script>
+		<script src="../assets/js/bootstrap-alert.js"></script>
+		<script src="../assets/js/bootstrap-modal.js"></script>
+		<script src="../assets/js/bootstrap-dropdown.js"></script>
+		<script src="../assets/js/bootstrap-scrollspy.js"></script>
+		<script src="../assets/js/bootstrap-tab.js"></script>
+		<script src="../assets/js/bootstrap-tooltip.js"></script>
+		<script src="../assets/js/bootstrap-popover.js"></script>
+		<script src="../assets/js/bootstrap-button.js"></script>
+		<script src="../assets/js/bootstrap-collapse.js"></script>
+		<script src="../assets/js/bootstrap-carousel.js"></script>
+		<script src="../assets/js/bootstrap-typeahead.js"></script>
+		-->
+	</body>
+</html>

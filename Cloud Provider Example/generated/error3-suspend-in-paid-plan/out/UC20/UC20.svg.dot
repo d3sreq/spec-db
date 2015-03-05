@@ -1,0 +1,45 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC20_ {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC201" [xlabel="1", label="{<VAR>|<JMP>&bull;}", tooltip="Application has not received any request for one 
+		  hour and it has free plan associated.", width="1.0"]
+		"UC202" [xlabel="2", label="{<JMP>&bull;}", tooltip="System changes application state to suspended.
+		  #(mark:app_suspended)", width="0.5"]
+		"UC203" [xlabel="3", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="Use case finishes.", width="0.5"]
+	}
+	subgraph cluster_UC20_1a {
+		label="Variation: 1a.\l Account has paid plan associat... "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC201a1" [xlabel="1a1", label="{<JMP>&bull;}", tooltip="System will not suspend application #(guard:!free_plan)", width="0.5"]
+		"UC201a2" [xlabel="1a2", label="{<JMP>&bull;}", tooltip="Use case finishes. #(goto:3)", width="0.5"]
+	}
+	"UC201":"JMP" -> "UC202":"JMP" [URL="#UC20_1"]
+	"UC202":"JMP" -> "UC203":"JMP" [URL="#UC20_2"]
+	"UC201":"VAR" -> "UC201a1":"JMP" [URL="#UC20_1"]
+	"UC201a1":"JMP" -> "UC201a2":"JMP" [URL="#UC20_1a1"]
+	"UC201a2":"JMP" -> "UC203":"JMP" [URL="#UC20_1a2"]
+}

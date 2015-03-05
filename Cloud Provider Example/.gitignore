@@ -1,3 +1,4 @@
-/.gradle
-**/ucs-tmp
-**/out
+/original/.gradle
+/original/**/ucs-tmp
+/original/**/out
+/original/foam-minimal.jar

@@ -1,0 +1,32 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC4_ {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC41" [xlabel="1", label="{<JMP>&bull;}", tooltip="User selects application to stop or the application
+		  to be stopped is given by the calling use case.", width="0.5"]
+		"UC42" [xlabel="2", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="System stops the application and changes its state to stopped.
+		  TODO: make url unavailable ?", width="0.5"]
+	}
+	"UC41":"JMP" -> "UC42":"JMP" [URL="#UC4_1"]
+}
