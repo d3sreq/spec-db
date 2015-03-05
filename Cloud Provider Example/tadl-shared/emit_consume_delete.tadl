@@ -1,0 +1,21 @@
+# edit-consume-delete
+
+## no multi-emit (aditional emit allowed only after delete)
+## Using Weak until as delete is not required after emit
+## CTL AG(emit -> AX(A[!emit W consume]))
+## Weak until not present - equivalent formula: A[a W b] = !E[(a & !b) U (!a & !b)]
+CTL AG(emit -> AX(!E[(!emit & !delete) U (emit & !delete)]))
+
+## no multi-delete (additional delete allowed only after emit)
+CTL AG(delete -> AX(!E[!emit U (delete & !emit)]))
+
+## if there is "delete" there must have been a "emit" before
+LTL G(delete -> O(emit))
+
+## if there is "consume" there must have been a "emit" before
+LTL G(consume -> O(emit))
+
+# TODO: consume only after emit
+
+## no consume after delete
+CTL AG(delete -> AX(!E[!emit U (consume & !emit)]))

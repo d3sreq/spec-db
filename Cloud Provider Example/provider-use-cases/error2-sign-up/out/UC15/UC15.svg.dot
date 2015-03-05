@@ -1,0 +1,50 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC15_ {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC151" [xlabel="1", label="{<JMP>&bull;}", tooltip="User pushes changes to the application's remote git repository.", width="0.5"]
+		"UC152" [xlabel="2", label="{<JMP>&bull;|<EXT>}", tooltip="System detects changes in the application's remote repository.", width="1.0"]
+		"UC153" [xlabel="3", label="{<JMP>&bull;}", tooltip="System verifies that application is in running or suspended state.", width="0.5"]
+		"UC154" [xlabel="4", label="{<JMP>&bull;}", tooltip="System stops application.", width="0.5"]
+		"UC155" [xlabel="5", label="{<JMP>&bull;|<EXT>}", tooltip="System starts application. #(include:UC3)", width="1.0"]
+		"UC156" [xlabel="6", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="Use case finishes.", width="0.5"]
+	}
+	subgraph cluster_UC15_2a {
+		label="Extension: 2a.\l Application in stopped or hibe... "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC152a1" [xlabel="2a1", label="{<JMP>&bull;}", tooltip="Use case finishes. #(goto:6)", width="0.5"]
+	}
+	"UC3" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC3 Start application", URL="../UC3/UC3.html", target="_top"]
+	"UC155":"JMP" -> "UC3" [URL="#UC15_5"]
+	"UC3" -> "UC155":"EXT" 
+	"UC151":"JMP" -> "UC152":"JMP" [URL="#UC15_1"]
+	"UC152":"EXT" -> "UC153":"JMP" [URL="#UC15_2"]
+	"UC153":"JMP" -> "UC154":"JMP" [URL="#UC15_3"]
+	"UC154":"JMP" -> "UC155":"JMP" [URL="#UC15_4"]
+	"UC155":"EXT" -> "UC156":"JMP" [URL="#UC15_5"]
+	"UC152":"EXT" -> "UC152a1":"JMP" [URL="#UC15_2"]
+	"UC152a1":"JMP" -> "UC156":"JMP" [URL="#UC15_2a1"]
+}

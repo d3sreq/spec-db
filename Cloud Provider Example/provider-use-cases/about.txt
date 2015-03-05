@@ -1,0 +1,2 @@
+system-correct directory contains use cases describing system before refactoring.
+It contains have temporal annotation and should contain no temporal violations.

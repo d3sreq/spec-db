@@ -1,0 +1,52 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC17_ {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC171" [xlabel="1", label="{<JMP>&bull;|<EXT>}", tooltip="User creates account. #(include:UC6)", width="1.0"]
+		"UC172" [xlabel="2", label="{<JMP>&bull;|<EXT>}", tooltip="User evaluates the account.", width="1.0"]
+		"UC173" [xlabel="3", fillcolor="#ccebc5", label="{<JMP>&bull;|<EXT>}", tooltip="User deletes account. #(include:UC10)", width="1.0"]
+	}
+	subgraph cluster_UC17_2a {
+		label="Extension: 2a.\l User decides to change the pla... "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC172a1" [xlabel="2a1", label="{<JMP>&bull;|<EXT>}", tooltip="User changes the plan. #(include:UC12)", width="1.0"]
+		"UC172a2" [xlabel="2a2", label="{<JMP>&bull;}", tooltip="Use case continues with step 2. #(goto:2)", width="0.5"]
+	}
+	"UC6" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC6 Create account", URL="../UC6/UC6.html", target="_top"]
+	"UC10" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC10 Delete account", URL="../UC10/UC10.html", target="_top"]
+	"UC12" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC12 Change billing information", URL="../UC12/UC12.html", target="_top"]
+	"UC171":"JMP" -> "UC6" [URL="#UC17_1"]
+	"UC6" -> "UC171":"EXT" 
+	"UC173":"JMP" -> "UC10" [URL="#UC17_3"]
+	"UC10" -> "UC173":"EXT" 
+	"UC172a1":"JMP" -> "UC12" [URL="#UC17_2a1"]
+	"UC12" -> "UC172a1":"EXT" 
+	"UC171":"EXT" -> "UC172":"JMP" [URL="#UC17_1"]
+	"UC172":"EXT" -> "UC173":"JMP" [URL="#UC17_2"]
+	"UC172":"EXT" -> "UC172a1":"JMP" [URL="#UC17_2"]
+	"UC172a1":"EXT" -> "UC172a2":"JMP" [URL="#UC17_2a1"]
+	"UC172a2":"JMP" -> "UC172":"JMP" [URL="#UC17_2a2"]
+}

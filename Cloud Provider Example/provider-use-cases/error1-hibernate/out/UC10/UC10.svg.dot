@@ -1,0 +1,36 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC10_ {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC101" [xlabel="1", label="{<JMP>&bull;}", tooltip="User deletes all his applications. TODO: include delete ?", width="0.5"]
+		"UC102" [xlabel="2", label="{<JMP>&bull;}", tooltip="User changes plan to free. TODO: include change plan ?", width="0.5"]
+		"UC103" [xlabel="3", label="{<JMP>&bull;}", tooltip="User fills out online survey form - writes his email associated
+		  with account and reason for leaving the service.", width="0.5"]
+		"UC104" [xlabel="4", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="System deletes the data associated with user account.
+		  #(unmark:account_created) #(delete:email)", width="0.5"]
+	}
+	"UC101":"JMP" -> "UC102":"JMP" [URL="#UC10_1"]
+	"UC102":"JMP" -> "UC103":"JMP" [URL="#UC10_2"]
+	"UC103":"JMP" -> "UC104":"JMP" [URL="#UC10_3"]
+}

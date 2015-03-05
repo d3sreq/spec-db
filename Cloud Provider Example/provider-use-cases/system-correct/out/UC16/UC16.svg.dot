@@ -1,0 +1,70 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC16_ {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC161" [xlabel="1", label="{<JMP>&bull;}", tooltip="System checks plan associated with account.", width="0.5"]
+		"UC162" [xlabel="2", label="{<VAR>|<JMP>&bull;}", tooltip="Paid plan associated.", width="1.0"]
+		"UC163" [xlabel="3", label="{<JMP>&bull;|<EXT>|<OUT>}", tooltip="System deduces monthly fee from the credit card.", width="1.5"]
+		"UC164" [xlabel="4", fillcolor="#ccebc5", label="{<JMP>&bull;}", tooltip="Use case finishes.", width="0.5"]
+	}
+	subgraph cluster_UC16_2a {
+		label="Variation: 2a.\l Free plan associated. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC162a1" [xlabel="2a1", label="{<JMP>&bull;}", tooltip="Use case finishes. #(guard:free_plan) #(goto:4)", width="0.5"]
+	}
+	subgraph cluster_UC16_3a {
+		label="Extension: 3a.\l Payment failed. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC163a1" [xlabel="3a1", label="{<JMP>&bull;}", tooltip="System initiates forced plan downgrade.", width="0.5"]
+		"UC163a2" [xlabel="3a2", label="{<JMP>&bull;|<EXT>}", tooltip="System stops random applications that are
+		    above the limit of the free plan. #(include:UC4)", width="1.0"]
+		"UC163a3" [xlabel="3a3", label="{<JMP>&bull;|<EXT>}", tooltip="System hibernates applications that were stopped in previous
+		    step. #(include:UC21)    ", width="1.0"]
+		"UC163a4" [xlabel="3a4", label="{<JMP>&bull;}", tooltip="System sends email saying that payment failed and list of 
+		    applications that were hibernated. #(close:app_hibernated)
+		    #(consume:email)", width="0.5"]
+		"UC163a5" [xlabel="3a5", label="{<JMP>&bull;}", tooltip="System changes plan to free.", width="0.5"]
+	}
+	"UC4" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC4 Stop application", URL="../UC4/UC4.html", target="_top"]
+	"UC21" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC21 Hibernate application subfunction", URL="../UC21/UC21.html", target="_top"]
+	"UC163a2":"JMP" -> "UC4" [URL="#UC16_3a2"]
+	"UC4" -> "UC163a2":"EXT" 
+	"UC163a3":"JMP" -> "UC21" [URL="#UC16_3a3"]
+	"UC21" -> "UC163a3":"EXT" 
+	"UC161":"JMP" -> "UC162":"VAR" [URL="#UC16_1"]
+	"UC162":"JMP" -> "UC163":"JMP" [URL="#UC16_2"]
+	"UC163":"OUT" -> "UC164":"JMP" [URL="#UC16_3"]
+	"UC162":"VAR" -> "UC162a1":"JMP" [URL="#UC16_2"]
+	"UC162a1":"JMP" -> "UC164":"JMP" [URL="#UC16_2a1"]
+	"UC163":"EXT" -> "UC163a1":"JMP" [URL="#UC16_3"]
+	"UC163a1":"JMP" -> "UC163a2":"JMP" [URL="#UC16_3a1"]
+	"UC163a2":"EXT" -> "UC163a3":"JMP" [URL="#UC16_3a2"]
+	"UC163a3":"EXT" -> "UC163a4":"JMP" [URL="#UC16_3a3"]
+	"UC163a4":"JMP" -> "UC163a5":"JMP" [URL="#UC16_3a4"]
+	"UC163a5":"JMP" -> "UC163":"OUT" [URL="#UC16_3a5"]
+}

@@ -1,0 +1,6 @@
+include \
+	'provider-use-cases/system-correct', \
+	'provider-use-cases/error1-hibernate', \
+	'provider-use-cases/error2-sign-up', \
+	'provider-use-cases/error3-suspend-in-paid-plan'
+

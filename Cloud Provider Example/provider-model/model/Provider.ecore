@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="">
+  <eClassifiers xsi:type="ecore:EClass" name="Application">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="addOns" upperBound="-1"
+        eType="#//AddOnPackage" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" lowerBound="1" eType="#//ApplicationState"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repository" lowerBound="1"
+        eType="#//GitRepository"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="webPackage" lowerBound="1"
+        eType="#//WebPackage" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Plan">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxRunningApplications"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="creditCard" eType="#//CreditCard"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="billingInformation" upperBound="-1"
+        eType="#//PersonalInfo" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="applications" upperBound="-1"
+        eType="#//Application"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FreePlan" eSuperTypes="#//Plan">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastRequestTimestamp" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PaidPlan" eSuperTypes="#//Plan">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="monthlyFee" ordered="false"
+        unique="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="User">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="plan" lowerBound="1" eType="#//Plan"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="email" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PersonalInfo">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreditCard">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardNumber" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ApplicationState">
+    <eLiterals name="RUNNING"/>
+    <eLiterals name="HIBERNATED"/>
+    <eLiterals name="STOPPED"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GitRepository">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" lowerBound="1" eType="#//RepositoryState"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Package">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WebPackage" eSuperTypes="#//Package"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AddOnPackage" eSuperTypes="#//Package"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="RepositoryState">
+    <eLiterals name="RUNNING"/>
+    <eLiterals name="HIBERNATED"/>
+  </eClassifiers>
+</ecore:EPackage>

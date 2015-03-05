@@ -1,0 +1,135 @@
+digraph mygraph {
+	rankdir="LR"
+	fontcolor="gray"
+	fontname="Arial"
+	margin="1"
+	dpi="62"
+	node [
+		shape="Mrecord",
+		style="filled",
+		label="",
+		fontname="Arial",
+		width="0.5",
+		height="0.1",
+		fillcolor="#b3cde3"
+	]
+	edge [
+		fontname="Arial"
+	]
+	ranksep="0.4"
+	nodesep="0.2"
+	 labeljust="l"
+	subgraph cluster_UC9_ {
+		bgcolor="#ffffcc"
+		label=""
+		margin="30"
+		"UC91" [xlabel="1", label="{<JMP>&bull;}", tooltip="User initiates change of the plan.", width="0.5"]
+		"UC92" [xlabel="2", label="{<JMP>&bull;}", tooltip="System presents information about current plan and available plans.", width="0.5"]
+		"UC93" [xlabel="3", label="{<VAR>|<JMP>&bull;|<OUT>}", tooltip="User selects upgrade to paid plan. #(mark:wants_paid_plan)", width="1.5"]
+		"UC94" [xlabel="4", label="{<VAR>|<JMP>&bull;}", tooltip="System evaluates that user has free plan associated 
+		  and wants to upgrade to paid plan.", width="1.0"]
+		"UC95" [xlabel="5", label="{<JMP>&bull;|<EXT>|<OUT>}", tooltip="System checks that it has billing information of the user.", width="1.5"]
+		"UC96" [xlabel="6", label="{<JMP>&bull;|<EXT>|<OUT>}", tooltip="System checks that it has credit card of the user.", width="1.5"]
+		"UC97" [xlabel="7", label="{<JMP>&bull;}", tooltip="System presents review of the plan change
+		  and presents terms and conditions.", width="0.5"]
+		"UC98" [xlabel="8", label="{<VAR>|<JMP>&bull;}", tooltip="User confirms the plan change.", width="1.0"]
+		"UC99" [xlabel="9", label="{<JMP>&bull;|<EXT>}", tooltip="System computes first payment according to days left to the
+		  end of the current month and substracts it from the credit
+		  card.", width="1.0"]
+		"UC910" [xlabel="10", fillcolor="#ccebc5", label="{<VAR>|<JMP>&bull;|<OUT>}", tooltip="System changed the plan to the paid one. #(unmark:free_plan) 
+		   #(delete:free_plan)", width="1.5"]
+	}
+	subgraph cluster_UC9_3a {
+		label="Variation: 3a.\l User wants to downgrade to fre... "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC93a1" [xlabel="3a1", label="{<JMP>&bull;}", tooltip="User selects downgrade to free plan. 
+		    #(guard:!free_plan) #(unmark:wants_paid_plan)", width="0.5"]
+	}
+	subgraph cluster_UC9_6a {
+		label="Extension: 6a.\l User wants to change credit ca... "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC96a1" [xlabel="6a1", label="{<JMP>&bull;|<EXT>}", tooltip="User provides credit card information. #(include:UC13)", width="1.0"]
+	}
+	subgraph cluster_UC9_5a {
+		label="Extension: 5a.\l User wants to change billing i... "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC95a1" [xlabel="5a1", label="{<JMP>&bull;|<EXT>}", tooltip="User provides billing information. #(include:UC12)", width="1.0"]
+	}
+	subgraph cluster_UC9_8a {
+		label="Variation: 8a.\l User cancels the plan change. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC98a1" [xlabel="8a1", fillcolor="#fbb4ae", label="{<JMP>&bull;}", tooltip="Use case aborts. #(abort)", width="0.5"]
+	}
+	subgraph cluster_UC9_4a {
+		label="Variation: 4a.\l System evaluates that user has... "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC94a1" [xlabel="4a1", label="{<JMP>&bull;}", tooltip="System skips billing information and credit card selection.
+		    #(guard:!free_plan & !wants_paid_plan) #(goto:7)", width="0.5"]
+	}
+	subgraph cluster_UC9_4b {
+		label="Variation: 4b.\l User selected same plan that h... "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC94b1" [xlabel="4b1", label="{<JMP>&bull;}", tooltip="System informs user that he has the selected plan
+		    already associated. 
+		    #(guard:free_plan & !wants_paid_plan | !free_plan & wants_paid_plan)", width="0.5"]
+		"UC94b2" [xlabel="4b2", fillcolor="#fbb4ae", label="{<JMP>&bull;}", tooltip="Use case aborts. #(abort)", width="0.5"]
+	}
+	subgraph cluster_UC9_9a {
+		label="Extension: 9a.\l Payment fails. "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC99a1" [xlabel="9a1", label="{<JMP>&bull;}", tooltip="System shows message to user that the payment failed.", width="0.5"]
+		"UC99a2" [xlabel="9a2", fillcolor="#fbb4ae", label="{<JMP>&bull;}", tooltip="Use case aborts. #(abort)", width="0.5"]
+	}
+	subgraph cluster_UC9_10a {
+		label="Variation: 10a.\l System changed the plan to fre... "
+		bgcolor="#f2f2f2"
+		fontcolor="gray"
+		margin="30"
+		"UC910a1" [xlabel="10a1", label="{<JMP>&bull;}", tooltip="Use case finishes. #(guard:!wants_paid_plan) 
+		     #(mark:free_plan) #(emit:free_plan)", width="0.5"]
+	}
+	"UC13" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC13 Change credit card", URL="../UC13/UC13.html", target="_top"]
+	"UC12" [fillcolor="#fed9a6", shape="box", height="0.5", label="UC12 Change billing information", URL="../UC12/UC12.html", target="_top"]
+	"UC96a1":"JMP" -> "UC13" [URL="#UC9_6a1"]
+	"UC13" -> "UC96a1":"EXT" 
+	"UC95a1":"JMP" -> "UC12" [URL="#UC9_5a1"]
+	"UC12" -> "UC95a1":"EXT" 
+	"UC91":"JMP" -> "UC92":"JMP" [URL="#UC9_1"]
+	"UC92":"JMP" -> "UC93":"VAR" [URL="#UC9_2"]
+	"UC93":"OUT" -> "UC94":"VAR" [URL="#UC9_3"]
+	"UC94":"JMP" -> "UC95":"JMP" [URL="#UC9_4"]
+	"UC95":"OUT" -> "UC96":"JMP" [URL="#UC9_5"]
+	"UC96":"OUT" -> "UC97":"JMP" [URL="#UC9_6"]
+	"UC97":"JMP" -> "UC98":"VAR" [URL="#UC9_7"]
+	"UC98":"JMP" -> "UC99":"JMP" [URL="#UC9_8"]
+	"UC99":"EXT" -> "UC910":"VAR" [URL="#UC9_9"]
+	"UC93":"VAR" -> "UC93a1":"JMP" [URL="#UC9_3"]
+	"UC93a1":"JMP" -> "UC93":"OUT" [URL="#UC9_3a1"]
+	"UC96":"EXT" -> "UC96a1":"JMP" [URL="#UC9_6"]
+	"UC96a1":"EXT" -> "UC96":"OUT" [URL="#UC9_6a1"]
+	"UC95":"EXT" -> "UC95a1":"JMP" [URL="#UC9_5"]
+	"UC95a1":"EXT" -> "UC95":"OUT" [URL="#UC9_5a1"]
+	"UC98":"VAR" -> "UC98a1":"JMP" [URL="#UC9_8"]
+	"UC94":"VAR" -> "UC94a1":"JMP" [URL="#UC9_4"]
+	"UC94a1":"JMP" -> "UC97":"JMP" [URL="#UC9_4a1"]
+	"UC94":"VAR" -> "UC94b1":"JMP" [URL="#UC9_4"]
+	"UC94b1":"JMP" -> "UC94b2":"JMP" [URL="#UC9_4b1"]
+	"UC99":"EXT" -> "UC99a1":"JMP" [URL="#UC9_9"]
+	"UC99a1":"JMP" -> "UC99a2":"JMP" [URL="#UC9_9a1"]
+	"UC910":"VAR" -> "UC910a1":"JMP" [URL="#UC9_10"]
+	"UC910a1":"JMP" -> "UC910":"OUT" [URL="#UC9_10a1"]
+}

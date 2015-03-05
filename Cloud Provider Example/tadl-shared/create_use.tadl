@@ -1,0 +1,8 @@
+## at least one branch with "use" required after "create"
+CTL AG(create -> EF(use))
+
+## only one "create" is allowed
+CTL AG(create -> AX(AG(!create)))
+
+## if there is "use" there must have been a "create" before
+LTL G(use -> O(create))
